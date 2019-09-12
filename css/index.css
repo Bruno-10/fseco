@@ -1,9 +1,15 @@
-
 .productos{
-    /* height: 40vh; */
-    width: 300px;
-    height: 300px;
+    height: 40vh;
     background-color: brown;
-    margin: 1px;
-    padding: 0;
+    margin: 1% 1%;
+    padding: 0px;
 }
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.contenedorcarrusel{
+    padding: 0px;
+}
+

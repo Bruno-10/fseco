@@ -54,6 +54,7 @@
                     </header>
 
         <section id="carousel">
+            <div class="col-sm-12 col-md-12 col-lg-12 contenedorcarrusel">
                     <div class="bd-example">
                         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -94,16 +95,17 @@
                             </a>
                         </div>
                     </div>
+            </div> 
 
         </section>
 
-        <main class="col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap">
-            <div class="productos col-sm-12 col-md-6 col-lg-4"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-4"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-4"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-4"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-4"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-4"></div>
+        <main class="col-sm-12 col-md-12 col-lg-12 d-flex">
+            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
+            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
+            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
+            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
+            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
+            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
         </main>
 
         <footer>

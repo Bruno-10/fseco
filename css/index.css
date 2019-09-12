@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.productos{
+    height: 40vh;
+    background-color: brown;
+    margin: 1px;
+    padding: 0;
+}

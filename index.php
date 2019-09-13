@@ -13,8 +13,8 @@
 </head>
     <body>
         <div class="container-fluid padding">
-                    <header class="row">
-                            <div class="col-sm-12 col-md-lg-12">
+                    <header class="row col-sm-12 col-md-12 col-lg-12 margencero">
+                            <div class="col-sm-12 col-md-lg-12 padding">
                                 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
                                         <div class="logo">
                                             <a class="navbar-brand" href="#">Logo</a>
@@ -52,69 +52,64 @@
                                 </nav>
                            </div>
                     </header>
-
-        <section id="carousel">
-            <div class="col-sm-12 col-md-12 col-lg-12 contenedorcarrusel">
-                    <div class="bd-example">
-                        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="img\WhatsApp Image 2019-09-12 at 19.00.48.jpeg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <section id="carousel" class="row col-sm-12 col-md-12 col-lg-12 margencero">
+                        <div class="col-sm-12 col-md-12 col-lg-12 contenedorcarrusel">
+                                <div class="bd-example">
+                                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="img\WhatsApp Image 2019-09-12 at 19.00.48.jpeg" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                            <h5>First slide label</h5>
+                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="img\WhatsApp Image 2019-09-12 at 19.05.35.jpeg" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                            <h5>Second slide label</h5>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="img\WhatsApp Image 2019-09-12 at 19.00.48.jpeg" class="d-block w-100" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                            <h5>Third slide label</h5>
+                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img\WhatsApp Image 2019-09-12 at 19.05.35.jpeg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img\WhatsApp Image 2019-09-12 at 19.00.48.jpeg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                                </div>
-                            </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-            </div> 
+                        </div> 
 
-        </section>
-
-        <main class="col-sm-12 col-md-12 col-lg-12 d-flex">
-            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
-            <div class="productos col-sm-12 col-md-6 col-lg-3"></div>
-        </main>
-
-        <footer>
-
-        </footer>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </div>
+                    </section>
+                    <main class="col-sm-12 col-md-12 col-lg-12 d-flex">
+                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
+                    </main>
+                    <footer class="row col-sm-12 col-md-12 col-lg-12 margencero">
+                    </footer>
+        </div>
+                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -25,5 +25,8 @@
 footer{
     background-color: blue;
     height: 50px;
+    position: fixed; 
+    bottom: 1px;
+    z-index: 1000;
 }
 

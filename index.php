@@ -29,16 +29,16 @@
                                                     <a class="nav-link" href="index.php">Home</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Perfil</a>
+                                                    <a class="nav-link" href="usuario.php">Perfil</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Log-In</a>
+                                                    <a class="nav-link" href="login.php">Log-In</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="registro.php">Register</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">F.A.Q</a>
+                                                    <a class="nav-link" href="faq.php">F.A.Q</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="contacto.php">Contacto</a>

@@ -24,22 +24,22 @@
                                             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                                                 <ul class="navbar-nav">
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Home</a>
+                                                    <a class="nav-link" href="index.php">Home</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Perfil</a>
+                                                    <a class="nav-link" href="usuario.php">Perfil</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Log-In</a>
+                                                    <a class="nav-link" href="login.php">Log-In</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Register</a>
+                                                    <a class="nav-link" href="registro.php">Register</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">F.A.Q</a>
+                                                    <a class="nav-link" href="faq.php">F.A.Q</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Contacto</a>
+                                                    <a class="nav-link" href="contacto.php">Contacto</a>
                                                 </li>
                                                 </ul>
                                             </div>

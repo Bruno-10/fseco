@@ -11,3 +11,7 @@
 h2{
     text-align: center;
 }
+
+button.btn.btn-success{
+ margin-bottom: 10px;
+}

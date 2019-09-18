@@ -1,8 +1,9 @@
-
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
 .emp-profile{
     padding: 3%;
-    margin-top: 3%;
-    margin-bottom: 3%;
     border-radius: 0.5rem;
     background: #fff;
 }
@@ -11,10 +12,10 @@
     margin-bottom: 10px;
     text-align: left;
     border-radius: 50%;
-
+    align-content: center;
 }
 .profile-img img{
-    width: 10vw;
+    width: 8vw;
     border-radius: 50%;
     border: 2px solid #3931af;
 }
@@ -82,5 +83,7 @@
 }
 
 .cajausuario{
-    border: 1px solid #41B3A3;
+    border: 2px solid #41B3A3;
+    border-radius: 4px;
+    height: 40%;
 }

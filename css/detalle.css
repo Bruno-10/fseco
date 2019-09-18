@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+}
+
+.producto{
+    width: 90%;
+    
+}
+
+.imagen{
+    display: flex;
+    border: 1px solid grey;
+    margin-top: 3%;
+}
+
+.imagen img{
+    height: 100%;
+    width: 70%;
+}
+
+.descripcion h4{
+    padding-left: 1%;
+}
+
+.precio{
+    background-color: rgb(233, 232, 232);
+    padding: 3%;
+    margin-bottom: 4%;
+    border-radius: 2%;
+}
+
+.precio input[type=number] {
+    text-align: center;
+    width: 20%;
+    margin-bottom: 3%;
+}
+
+.precio p{
+    color: rgb(92, 184, 0)
+}
+
+.precio input[type=submit]{
+    border: none;
+    border-radius: 5%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(247, 158, 43);
+    padding: 2%;
+    cursor: pointer;
+    
+}
+
+
+@media only screen and (min-width: 992px){
+
+    main{
+        margin: 2% 0;
+    }
+
+    .producto{
+        display: flex;
+    }
+
+    .imagen img{
+        width: 50%;
+        height: 60%;
+    }
+
+    .imagen{
+        align-items: center;
+        margin-bottom: 3%;
+    }
+
+    .descripcion{
+        width: 100%;
+    }
+
+    .desktop{
+        margin-top: 3%;
+        padding: 1%;
+    }
+
+}

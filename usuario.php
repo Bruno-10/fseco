@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/usuario.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="css/usuario1.css">
+    <title>Perfil</title>
 </head>
     <body>
         <div class="container-fluid padding">
@@ -56,8 +56,8 @@
                         <div class="row col-sm-12 col-md-12 col-lg-12 emp-profile margencero padding">
                             <form method="post">
                                 <div class="row col-sm-12 col-md-12 col-lg-12">
-                                    <div class="col-md-4">
-                                        <div class="profile-img">
+                                    <div class="col-md-4 cajausuario">
+                                        <div class="profile-img marco">
                                             <img src="img/pelota.jpg" alt="profile picture"/>
                                         </div>
                                     </div>

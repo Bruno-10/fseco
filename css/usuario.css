@@ -1,3 +1,4 @@
+
 .emp-profile{
     padding: 3%;
     margin-top: 3%;
@@ -7,7 +8,7 @@
 }
 .profile-img{
     margin: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
     border-radius: 50%;
 
@@ -78,4 +79,8 @@
 .profile-tab p{
     font-weight: 600;
     color: #0062cc;
+}
+
+.cajausuario{
+    border: 1px solid #41B3A3;
 }

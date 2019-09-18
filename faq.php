@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/faq1.css">
     <title>detalle</title>
 </head>
 <body>
@@ -52,18 +52,27 @@
                                             </div>
                     </header>
 
-                    <main>
-                        <h4>Lorem ipsum dolor sit?</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta?</p>
-                        <h4>Lorem ipsum dolor sit?</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta?</p>
-                        <h4>Lorem ipsum dolor sit?</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta?</p>
-                        <h4>Lorem ipsum dolor sit?</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta?</p>
-                        <h4>Lorem ipsum dolor sit?</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta?</p>
+                    <main> 
 
+                        <h3>Preguntas Frequentes.</h3>
+
+                        <div class="preguntas">
+                            <h4>Lorem ipsum dolor sit?</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta</p>
+                        </div>
+                        <div class="preguntas">
+                            <h4>Lorem ipsum dolor sit?</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta</p>
+                        </div>
+                        <div class="preguntas">
+                            <h4>Lorem ipsum dolor sit?</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta</p>
+                        </div>
+                        <div class="preguntas">
+                            <h4>Lorem ipsum dolor sit?</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ullam odio tenetur, maxime ab rem impedit enim ipsum minima odit beatae consequuntur doloribus, reiciendis debitis voluptates neque totam minus dicta</p>
+                        </div>
+    
                     </main>
 
                     <footer class="row col-sm-12 col-md-12 col-lg-12 margencero">

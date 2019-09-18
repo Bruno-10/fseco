@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/usuario.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="css/usuario1.css">
+    <title>Perfil</title>
 </head>
     <body>
         <div class="container-fluid padding">
@@ -53,32 +52,35 @@
                            </div>
                     </header>
                     <main class="row col-sm-12 col-md-12 col-lg-12 margencero">
-                        <div class="row col-sm-12 col-md-12 col-lg-12 emp-profile margencero padding">
+                        <div class="row col-sm-12 col-md-12 col-lg-12 emp-profile margencero">
                             <form method="post">
                                 <div class="row col-sm-12 col-md-12 col-lg-12">
-                                    <div class="col-md-4">
-                                        <div class="profile-img">
-                                            <img src="img/pelota.jpg" alt="profile picture"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-12">
-                                        <div class="profile-head">
+                                    <div class="col-md-6  cajausuario">
+                                        <div class="profile-img marco row">
+                                            <img src="img/pelota.jpg" alt="profile picture" class=""/>
+                                            <div class="col-md-4 col-lg-8 col-sm-2">
+                                                <div class="profile-head">
                                                     <h5>
                                                         Nombre del usuario
                                                     </h5>
                                                     <h6>
                                                         Profesión
                                                     </h6>
-                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Datos personales</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Compras realizadas</a>
-                                                </li>
-                                            </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                            <div id="datos">
+                                <div class="profile-head"> 
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Datos personales</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Compras realizadas</a>
+                                        </li>
+                                    </ul>
+                                </div>
                                     <!--  <div class="col-md-2">
                                         <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
                                     </div>
@@ -193,6 +195,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </form>           
                         </div>
                     </main>

@@ -14,15 +14,15 @@
     <body>
         <div class="container-fluid padding">
                     <header class="row col-sm-12 col-md-12 col-lg-12 margencero">
-                            <div class="col-sm-12 col-md-lg-12 padding">
-                                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                                        <div class="logo">
+                                <nav class=" col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md bg-dark navbar-dark">
+                                            <div class="logo">
                                             <a class="navbar-brand" href="#">Logo</a>
-                                        </div>
-                                        <div class="hamburguesa align-items-right">
-                                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                            </div>
+                                            <div class="hamburguesa align-items-right">
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                                                 <span class="navbar-toggler-icon"></span>
-                                            </button>   
+                                                </button>   
+                                            </div>
                                             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                                                 <ul class="navbar-nav">
                                                 <li class="nav-item">
@@ -46,14 +46,14 @@
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="listado.php">Shop</a>
                                                 </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="listado.php"><ion-icon class="cart" name="cart"></ion-icon></a>
+                                                </li>
                                                 </ul>
                                             </div>
-                                        </div> 
-                                        <div class="carrito">
-                                             <a href="#"><ion-icon class="cart" name="cart"></ion-icon></a>
-                                        </div>
+                                         
+                                       
                                 </nav>
-                           </div>
                     </header>
                     <section id="carousel" class="row col-sm-12 col-md-12 col-lg-12 margencero">
                         <div class="col-sm-12 col-md-12 col-lg-12 contenedorcarrusel">
@@ -98,7 +98,6 @@
                                     </div>
                                 </div>
                         </div> 
-
                     </section>
                     <main class="col-sm-12 col-md-12 col-lg-12 d-flex">
                         <div class="productos col-sm-12 col-md-4 col-lg-3"></div>

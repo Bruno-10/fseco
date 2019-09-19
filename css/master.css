@@ -1,8 +1,11 @@
+
+
+
 *{
     box-sizing: border-box;
     margin: 0 auto;
-}
-ul, ol{
+} */
+ ul, ol{
     padding: 0;
   }
 li {
@@ -19,7 +22,7 @@ a{
 .margencero{
     padding:0px;
     margin:0px;
-}
+} 
 .hamburguesa{
     margin-left: 0px;
     margin-right: 0px;
@@ -32,7 +35,7 @@ a{
 }
 .cart{
     color: aliceblue;
-}
+} 
 footer{
     background-color: blue;
     height: 50px;
@@ -40,4 +43,3 @@ footer{
     bottom: 1px;
     z-index: 1000;
 }
-

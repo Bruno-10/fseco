@@ -16,6 +16,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     
+    
 }
 
 article img{
@@ -41,6 +42,7 @@ article img{
     padding: 4%;
     border-radius: 4px;
     
+    
 }
 
 .more{
@@ -55,15 +57,17 @@ article img{
 {
     .categorias
     { 
-    position: absolute;
-    top: 1%;
+    z-index: 1000;
+    position: fixed;
+    top: 8.5%;
     left: 1%;
     }
 
     .cvip-products
     {
         justify-content: center;
-        margin-left: 5%;
+        margin-left: 15%;
+        margin-top: 3vh;
     }
     main
     {
@@ -71,10 +75,17 @@ article img{
     }
 }
 
-@media (min-width:1200px) {
-    main
+ @media (min-width:1000px) {
+    .cvip-products
     {
-        flex-wrap: nowrap;
-        flex-direction: row;
+        margin-left: 8%; 
+        
     }
-}
+    .categorias
+    { 
+    z-index: 1000;
+    position: absolute;
+    top: 3vh;
+    left: 1%;
+    }
+} 

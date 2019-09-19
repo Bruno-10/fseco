@@ -65,8 +65,8 @@
                                         <li class="secciones">Lorem, ipsum dolor.</li>
                                     </ul>
                             </nav>
-                            <section class="row col-sm-8 col-md-7 col-lg-6 cvip-products">
-		                    	<article class="product col-sm-8">
+                            <section class="row col-sm-8 col-md-10 col-lg-10 cvip-products">
+		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
                                         <img class="photo col-lg-12" src="img/WhatsApp Image 2019-09-12 at 19.00.48.jpeg" alt="pdto 03">
 		                    		</div>
@@ -74,7 +74,7 @@
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
 		                    		<a class="more" href="#">ver más</a>
 		                    	</article>
-		                    	<article class="product col-sm-8">
+		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
                                         <img class="photo col-lg-12" src="img/WhatsApp Image 2019-09-12 at 19.00.48.jpeg" alt="pdto 03">
 		                    			
@@ -83,7 +83,7 @@
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
 		                    		<a class="more" href="#">ver más</a>
 		                    	</article>
-		                    	<article class="product col-sm-8">
+		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
 		                    			<img class="photo col-lg-12" src="img/WhatsApp Image 2019-09-12 at 19.00.48.jpeg" alt="pdto 03">
 		                    			
@@ -92,7 +92,7 @@
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
 		                    		<a class="more" href="#">ver más</a>
 		                    	</article>
-		                    	<article class="product col-sm-8">
+		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
 		                    			<img class="photo col-lg-12" src="img/WhatsApp Image 2019-09-12 at 19.00.48.jpeg"" alt="pdto 01">
 		                    			
@@ -101,7 +101,7 @@
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
 		                    		<a class="more" href="#">ver más</a>
 		                    	</article>
-		                    	<article class="product col-sm-8">
+		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
 		                    			<img class="photo col-lg-12" src="img/WhatsApp Image 2019-09-12 at 19.00.48.jpeg" alt="pdto 02">
 		                    			
@@ -110,7 +110,7 @@
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
 		                    		<a class="more" href="#">ver más</a>
 		                    	</article>
-		                    	<article class="product col-sm-8">
+		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
 		                    			<img class="photo col-lg-12" src="img/WhatsApp Image 2019-09-12 at 19.00.48.jpeg" alt="pdto 03">
 		                    			

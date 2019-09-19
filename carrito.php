@@ -53,18 +53,18 @@
                                 </nav>
                            </div>
                     </header>
-                    <main class="row margencero">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
+                    <main class="row margencero justify-content-around">
+                        <div class="col-sm-12 col-md-11 col-lg-11">
                             <h2>CARRITO</h2>
                         </div>
-                        <div class="col-sm-12 col-md-6 col-lg-6 margencero"> 
-                            <table class="table">
-                                <thead class="thead-dark">
+                        <div class="col-sm-12 col-md-6 col-lg-5 margencero"> 
+                            <table class="table border">
+                                <thead class="fondo">
                                     <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Producto</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col">Cantidad</th>
+                                    <th scope="col border"></th>
+                                    <th scope="col border">Producto</th>
+                                    <th scope="col border">Precio</th>
+                                    <th scope="col border">Cantidad</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -96,29 +96,37 @@
                                 </tbody>
                             </table>
                         </div>  
-                        <div class="col-sm-12 col-md-6 col-lg-6 margencero ">
-                            <table class="table ">
-                                    <thead class="thead-dark ">
+                        <div class="col-sm-12 col-md-4 col-lg-5 margencero">
+                            <table class="table border">
+                                    <thead class="fondo">
                                         <tr>
-                                        <th scope="col">TOTAL</th>
-                                       
+                                        <th scope="row">TOTAL</th>
+                                        <td></td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Subtotal</td>
+                                            <th scope="row">Subtotal</th>
+                                            <td>$800</td>
                                         </tr>
                                         <tr>
-                                            <td>Envio</td>
+                                            <th scope="row">Envio</th>
+                                            <td>$150</td>
                                         </tr>
                                         <tr>
-                                            <td>Total</td>
+                                            <th scope="row">Total</th>
+                                            <td>$950</td>
                                         </tr> 
                                     </tbody>
                             </table>
-                            <div class="col-md-4 col-lg-7"> 
-                                    <button class="btn btn-success" type="submit">Enviar</button>
+                            <div class="row col-sm-12 col-md-12 col-lg-12 justify-content-between"> 
+                                <div class="col-sm-3 col-md-6 col-lg-4 boton">
+                                    <button class="btn btn-success " type="submit">ir a Caja</button>
+                                </div>
+                                <div class="col-sm-3 col-md-6 col-lg-4 boton">
                                     <button class="btn btn-danger" type="submit">Cancelar</button>
+                                 </div>
+                                    
                             </div>
                         </div>  
                     </main>

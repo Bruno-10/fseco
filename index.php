@@ -7,54 +7,14 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <link rel="stylesheet" href="css/master.css">
+    
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/master.css">
     <title>Home</title>
 </head>
     <body>
         <div class="container-fluid padding">
-                    <header class="row col-sm-12 col-md-12 col-lg-12 margencero">
-                                <nav class=" col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md bg-dark navbar-dark">
-                                            <div class="logo">
-                                            <a class="navbar-brand" href="#">Logo</a>
-                                            </div>
-                                            <div class="hamburguesa align-items-right">
-                                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                                                <span class="navbar-toggler-icon"></span>
-                                                </button>   
-                                            </div>
-                                            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                                                <ul class="navbar-nav">
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="index.php">Home</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="usuario.php">Perfil</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="login.php">Log-In</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="registro.php">Register</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="faq.php">F.A.Q</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="contacto.php">Contacto</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="listado.php">Shop</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="listado.php"><ion-icon class="cart" name="cart"></ion-icon></a>
-                                                </li>
-                                                </ul>
-                                            </div>
-                                         
-                                       
-                                </nav>
-                    </header>
+                    <?php require_once("header.php"); ?>
                     <section id="carousel" class="row col-sm-12 col-md-12 col-lg-12 margencero">
                         <div class="col-sm-12 col-md-12 col-lg-12 contenedorcarrusel">
                                 <div class="bd-example">
@@ -107,8 +67,7 @@
                         <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
                         <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
                     </main>
-                    <footer class="row col-sm-12 col-md-12 col-lg-12 margencero">
-                    </footer>
+                    <?php require_once("footer.php"); ?>
         </div>
                     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

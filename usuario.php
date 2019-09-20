@@ -19,7 +19,7 @@
                                 <div class="row col-sm-12 col-md-12 col-lg-12">
                                     <div class="col-md-6  cajausuario">
                                         <div class="profile-img marco row">
-                                            <img src="img/pelota.jpg" alt="profile picture" class=""/>
+                                            <img src="img/fotoperfil.png" alt="profile picture" class=""/>
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>

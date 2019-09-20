@@ -14,7 +14,7 @@
         <div class="container-fluid padding">
         <?php require_once("header.php"); ?>
                     <main class="row col-sm-12 col-md-12 col-lg-12 margencero">
-                            <nav class="categorias col-sm-2 col-md-3 col-lg-2 margencero">
+                            <nav class="categorias col-sm-2 col-md-2 col-lg-2 margencero">
                                     <header class="card-header col-sm-12">
                                 		<h6 class="title">Categorias</h6>
                                     </header>

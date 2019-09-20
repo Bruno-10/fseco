@@ -1,6 +1,6 @@
 <footer>
     <div class="logotipo" >
-        <img src="img/logopsport.jpg" alt="logo de la empresa">
+        <img src="img/pelota.jpg" alt="logo de la empresa">
     </div>
 
     <hr>

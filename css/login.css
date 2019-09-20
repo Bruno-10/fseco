@@ -1,7 +1,7 @@
 
             body {font-family: Arial, Helvetica, sans-serif;}
-            form {border: 3px solid #f1f1f1;}
-            input[type=text], input[type=password] {
+            .formLogin {border: 3px solid #f1f1f1;}
+            .inputLogin{
             width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -10,7 +10,7 @@
             box-sizing: border-box;
             }
 
-            button {
+            button.botonLogin{
             background-color: #4CAF50;
             color: white;
             padding: 14px 20px;

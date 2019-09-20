@@ -41,7 +41,7 @@
                                                     <a class="nav-link" href="login.php"> <ion-icon name="exit"></ion-icon> Iniciar sesion</a>  
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="listado.php"><ion-icon name="cart"></ion-icon>Carrito</a>
+                                                    <a class="nav-link" href="carrito.php"><ion-icon name="cart"></ion-icon>Carrito</a>
                                                 </li>
                                                 </ul>
                                             </div>   

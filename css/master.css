@@ -4,7 +4,7 @@
 *{
     box-sizing: border-box;
     margin: 0 auto;
-} */
+} 
  ul, ol{
     padding: 0;
   }
@@ -36,10 +36,4 @@ a{
 .cart{
     color: aliceblue;
 } 
-footer{
-    background-color: blue;
-    height: 50px;
-    position: fixed; 
-    bottom: 1px;
-    z-index: 1000;
-}
+

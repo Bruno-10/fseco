@@ -52,7 +52,7 @@
 
             <p><i class="fab fa-whatsapp"></i><span>Whats App:</span><a href="tel:+543411554365">+54 341-1554365</a></p>
 
-            <p><i class="fab fa-instagram"></i></i><span>Instagram:</span><a href="https://www.instagram.com/padelsportgalarza/">Padel Sport Galarza</a></p>
+            <p><i class="fab fa-instagram"></i><span>Instagram:</span><a href="https://www.instagram.com/padelsportgalarza/">Padel Sport Galarza</a></p>
 
         </div>
     </div>

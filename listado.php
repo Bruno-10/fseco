@@ -35,7 +35,7 @@
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="#">ver más</a>
+		                    		<a class="more" href="detalle.php">ver más</a>
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
@@ -44,7 +44,7 @@
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="#">ver más</a>
+		                    		<a class="more" href="detalle.php">ver más</a>
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
@@ -53,7 +53,7 @@
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="#">ver más</a>
+		                    		<a class="more" href="detalle.php">ver más</a>
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
@@ -62,7 +62,7 @@
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="#">ver más</a>
+		                    		<a class="more" href="detalle.php">ver más</a>
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
@@ -71,7 +71,7 @@
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="#">ver más</a>
+		                    		<a class="more" href="detalle.php">ver más</a>
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
@@ -80,7 +80,7 @@
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="#">ver más</a>
+		                    		<a class="more" href="detalle.php">ver más</a>
 		                    	</article>
 		                    </section>
                     </main>  

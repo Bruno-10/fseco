@@ -58,7 +58,7 @@ article img{
     .categorias
     { 
     z-index: 1000;
-    position: fixed;
+    position: absolute;
     top: 8.5%;
     left: 1%;
     }
@@ -84,7 +84,7 @@ article img{
     .categorias
     { 
     z-index: 1000;
-    position: relative;
+    position: absolute;
     top: 3vh;
     left: 1%;
     }

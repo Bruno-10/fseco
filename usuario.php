@@ -68,7 +68,7 @@
                                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <label>User Id</label>
+                                                                <label>Usuario</label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <p>Kshiti123</p>
@@ -76,10 +76,10 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <label>Name</label>
+                                                                <label>Nombre</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p>Kshiti Ghelani</p>
+                                                                <p>Roberto Perez</p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -92,44 +92,28 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <label>Phone</label>
+                                                                <label>Telefono</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p>123 456 7890</p>
+                                                                <p>341-1221211</p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <label>Profession</label>
+                                                                <label>Profesion</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p>Web Developer and Designer</p>
+                                                                <p>Programador</p>
                                                             </div>
                                                         </div>
                                             </div>
                                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <label>Experience</label>
+                                                                <label>Experiencia</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p>Expert</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label>Hourly Rate</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>10$/hr</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label>Total Projects</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>230</p>
+                                                                <p>Junior</p>
                                                             </div>
                                                         </div>
                                                         <div class="row">

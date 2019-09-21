@@ -1,6 +1,12 @@
+.carousel-item img {
+    object-fit: scale-down;
+    height: 50vh;
+    width: 100%;
+  }
+
 .productos{
-    height: 30vh;
-    background-color: brown;
+    height: auto;
+    border: 2px solid #f1f1f1;
     margin: 1% 1%;
     padding: 0px;
 }

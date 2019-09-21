@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index_1.css">
     <link rel="stylesheet" href="css/footer1.css">
     <link rel="stylesheet" href="css/master.css">
     <title>Home</title>
@@ -60,12 +60,24 @@
                         </div> 
                     </section>
                     <main class="col-sm-12 col-md-12 col-lg-12 d-flex">
-                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
-                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
-                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
-                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
-                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
-                        <div class="productos col-sm-12 col-md-4 col-lg-3"></div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3">
+                            <img class="col-sm-12 col-md-4 col-lg-10" src="img/paleta_1.jpg" alt="paleta">
+                        </div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3">
+                            <img class="col-sm-12 col-md-4 col-lg-10" src="img/paleta_2.jpg" alt="paleta">
+                        </div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3">
+                            <img class="col-sm-12 col-md-4 col-lg-9" src="img/paleta_3.jpg" alt="paleta">
+                        </div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3">
+                            <img class="col-sm-12 col-md-4 col-lg-10" src="img/paleta_1.jpg" alt="paleta">
+                        </div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3">
+                            <img class="col-sm-12 col-md-4 col-lg-10" src="img/paleta_2.jpg" alt="paleta">
+                        </div>
+                        <div class="productos col-sm-12 col-md-4 col-lg-3">
+                            <img class="col-sm-12 col-md-4 col-lg-9" src="img/paleta_3.jpg" alt="paleta">
+                        </div>
                     </main>
                     <?php require_once("footer.php"); ?>
         </div>

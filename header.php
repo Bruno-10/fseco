@@ -2,7 +2,7 @@
                     <header class="row col-sm-12 col-md-12 col-lg-12 margencero">
                             <div class="col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md bg-dark navbar-dark">
                                 <div class="logo col-sm-12 col-md-6 col-lg-3 justify-content-center">
-                                    <a class="navbar-brand" href="index.php"><img class="col-sm-12 col-md-6 col-lg-12" src="img/logoppal.jpg" alt="logoprincipal"></a>
+                                    <a class="navbar-brand" href="index.php"><img class="col-sm-12 col-md-6 col-lg-12" src="img/logoppal.png" alt="logoprincipal"></a>
                                 </div>
                                 <nav class="col-sm-12 col-md-6 col-lg-6 navbar navbar-light justify-content-center ">
                                         <form class="form-inline flex-wrap ">

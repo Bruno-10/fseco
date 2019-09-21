@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="css/footer1.css">
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/usuario1.css">
     <title>Perfil</title>
@@ -19,7 +20,7 @@
                                 <div class="row col-sm-12 col-md-12 col-lg-12">
                                     <div class="col-md-6  cajausuario">
                                         <div class="profile-img marco row">
-                                            <img src="img/pelota.jpg" alt="profile picture" class=""/>
+                                            <img src="img/fotoperfil.png" alt="profile picture" class=""/>
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>

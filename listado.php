@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <link rel="stylesheet" href="css/master.css">
+	<link rel="stylesheet" href="css/master.css">
+	<link rel="stylesheet" href="css/footer1.css">
     <link rel="stylesheet" href="css/listado.css">
     <title>Productos</title>
 </head>
@@ -14,7 +15,7 @@
         <div class="container-fluid padding">
         <?php require_once("header.php"); ?>
                     <main class="row col-sm-12 col-md-12 col-lg-12 margencero">
-                            <nav class="categorias col-sm-2 col-md-3 col-lg-2 margencero">
+                            <nav class="categorias col-sm-2 col-md-2 col-lg-2 margencero">
                                     <header class="card-header col-sm-12">
                                 		<h6 class="title">Categorias</h6>
                                     </header>

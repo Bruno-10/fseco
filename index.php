@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
     <link rel="stylesheet" href="css/index_1.css">
     <link rel="stylesheet" href="css/footer1.css">
     <link rel="stylesheet" href="css/master.css">
@@ -27,21 +25,21 @@
                                         </ol>
                                         <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="img/carusel1.jpeg" class="d-block w-100" alt="...">
+                                            <img src="img\WhatsApp Image 2019-09-12 at 19.00.48.jpeg" class="d-block w-100" alt="...">
                                             <div class="carousel-caption d-none d-md-block">
                                             <h5>First slide label</h5>
                                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                                             </div>
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="img/carusel1.jpeg" class="d-block w-100" alt="...">
+                                            <img src="img\WhatsApp Image 2019-09-12 at 19.05.35.jpeg" class="d-block w-100" alt="...">
                                             <div class="carousel-caption d-none d-md-block">
                                             <h5>Second slide label</h5>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                             </div>
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="img/carusel2.jpeg" class="d-block w-100" alt="...">
+                                            <img src="img\WhatsApp Image 2019-09-12 at 19.00.48.jpeg" class="d-block w-100" alt="...">
                                             <div class="carousel-caption d-none d-md-block">
                                             <h5>Third slide label</h5>
                                             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -62,7 +60,7 @@
                     </section>
                     <main class="col-sm-12 col-md-12 col-lg-12 d-flex">
                         <div class="productos col-sm-12 col-md-4 col-lg-3">
-                            <img class="col-sm-12 col-md-4 col-lg-10" src="img/paleta_1.jpg" alt="paleta">
+                            <img class="col-sm-12 col-md-4 col-lg-10" src="img/sinfondo.jpg" alt="paleta">
                         </div>
                         <div class="productos col-sm-12 col-md-4 col-lg-3">
                             <img class="col-sm-12 col-md-4 col-lg-10" src="img/paleta_2.jpg" alt="paleta">

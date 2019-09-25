@@ -1,3 +1,22 @@
+<?php
+$nombre = "";
+$apellido = "";
+$email = "";
+$usuario = "";
+$password= "";
+$rpassword= "";
+
+
+if ($_POST){
+    
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $email = $_POST["email"];
+    $usuario = $_POST["usuario"];
+    $password = $_POST["password"];
+    $rpassword = $_POST["rpassword"];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,33 +35,41 @@
         <?php require_once("header.php"); ?>
                 <main class="row col-sm-12 col-md-12 col-lg-12 main margencero">     
                     <div class="col-sm-12 col-md-12 col-lg-6 caja_form">
-                        <form class="needs-validation" novalidate>
-                            <h2>Registráte</h2>
+                        <form action="registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                            <h2>Registrate</h2>
                             <div class="form-column">
                                 <div class="col-md-4 col-lg-7">
                                     <label for="nombre">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre" required>
+                                    <input type="text" class="form-control" name="nombre" id="nombre"  value="<?= $nombre ?>"  required>
                                 </div>
                                 <div class="col-md-4 col-lg-7">
                                     <label for="apellido">Apellido</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                </div>
+                                <div class="col-md-4 col-lg-7">
+                                    <label for="perfil">Foto de perfil</label>
+                                    <input type="file" class="form-control" name="perfil" id="perfil"  required>
                                 </div>
                                 <div class="col-md-4 col-lg-7">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" required>
+                                    <input type="email" class="form-control" name="email" id="email" value="<?= $email ?>"  required>
                                 </div>
                                 <div class="col-md-4 col-lg-7">
                                     <label for="usuario">Usuario</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" name="usuario" id="usuario">@</span>
+                                            <span class="input-group-text">@</span>
                                         </div>
-                                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                        <input type="text" class="form-control"  aria-describedby="inputGroupPrepend"  name="usuario" id="usuario" value="<?=$usuario?>"  required>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-lg-7">
                                     <label for="password">Contraseña</label>
                                     <input type="password" class="form-control" name="password" id="password" required>
+                                </div>
+                                <div class="col-md-4 col-lg-7">
+                                    <label for="rpassword">Repetir contraseña</label>
+                                    <input type="password" class="form-control" name="rpassword" id="rpassword" required>
                                 </div>
                                 <div class="col-md-4 col-lg-7"> 
                                     <br>
@@ -51,6 +78,7 @@
                                 </div>
                             </div>
                         </form>
+                        <?php require_once("function.php"); ?>
                     </div>
                 
                 </main>

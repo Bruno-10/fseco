@@ -28,7 +28,7 @@ function validarPass($password, $rpassword) {
 
 
 
-function validarReg($nombre,$apellido,$email,$usuario,$archivo){
+function validarReg($nombre,$apellido,$email,$usuario){
 
   $return = [];
 

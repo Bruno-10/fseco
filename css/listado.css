@@ -18,6 +18,18 @@ main{
        
 }
 
+a{
+    color: aliceblue;
+}
+
+a:hover{
+    color: aliceblue;
+}
+
+h5{
+    margin-left: -16px;
+}
+
 article img{
     width: 50vw;
 }

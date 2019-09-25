@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
         <link rel="stylesheet" href="css/master.css">
         <link rel="stylesheet" href="css/login_1.css">
         <link rel="stylesheet" href="css/footer1.css">
@@ -27,13 +28,13 @@
 
   <div class="container">
     <label for="uname"><b>Usuario</b></label>
-    <input type="text" placeholder="Ingrese usuario" name="uname" required>
+    <input type="text" placeholder="Ingrese usuario" name="uname"  id="uname" required>
 
     <label for="psw"><b>Contraseña</b></label>
-    <input type="password" placeholder="Ingrese contraseña" name="psw" required>  
+    <input type="password" placeholder="Ingrese contraseña" name="psw" id="psw" required>  
     <button class="login" type="submit">Ingresar</button>
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Recordarme
+      <input type="checkbox" checked="checked" name="remember" id="remember"> Recordarme
     </label>
   </div>
 

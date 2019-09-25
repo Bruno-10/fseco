@@ -24,14 +24,14 @@
                         <h3>Ecribinos</h3>
 
                         <label for="fname">Nombre</label>
-                        <input type="text" id="fname" name="firstname" required placeholder="Tu Nombre..">
+                        <input type="text" id="fname" name="firstname" required placeholder="Nombre..">
 
                         <label for="lname">Apellido</label>
-                        <input type="text" id="lname" name="lastname" required placeholder="Tu Apellido..">
+                        <input type="text" id="lname" name="lastname" required placeholder="Apellido..">
 
                         <label for="email">Email</label>
                         <br>
-                        <input type="email" id="email" name="email" required placeholder="Tu Email..">
+                        <input type="email" id="email" name="email" required placeholder="Email..">
 
                         <label for="subject">Motivo</label>
                         <textarea id="subject" name="subject" placeholder="Escribenos algo.." style="height:200px"></textarea>

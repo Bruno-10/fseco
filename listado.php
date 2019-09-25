@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/listado.css">
 	<link rel="stylesheet" href="css/footer1.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
     <title>Productos</title>
 </head>
     <body>

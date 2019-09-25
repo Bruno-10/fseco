@@ -20,29 +20,29 @@
                             <h2>Registráte</h2>
                             <div class="form-column">
                                 <div class="col-md-4 col-lg-7">
-                                    <label for="validationCustom01">Nombre</label>
-                                    <input type="text" class="form-control" id="validationCustom01" required>
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" id="nombre" required>
                                 </div>
                                 <div class="col-md-4 col-lg-7">
-                                    <label for="validationCustom02">Apellido</label>
-                                    <input type="text" class="form-control" id="validationCustom02" required>
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" required>
                                 </div>
                                 <div class="col-md-4 col-lg-7">
-                                    <label for="validationCustom03">Email</label>
-                                    <input type="email" class="form-control" id="validationCustom03" required>
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" required>
                                 </div>
                                 <div class="col-md-4 col-lg-7">
-                                    <label for="validationCustomUsername">Usuario</label>
+                                    <label for="usuario">Usuario</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                            <span class="input-group-text" name="usuario" id="usuario">@</span>
                                         </div>
                                         <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-lg-7">
-                                    <label for="validationCustom04">Contraseña</label>
-                                    <input type="password" class="form-control" id="validationCustom04" required>
+                                    <label for="password">Contraseña</label>
+                                    <input type="password" class="form-control" name="password" id="password" required>
                                 </div>
                                 <div class="col-md-4 col-lg-7"> 
                                     <br>

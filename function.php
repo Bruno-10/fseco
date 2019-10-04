@@ -53,6 +53,22 @@ function validarReg($nombre,$apellido,$email,$usuario){
   return $return;
  }
 
+ function validarImg($perfil){
+   $errorImg = "";
+   if ($perfil["perfil"]["error"] != 0){
+      $errorImg = "<P>*Hubo error al cargar la imagen</p>";
+   } else {
+     $ext = pathinfo($perfil["perfil"]["name"], PATHINFO_EXTENSION);
+
+     if ($ext != "jpg" && $ext != "jpeg" && $ext != "png"){
+       $errorImg = "<p>*La imagen debe ser jpg, jpeg o png </p>";
+     } else{
+       move_uploaded_file($perfil["perfil"]["tmp_name"], "Archivo/ImgUser." . $ext);
+     }
+   }
+   return $errorImg;
+ }
+
 
  
 if ($_POST){
@@ -60,8 +76,10 @@ if ($_POST){
   foreach (validarReg($nombre,$apellido,$email,$usuario) as $value) {
       echo $value;
     }
+    
+    echo validarImg($_FILES);
+    echo validarPass($password, $rpassword);
 
-  echo validarPass($password, $rpassword);
 }
   
 ?>

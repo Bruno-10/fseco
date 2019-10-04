@@ -19,14 +19,12 @@ $perfil = "";
     $errores = validarRegistracion($datos);
     $resultado = [];
     if (empty($errores)) {
+
+        guardarDatos($datos, "usuarios.json");
+
         header("location: usuario.php");
     }   
-    else{
-        foreach($errores as $error){
 
-           echo $error;
-    } 
-    }
 }
 
 ?>
@@ -93,7 +91,13 @@ $perfil = "";
                         </form>
                         <div class="col-md-7 col-lg-9 errores">
                         <?php 
+                            if($_POST){
+                                foreach($errores as $error){
                         
+                                   echo $error;
+                            } 
+                        }
+                            
                         
                         ?>
                         </div>

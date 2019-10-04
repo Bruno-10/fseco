@@ -7,19 +7,26 @@
       "usuario" => $_POST["usuario"],
       "password" => password_hash($_POST["password"], PASSWORD_DEFAULT)
     ];
-    $archivo = "usuarios.json";
   }
-function guardarDatos($dato, $archivo){
-  $resultado = false;
-  $archivoNuevo = FILE_GET_CONTENTS($archivo);
-  if ($archivoNuevo){
-      $resultado = true;
-      $array = json_decode($archivoNuevo, true);
-      $array [] = $dato;
-      $jsonFinal = json_encode($array);
-      file_put_contents($archivo, $jsonFinal);
-  }
-  return $resultado;
+
+  function guardarDatos($que, $donde){
+    //$QUE so los los datos que vamos a guardar
+    //$DONDE es la ubicacion del archivo 
+    $exito = false;
+
+    $archivo = FILE_GET_CONTENTS($donde);
+    if ($archivo){
+        $exito = true;
+        $array = json_decode($archivo, true);
+        $array [] = $que;
+        $jsonFinal = json_encode($array) ;
+        file_put_contents($donde, $jsonFinal);
+    }
+    //en caso de errro return false
+
+    return $exito;
+
+
 }
 
 function validarRegistracion($datos){

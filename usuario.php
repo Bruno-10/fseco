@@ -1,3 +1,16 @@
+<?php 
+session_start();
+$datosUsuario= $_SESSION["perfil"];
+if ($_POST){
+    
+    $nombre = $_POST["nombre"];
+    $apellido = $_POST["apellido"];
+    $email = $_POST["email"];
+    $usuario = $_POST["usuario"];
+    $password = $_POST["password"];
+    $rpassword = $_POST["rpassword"];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,10 +37,10 @@
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>
-                                                        Nombre del usuario
+                                                    <?=$datosUsuario["nombre"]?>
                                                     </h5>
                                                     <h6>
-                                                        Profesión
+                                                    <?=$datosUsuario["email"]?>
                                                     </h6>
                                                 </div>
                                             </div>
@@ -68,7 +81,7 @@
                                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <label>Usuario</label>
+                                                                <label><?=$datosUsuario["usuario"]?></label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <p>Kshiti123</p>

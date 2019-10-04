@@ -21,28 +21,25 @@
           <h2>Login</h2>
       </div>
       <div class="col-sm-4 col-md-4 col-lg-4">
-<form action="/action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Usuario</b></label>
-    <input type="text" placeholder="Ingrese usuario" name="uname"  id="uname" required>
-
-    <label for="psw"><b>Contraseña</b></label>
-    <input type="password" placeholder="Ingrese contraseña" name="psw" id="psw" required>  
-    <button class="login" type="submit">Ingresar</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember" id="remember"> Recordarme
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancelar</button>
-    <span class="psw"><a href="#">Recuperar contraseña</a></span>
-  </div>
-</form>
+        <form action="procesar_login.php" method="POST" enctype="multipart/form-data">
+            <div class="imgcontainer">
+              <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="container">
+              <label for="usuario"><b>Usuario</b></label>
+                <input type="text" placeholder="Ingrese usuario" name="usuario"  id="usuario" required>
+              <label for="pass"><b>Contraseña</b></label>
+                <input type="password" placeholder="Ingrese contraseña" name="password" id="password" required>  
+              <button class="login" type="submit">Ingresar</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember" id="remember"> Recordarme
+              </label>
+            </div>
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" class="cancelbtn">Cancelar</button>
+              <span class="psw"><a href="#">Recuperar contraseña</a></span>
+            </div>
+        </form>
       </div>
       <div>
         <?php require_once("footer.php"); ?>

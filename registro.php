@@ -1,21 +1,34 @@
 <?php
+require_once("function.php"); 
 $nombre = "";
 $apellido = "";
 $email = "";
 $usuario = "";
-$password= "";
-$rpassword= "";
+$password = "";
+$rpassword = "";
+$perfil = "";
 
-
-if ($_POST){
-    
+ if ($_POST){
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
     $email = $_POST["email"];
     $usuario = $_POST["usuario"];
     $password = $_POST["password"];
-    $rpassword = $_POST["rpassword"];
+    $rpassword = $_POST["rpassword"]; 
+    $datos = $_POST;
+    $errores = validarRegistracion($datos);
+    $resultado = [];
+    if (empty($errores)) {
+        header("location: usuario.php");
+    }   
+    else{
+        foreach($errores as $error){
+
+           echo $error;
+    } 
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,7 +92,10 @@ if ($_POST){
                             </div>
                         </form>
                         <div class="col-md-7 col-lg-9 errores">
-                        <?php require_once("function.php"); ?>
+                        <?php 
+                        
+                        
+                        ?>
                         </div>
                     </div>
                 

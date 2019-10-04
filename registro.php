@@ -16,9 +16,12 @@ $perfil = "";
     $password = $_POST["password"];
     $rpassword = $_POST["rpassword"]; 
     $datos = $_POST;
+    $imagen = $_FILES["perfil"];
     $errores = validarRegistracion($datos);
     $resultado = [];
     if (empty($errores)) {
+
+        guardarImg($imagen);
 
         guardarDatos($datos, "usuarios.json");
 

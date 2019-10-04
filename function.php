@@ -9,6 +9,13 @@
     ];
   }
 
+
+  function guardarImg($imagen){
+    $n = rand(0,1000);
+    $ext = pathinfo($imagen["name"], PATHINFO_EXTENSION);
+     move_uploaded_file($imagen["tmp_name"], "Archivo/ImgUser$n." . $ext);
+   }
+
   function guardarDatos($que, $donde){
     //$QUE so los los datos que vamos a guardar
     //$DONDE es la ubicacion del archivo 
@@ -30,6 +37,7 @@
 }
 
 function validarRegistracion($datos){
+  $datos["perfil"] = $_FILES["perfil"]; 
   $errores = [];
   //validar password//
   if (($datos["password"] == "") && ($datos["rpassword"] == "")) {
@@ -55,16 +63,14 @@ function validarRegistracion($datos){
     $errores [] = "<p>*El usuario debe tener mas de 8 caracteres <br></p>";
   }
   //validar imagen //
- /*  if ($datos["perfil"]["error"] != 0){
+  if ($datos["perfil"]["error"] != 0){
       $errores [] = "<P>*Hubo error al cargar la imagen</p>";
    } else {
      $ext = pathinfo($datos["perfil"]["name"], PATHINFO_EXTENSION);
      if ($ext != "jpg" && $ext != "jpeg" && $ext != "png"){
        $errores [] = "<p>*La imagen debe ser jpg, jpeg o png </p>";
-     } else{
-       move_uploaded_file($datos["perfil"]["tmp_name"], "archivo/ImgUser." . $ext);
-     }
-   }  */
+     } 
+   }  
    return $errores;
 }
 

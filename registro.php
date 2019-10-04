@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("function.php"); 
 $nombre = "";
 $apellido = "";
@@ -12,6 +13,7 @@ $perfil = "";
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
     $email = $_POST["email"];
+    $perfil = $_POST["perfil"];
     $usuario = $_POST["usuario"];
     $password = $_POST["password"];
     $rpassword = $_POST["rpassword"]; 
@@ -19,7 +21,7 @@ $perfil = "";
     $errores = validarRegistracion($datos);
     $resultado = [];
     if (empty($errores)) {
-
+        $_SESSION["usuario"] = $_POST;
         guardarDatos($datos, "usuarios.json");
 
         header("location: usuario.php");

@@ -1,5 +1,5 @@
 <?php
-    if ($_POST) {
+   /*  if ($_POST) {
     $dato = [
       "nombre" => $_POST["nombre"],
       "apellido" => $_POST["apellido"],
@@ -7,7 +7,7 @@
       "usuario" => $_POST["usuario"],
       "password" => password_hash($_POST["password"], PASSWORD_DEFAULT)
     ];
-  }
+  } */
 
   function guardarDatos($que, $donde){
     //$QUE so los los datos que vamos a guardar
@@ -68,34 +68,20 @@ function validarRegistracion($datos){
    return $errores;
 }
 
-
- 
-
-function buscarDatos($dato, $archivo){
-  $resultado = [];
-  $archivoNuevo = FILE_GET_CONTENTS($archivo);
-  if ($archivoNuevo){
-      $resultado = true;
+function validarLogin($dato, $archivo){
+    $resultado = [];
+    $archivoNuevo = FILE_GET_CONTENTS($archivo);
+    if ($archivoNuevo){
       $array = json_decode($archivoNuevo, true);
       foreach ($array as $key => $value) {
-              if ($dato == $value){
-                  $resultado = ($array[$key]);
-              }
-              else {
-                $resultado = null;
-              }
-          }
-  }
-  return $resultado;
+        if ($dato["usuario"] == $key && $dato["password"] == $value){
+            $resultado [] = ($array);
+        }
+    }
+}
+return $resultado;
 }
 
-
-
-
-
-
-
-  
 ?>
 
 

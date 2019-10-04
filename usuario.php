@@ -1,15 +1,6 @@
-<?php 
-session_start();
-$datosUsuario= $_SESSION["perfil"];
-if ($_POST){
-    
-    $nombre = $_POST["nombre"];
-    $apellido = $_POST["apellido"];
-    $email = $_POST["email"];
-    $usuario = $_POST["usuario"];
-    $password = $_POST["password"];
-    $rpassword = $_POST["rpassword"];
-}
+<?php
+    session_start();
+    $datosUsuario = $_SESSION["usuario"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,15 +24,13 @@ if ($_POST){
                                 <div class="row col-sm-12 col-md-12 col-lg-12">
                                     <div class="col-md-6  cajausuario">
                                         <div class="profile-img marco row">
-                                            <img src="img/fotoperfil.png" alt="profile picture" class=""/>
+                                            <img src="<?= $datosUsuario["perfil"]; ?>" alt="profile picture" class=""/>
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>
-                                                    <?=$datosUsuario["nombre"]?>
+                                                        <?= $datosUsuario["usuario"]; ?>
                                                     </h5>
-                                                    <h6>
-                                                    <?=$datosUsuario["email"]?>
-                                                    </h6>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -81,10 +70,10 @@ if ($_POST){
                                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <label><?=$datosUsuario["usuario"]?></label>
+                                                                <label>Usuario</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p>Kshiti123</p>
+                                                                <p><?= $datosUsuario["usuario"]; ?></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -92,7 +81,7 @@ if ($_POST){
                                                                 <label>Nombre</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p>Roberto Perez</p>
+                                                                <p><?= $datosUsuario["nombre"]; ?></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -100,7 +89,7 @@ if ($_POST){
                                                                 <label>Email</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p>kshitighelani@gmail.com</p>
+                                                                <p><?= $datosUsuario["email"]; ?></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">

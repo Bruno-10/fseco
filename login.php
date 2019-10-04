@@ -1,3 +1,23 @@
+<?php 
+session_start();
+require_once("function.php"); 
+
+$usuario = "";
+$password = "";
+ if ($_POST){
+    $usuario = $_POST["usuario"];
+    $password = $_POST["password"];
+    $datos = $_POST;
+    $archivo = "usuarios.json";
+    $resultado = validarLogin($datos,$archivo);
+    if (empty($resultado)) {
+        $_SESSION["usuario"] = $resultado;
+        header("location: usuario.php");
+    }   
+    
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +41,7 @@
           <h2>Login</h2>
       </div>
       <div class="col-sm-4 col-md-4 col-lg-4">
-        <form action="procesar_login.php" method="POST" enctype="multipart/form-data">
+        <form action="login.php" method="POST" enctype="multipart/form-data">
             <div class="imgcontainer">
               <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
             </div>

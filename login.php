@@ -2,6 +2,8 @@
 session_start();
 require_once("function.php"); 
 
+
+
 $usuario = "";
 $password = "";
  if ($_POST){
@@ -10,9 +12,15 @@ $password = "";
     $datos = $_POST;
     $archivo = "usuarios.json";
     $resultado = validarLogin($datos,$archivo);
+    
+    if ($resultado != []){
+      
     $_SESSION["usuario"] = $resultado;
     header("location: usuario.php");
-}   
+  }
+
+    else {header("location: login.php?error=true");};
+};   
   
 ?>
 <!DOCTYPE html>
@@ -43,6 +51,11 @@ $password = "";
               <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
             </div>
             <div class="container">
+            <?php
+            if(isset($_GET["error"]))
+            {echo"Error al ingresar, por favor intente denuevo. <br>";}
+            else {echo "<br>";}; 
+             ?>
               <label for="usuario"><b>Usuario</b></label>
                 <input type="text" placeholder="Ingrese usuario" name="usuario"  id="usuario" required>
               <label for="pass"><b>Contraseña</b></label>
@@ -56,6 +69,7 @@ $password = "";
               <button type="button" class="cancelbtn">Cancelar</button>
               <span class="psw"><a href="#">Recuperar contraseña</a></span>
             </div>
+            
         </form>
       </div>
       <div>

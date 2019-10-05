@@ -13,15 +13,16 @@ $perfil = "";
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
     $email = $_POST["email"];
-    $perfil = $_POST["perfil"];
+    //$perfil = $_POST["perfil"];
     $usuario = $_POST["usuario"];
-    $password = $_POST["password"];
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $rpassword = $_POST["rpassword"]; 
     $datos = $_POST;
     $imagen = $_FILES["perfil"];
     $errores = validarRegistracion($datos);
     $resultado = [];
     if (empty($errores)) {
+        guardarImg($_FILES["perfil"]);
         $_SESSION["usuario"] = $_POST;
         guardarDatos($datos, "usuarios.json");
 

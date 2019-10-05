@@ -1,6 +1,7 @@
 <?php
     session_start();
     $datosUsuario = $_SESSION["usuario"];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@
                                 <div class="row col-sm-12 col-md-12 col-lg-12">
                                     <div class="col-md-6  cajausuario">
                                         <div class="profile-img marco row">
-                                            <img src="<?= $datosUsuario["perfil"]; ?>" alt="profile picture" class=""/>
+                                            <img src=<?php echo ("archivo/ImgUser" . $datosUsuario["imageId"] . "." . $datosUsuario["imageExt"]);?> alt="profile picture" class=""/>
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>
@@ -46,25 +47,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                    <!--  <div class="col-md-2">
-                                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                                    </div>
-                                </div>
-                                <div class="row col-sm-12 col-md-12 col-lg-12">
-                                    <div class="col-md-4">
-                                        <div class="profile-work">
-                                            <p>WORK LINK</p>
-                                            <a href="">Website Link</a><br/>
-                                            <a href="">Bootsnipp Profile</a><br/>
-                                            <a href="">Bootply Profile</a>
-                                            <p>SKILLS</p>
-                                            <a href="">Web Designer</a><br/>
-                                            <a href="">Web Developer</a><br/>
-                                            <a href="">WordPress</a><br/>
-                                            <a href="">WooCommerce</a><br/>
-                                            <a href="">PHP, .Net</a><br/>
-                                        </div>
-                                    </div> -->
+                                   
                                     <div class="col-md-8">
                                         <div class="tab-content profile-tab" id="myTabContent">
                                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">

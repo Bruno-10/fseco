@@ -11,9 +11,12 @@
 
 
   function guardarImg($imagen){
-    $n = rand(0,1000);
+    $id = 0;
+    $id = ++$id;
+    $_POST["imageId"] = $id;
     $ext = pathinfo($imagen["name"], PATHINFO_EXTENSION);
-     move_uploaded_file($imagen["tmp_name"], "Archivo/ImgUser$n." . $ext);
+    $_POST["imageExt"] = pathinfo($imagen["name"], PATHINFO_EXTENSION);
+     move_uploaded_file($imagen["tmp_name"], "Archivo/ImgUser$id." . $ext);
    }
 
   function guardarDatos($que, $donde){
@@ -78,6 +81,7 @@ function validarLogin($dato, $archivo){
     $dato = $_POST["usuario"];
     $usuarios_json = file_get_contents($archivo);
     $usuarios = json_decode($usuarios_json, true);
+    $resultado = [];
     foreach ($usuarios as $arrayUsuario) {
      foreach ($arrayUsuario as $usuario => $emails) {
      if ($dato == $emails) {

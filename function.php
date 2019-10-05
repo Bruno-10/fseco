@@ -75,12 +75,14 @@ function validarRegistracion($datos){
 }
 
 function validarLogin($dato, $archivo){
+    $dato = $_POST["usuario"];
     $usuarios_json = file_get_contents($archivo);
     $usuarios = json_decode($usuarios_json, true);
     foreach ($usuarios as $arrayUsuario) {
      foreach ($arrayUsuario as $usuario => $emails) {
-     if ($dato["usuario"] == $emails) {
+     if ($dato == $emails) {
        $resultado = $arrayUsuario;
+       return $resultado;
      }
      else {
          $resultado = NULL;

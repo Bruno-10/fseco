@@ -10,11 +10,8 @@ $password = "";
     $datos = $_POST;
     $archivo = "usuarios.json";
     $resultado = validarLogin($datos,$archivo);
-    if ($resultado  != []){
     $_SESSION["usuario"] = $resultado;
     header("location: usuario.php");
-    }
-    
 }   
   
 ?>

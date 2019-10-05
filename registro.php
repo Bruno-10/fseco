@@ -85,6 +85,9 @@ $perfil = "";
                                     <label for="rpassword">Repetir contraseña</label>
                                     <input type="password" class="form-control" name="rpassword" id="rpassword" required>
                                 </div>
+                                <div class="col-md-7 col-lg-9 recordar">
+                                    <input type="checkbox" name="recordar" id="recordar">Recordar Usuario
+                                </div>
                                 <div class="col-md-7 col-lg-9"> 
                                     <br>
                                     <button class="btn btn-success" type="submit">Enviar</button>

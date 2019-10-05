@@ -15,7 +15,7 @@
         <div class="container-fluid padding">
                     <?php require_once("header.php"); ?>
                     <section id="carousel" class="row col-sm-12 col-md-12 col-lg-12 margencero">
-                        <div class="col-sm-6 col-md-6 col-lg-6 contenedorcarrusel">
+                        <div class="col-sm-12 col-md-6 col-lg-6 contenedorcarrusel">
                                 <div class="bd-example">  
                                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner">

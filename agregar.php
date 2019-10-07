@@ -10,7 +10,7 @@ $listadoDeProductos = json_decode($jsonDeProductos, true);
 foreach ($listadoDeProductos as $producto){
     foreach ($producto as $key => $valor){
         if( $producto_id == $valor){
-            $_SESSION["carrito"] = $producto;
+            $_SESSION["carrito"][] = $producto;
             header("location:carrito.php");
             exit;
         }

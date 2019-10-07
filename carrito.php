@@ -44,8 +44,8 @@ session_start();
                                         ('
                                             <tr>
                                                 <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/pelota.jpg"> </th>
-                                                    <td>' . $productos["nombre"] . ' </td>
-                                                    <td>' . $productos["id"] . ' </td>
+                                                    <td>' . $value["nombre"] . ' </td>
+                                                    <td>' . $value["id"] . ' </td>
                                                     <td><input type="text"></td>
                                         </tr> 
                                         ');

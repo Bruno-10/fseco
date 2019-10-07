@@ -51,11 +51,11 @@ $password = "";
               <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
             </div>
             <div class="container">
-            <?php
+            <p id="errorLogin"> <?php
             if(isset($_GET["error"]))
-            {echo"Error al ingresar, por favor intente denuevo. <br>";}
+            {echo "Usuario o contraseña incorrectos, por favor intente denuevo. <br>";}
             else {echo "<br>";}; 
-             ?>
+             ?> </p>
               <label for="usuario"><b>Usuario</b></label>
                 <input type="text" placeholder="Ingrese usuario" name="usuario"  id="usuario" required>
               <label for="pass"><b>Contraseña</b></label>

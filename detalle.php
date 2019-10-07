@@ -36,10 +36,10 @@
                                 <div class="precio">
                                     <h3>$800</h3>
                                     <p>En stock</p>
-                                    <form action="#">
-                                        <input type="number" name="numero" id="numero" value="1">
+                                    <form action="#" method="GET">
+                                     <!-- <input type="number" name="numero" id="numero" > -->
                                         <br>
-                                        <input type="submit" value="Agregar al Carrito">
+                                        <a href="agregar.php?producto_id=34" ><input type="button"  value="Agregar al Carrito"></a>
                                     </form>
                                 </div>
 

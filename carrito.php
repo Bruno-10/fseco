@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,31 +36,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                    <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/pelota.jpg"> </th>
-                                    <td>Pelota</td>
-                                    <td>$800</td>
-                                    <td>1</td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/pelota.jpg"> </th>
-                                    <td>Pelota</td>
-                                    <td>$800</td>
-                                    <td>1</td>
-                                    </tr>
-                                    <tr>
-                                    <tr>
-                                    <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/pelota.jpg"> </th>
-                                    <td>Pelota</td>
-                                    <td>$800</td>
-                                    <td>1</td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/pelota.jpg"> </th>
-                                    <td>Pelota</td>
-                                    <td>$800</td>
-                                    <td>1</td>
-                                    </tr>
+                                <?php 
+                                $productos = $_SESSION["carrito"];
+                                function dibujarProductos($productos){
+                                    foreach ($productos as $producto => $value){
+                                        echo 
+                                        ('
+                                            <tr>
+                                                <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/pelota.jpg"> </th>
+                                                    <td>' . $productos["nombre"] . ' </td>
+                                                    <td>' . $productos["id"] . ' </td>
+                                                    <td><input type="text"></td>
+                                        </tr> 
+                                        ');
+                                    }
+                                }    
+
+                                dibujarProductos($productos);
+                                
+                                ?>
+                                
+                            
                                 </tbody>
                             </table>
                         </div>  

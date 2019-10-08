@@ -1,15 +1,4 @@
 <?php
-   /*  if ($_POST) {
-    $dato = [
-      "nombre" => $_POST["nombre"],
-      "apellido" => $_POST["apellido"],
-      "email" => $_POST["email"],
-      "usuario" => $_POST["usuario"],
-      "password" => password_hash($_POST["password"], PASSWORD_DEFAULT)
-    ];
-  } */
-
-
   function guardarImg($imagen){
     $id = 0;
     $id = ++$id;
@@ -95,6 +84,14 @@ function validarLogin($dato, $archivo){
    }
    return $resultado;
   }
+
+
+
+
+
+
+
+
 ?>
 
 

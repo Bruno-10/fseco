@@ -25,9 +25,9 @@
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="listado.php">Productos</a>
                                                 </li>
-                                                <li class="nav-item">
+                                                <!-- <li class="nav-item">
                                                     <a class="nav-link" href="usuario.php">Perfil</a>
-                                                </li>
+                                                </li> -->
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="faq.php">FAQ</a>
                                                 </li>

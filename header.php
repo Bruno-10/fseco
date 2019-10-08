@@ -1,6 +1,6 @@
 
-                    <header class="row col-sm-12 col-md-12 col-lg-12 margencero">
-                            <div class="col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md bg-dark navbar-dark">
+                    <header class="row col-sm-12 col-md-12 col-lg-12 margencero" style="background-color:#0E0034;">
+                            <div class="col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md navbar-dark">
                                 <div class="logo col-sm-12 col-md-6 col-lg-3 justify-content-center">
                                     <a class="navbar-brand" href="index.php"><img class="col-sm-12 col-md-6 col-lg-12" src="img/logoppal.png" alt="logoprincipal"></a>
                                 </div>
@@ -11,7 +11,7 @@
                                         </form>
                                 </nav>
                             </div>
-                            <nav class=" col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md bg-dark navbar-dark">   
+                            <nav class=" col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md navbar-dark">   
                                             <div class="hamburguesa align-items-right">
                                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                                                 <span class="navbar-toggler-icon"></span>
@@ -20,14 +20,14 @@
                                             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                                                 <ul class="navbar-nav block">
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="index.php">Inicio</a>
+                                                    <a class="nav-link color_menu" href="index.php">Inicio</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="listado.php">Productos</a>
                                                 </li>
-                                                <!-- <li class="nav-item">
+                                                 <li class="nav-item">
                                                     <a class="nav-link" href="usuario.php">Perfil</a>
-                                                </li> -->
+                                                </li> 
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="faq.php">FAQ</a>
                                                 </li>

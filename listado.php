@@ -15,17 +15,17 @@
     <body>
         <div class="container-fluid padding">
         <?php require_once("header.php"); ?>
-                    <main class="row col-sm-12 col-md-12 col-lg-12 margencero">
+                    <main class="row col-sm-12 col-md-10 col-lg-10 margencero">
                             <nav class="categorias col-sm-2 col-md-2 col-lg-2 margencero">
                                     <header class="card-header col-sm-12">
                                 		<h5 class="title">Categorias</h5>
                                     </header>
                                     <ul class="navegacion">
-                                        <li class="secciones"><a href="#">Lorem, ipsum dolor.</a></li>
-                                        <li class="secciones"><a href="#">Lorem, ipsum dolor.</a></li>
-                                        <li class="secciones"><a href="#">Lorem, ipsum dolor.</a></li>
-                                        <li class="secciones"><a href="#">Lorem, ipsum dolor.</a></li>
-                                        <li class="secciones"><a href="#">Lorem, ipsum dolor.</a></li>
+                                        <li class="secciones"><a href="#">PALETAS</a></li>
+                                        <li class="secciones"><a href="#">INDUMENTARIA</a></li>
+                                        <li class="secciones"><a href="#">ACCESORIOS</a></li>
+                                        <li class="secciones"><a href="#">PALETEROS, MOCHILAS, FUNDAS</a></li>
+                                        <li class="secciones"><a href="#">PELOTAS</a></li>
                                     </ul>
                             </nav>
                             <section class="row col-sm-8 col-md-10 col-lg-10 cvip-products">

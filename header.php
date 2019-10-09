@@ -1,5 +1,9 @@
-
-                    <header class="row col-sm-12 col-md-12 col-lg-12 margencero" style="background-color:#0E0034;">
+<?php
+session_start();
+$datosUsuario = $_SESSION["usuario"];
+       
+?>
+                <header class="row col-sm-12 col-md-12 col-lg-12 margencero" style="background-color:#0E0034;">
                             <div class="col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md navbar-dark">
                                 <div class="logo col-sm-12 col-md-6 col-lg-3 justify-content-center">
                                     <a class="navbar-brand" href="index.php"><img class="col-sm-12 col-md-6 col-lg-12" src="img/logoppal.png" alt="logoprincipal"></a>
@@ -17,7 +21,12 @@
                                                 <span class="navbar-toggler-icon"></span>
                                                 </button>   
                                             </div>
-                                            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                            <div class="collapse navbar-collapse" id="collapsibleNavbar">                                   
+                                                <!-- Si session start es igual a vacio muestro esto:  -->
+                                                <?php
+                                                //En el if va la variable con la que identificas si estan logueados
+                                                    if($datosUsuario == []) { 
+                                                ?>
                                                 <ul class="navbar-nav block">
                                                 <li class="nav-item">
                                                     <a class="nav-link color_menu" href="index.php">Inicio</a>
@@ -25,9 +34,7 @@
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="listado.php">Productos</a>
                                                 </li>
-                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="usuario.php">Perfil</a>
-                                                </li> 
+                                                 
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="faq.php">FAQ</a>
                                                 </li>
@@ -44,6 +51,36 @@
                                                     <a class="nav-link" href="carrito.php"><ion-icon name="cart"></ion-icon>Carrito</a>
                                                 </li>
                                                 </ul>
+                                                <?php 
+                                                    } else {
+                                                ?>   
+                                                <ul class="navbar-nav block">
+                                                <li class="nav-item">
+                                                    <a class="nav-link color_menu" href="index.php">Inicio</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="listado.php">Productos</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="usuario.php">Perfil</a>
+                                                </li> 
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="faq.php">FAQ</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="contacto.php">Contacto</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="carrito.php"><ion-icon name="cart"></ion-icon>Carrito</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="logOut.php">LogOut</a> 
+                                                </li>
+                                                </ul>
+                                                  <?php  } ?>
+
+
+
                                             </div>   
                                 </nav>
                     </header>

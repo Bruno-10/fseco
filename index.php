@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://use.fontawesome.com/1d3c969340.js"></script>
     <link rel="stylesheet" href="css/index_1.css">
     <link rel="stylesheet" href="css/footer1.css">
     <link rel="stylesheet" href="css/master.css">
@@ -42,9 +43,9 @@
                         </div> 
                     </section>
                     <section class="col-sm-10 col-md-10 col-lg-10 banner">
-                            <div> <h3> HASTA 6 CUOTAS SIN INTERES </h3> </div>
-                            <div> <h3> ENVIOS GRATIS </h3> </div>
-                            <div> <h3> 10% DE DESCUENTO </h3> </div>                       
+                            <div><h3>  <i class="fa fa-credit-card"></i>HASTA 6 CUOTAS SIN INTERES </h3> </div>
+                            <div> <h3> <i class="fa fa-truck"></i> ENVIOS GRATIS </h3> </div>
+                            <div> <h3> <i class="fa fa-money-bill-alt"></i> 10% DE DESCUENTO </h3> </div>                       
                     </section>
                     <section class="col-sm-10 col-md-10 col-lg-10 categorias">
                         <div>

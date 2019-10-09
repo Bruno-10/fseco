@@ -1,8 +1,3 @@
-<?php
-    session_start();
-    $datosUsuario = $_SESSION["usuario"];
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -11,13 +11,14 @@
 .banner{
     display: flex;
     flex-wrap: wrap;
-    height: 100px;
+    justify-content: center;
+    height: auto;
     margin-top: 10px;
     background-color: rgb(228, 88, 32);
     color:white;
 }
 .banner div{
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .categorias{
     text-align: center;

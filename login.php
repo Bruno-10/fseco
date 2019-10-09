@@ -1,9 +1,6 @@
 <?php 
 session_start();
 require_once("function.php"); 
-
-
-
 $usuario = "";
 $password = "";
  if ($_POST){
@@ -12,14 +9,13 @@ $password = "";
     $datos = $_POST;
     $archivo = "usuarios.json";
     $resultado = validarLogin($datos,$archivo);
-    
-    if ($resultado != []){
-      
-    $_SESSION["usuario"] = $resultado;
+    if ($resultado != []){ 
+     $_SESSION["usuario"] = $resultado;
     header("location: usuario.php");
   }
-
-    else {header("location: login.php?error=true");};
+    else {
+      header("location: login.php?error=true");
+    }
 };   
   
 ?>
@@ -53,7 +49,7 @@ $password = "";
             <div class="container">
             <p id="errorLogin"> <?php
             if(isset($_GET["error"]))
-            {echo "Usuario o contraseña incorrectos, por favor intente denuevo. <br>";}
+            {echo "Usuario o contraseña incorrectos, por favor intente de nuevo. <br>";}
             else {echo "<br>";}; 
              ?> </p>
               <label for="usuario"><b>Usuario</b></label>

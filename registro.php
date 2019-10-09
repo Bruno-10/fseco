@@ -25,7 +25,6 @@ $perfil = "";
         guardarImg($_FILES["perfil"]);
         $_SESSION["usuario"] = $_POST;
         guardarDatos($datos, "usuarios.json");
-
         header("location: usuario.php");
     }   
 
@@ -88,6 +87,7 @@ $perfil = "";
                                 </div>
                                 <div class="col-md-7 col-lg-9 recordar">
                                     <input type="checkbox" name="recordar" id="recordar">Recordar Usuario
+                                    <input type="hidden" name="producto[]" id="producto">
                                 </div>
                                 <div class="col-md-7 col-lg-9"> 
                                     <br>

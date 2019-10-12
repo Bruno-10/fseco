@@ -34,7 +34,8 @@
                                 </thead>
                                 <tbody>
                                 <?php 
-                                $productos = $_SESSION["carrito"];
+                                if (isset($_SESSION["carrito"])){
+                                    $productos = $_SESSION["carrito"];
                                 function dibujarProductos($productos){
                                     foreach ($productos as $producto => $value){
                                         echo 
@@ -50,6 +51,7 @@
                                 }    
 
                                 dibujarProductos($productos);
+                                }
                                 
                                 ?>
                                 

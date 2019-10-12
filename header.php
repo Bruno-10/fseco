@@ -2,9 +2,14 @@
 
 if(!isset($_SESSION)){
     session_start();
-        
 };
-$datosUsuario = $_SESSION["usuario"];
+
+if (!isset($_SESSION["usuario"])){
+    $_SESSION["usuario"] = [];
+}
+
+$datosUsuario = $_SESSION["usuario"];   
+
 
 ?>
                 <header class="row col-sm-12 col-md-12 col-lg-12 margencero" style="background-color:#0E0034;">

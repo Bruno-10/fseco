@@ -1,7 +1,6 @@
 <?php
   function guardarImg($imagen){
-    $id = 0;
-    $id = ++$id;
+    $id = rand(0, 2000000000);
     $_POST["imageId"] = $id;
     $ext = pathinfo($imagen["name"], PATHINFO_EXTENSION);
     $_POST["imageExt"] = pathinfo($imagen["name"], PATHINFO_EXTENSION);
@@ -28,9 +27,35 @@
 
 }
 
+function mailExistente($datos, $archivo){
+        $usuarios_json = file_get_contents($archivo);
+        $usuarios = json_decode($usuarios_json, true);
+        $resultado = "MAIL YA EXISTENTE";
+        foreach ($usuarios as $arrayUsuario) {
+                foreach ($arrayUsuario as $usuario => $valor) {
+                        if ($datos["email"] == $valor) {
+                            $resultado = $arrayUsuario;
+                            return $resultado;
+                        }
+        else {
+            $resultado = " ";
+        }
+                }
+      }
+      return $resultado;
+}
+
 function validarRegistracion($datos){
   $datos["perfil"] = $_FILES["perfil"]; 
   $errores = [];
+  $archivo = "usuarios.json";
+  //validar si el mail ya existe
+if (mailExistente($datos, $archivo) == " ") {
+    $errores = [];
+  }
+  else {
+    $errores[] = "<p>Mail ya existente</p>";
+  } 
   //validar password//
   if (($datos["password"] == "") && ($datos["rpassword"] == "")) {
     $errores []= "<p>*Los dos campos de contraseña estan vacios</p>";
@@ -66,14 +91,14 @@ function validarRegistracion($datos){
    return $errores;
 }
 
-function validarLogin($dato, $archivo){
+function validarLogin($datos, $archivo){
     // $dato = $_POST["usuario"];
     $usuarios_json = file_get_contents($archivo);
     $usuarios = json_decode($usuarios_json, true);
     $resultado = [];
     foreach ($usuarios as $arrayUsuario) {
      foreach ($arrayUsuario as $usuario => $valor) {
-     if ($dato["usuario"] == $valor) {
+     if ($datos["usuario"] == $valor) {
        $resultado = $arrayUsuario;
        return $resultado;
      }

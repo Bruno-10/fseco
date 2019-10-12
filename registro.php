@@ -62,7 +62,7 @@ $perfil = "";
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="perfil">Foto de perfil</label>
-                                    <input type="file" class="form-control" name="perfil" id="perfil"  required>
+                                    <input type="file" class="form-control" name="perfil" id="perfil"   required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="email">Email</label>

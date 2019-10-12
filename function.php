@@ -27,13 +27,14 @@
 
 }
 
-function mailExistente($datos, $archivo){
+function datoPreexistente($datos, $archivo, $que){
+  // $que es el dato a verificar
         $usuarios_json = file_get_contents($archivo);
         $usuarios = json_decode($usuarios_json, true);
-        $resultado = "MAIL YA EXISTENTE";
+        $resultado = "dato existente";
         foreach ($usuarios as $arrayUsuario) {
                 foreach ($arrayUsuario as $usuario => $valor) {
-                        if ($datos["email"] == $valor) {
+                        if ($que == $valor) {
                             $resultado = $arrayUsuario;
                             return $resultado;
                         }
@@ -45,17 +46,25 @@ function mailExistente($datos, $archivo){
       return $resultado;
 }
 
+
 function validarRegistracion($datos){
   $datos["perfil"] = $_FILES["perfil"]; 
   $errores = [];
   $archivo = "usuarios.json";
   //validar si el mail ya existe
-if (mailExistente($datos, $archivo) == " ") {
-    $errores = [];
-  }
+  if (datoPreexistente($datos, $archivo, $datos["email"]) == " ") {
+      $errores = [];
+    }
+    else {
+      $errores[] = "<p>Mail ya existente</p>";
+    } 
+  // validar si el usuario ya existe
+  if (datoPreexistente($datos, $archivo, $datos["usuario"]) == " ") {
+      $errores = [];
+    }
   else {
-    $errores[] = "<p>Mail ya existente</p>";
-  } 
+      $errores[] = "<p>Usuario ya existente</p>";
+    }  
   //validar password//
   if (($datos["password"] == "") && ($datos["rpassword"] == "")) {
     $errores []= "<p>*Los dos campos de contraseña estan vacios</p>";

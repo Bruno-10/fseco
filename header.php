@@ -1,8 +1,11 @@
 <?php
+
 if(!isset($_SESSION)){
     session_start();
+        
 };
-/* $datosUsuario = $_SESSION["usuario"];    */   
+$datosUsuario = $_SESSION["usuario"];
+
 ?>
                 <header class="row col-sm-12 col-md-12 col-lg-12 margencero" style="background-color:#0E0034;">
                             <div class="col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md navbar-dark">
@@ -24,10 +27,10 @@ if(!isset($_SESSION)){
                                             </div>
                                             <div class="collapse navbar-collapse" id="collapsibleNavbar">                                   
                                                 <!-- Si session start es igual a vacio muestro esto:  -->
-                                               <!--  <?php
+                                               <?php
                                                 //En el if va la variable con la que identificas si estan logueados
-                                                    if($datosUsuario == []) { 
-                                                ?> -->
+                                                    if($datosUsuario == []) {
+                                                        echo ('
                                                 <ul class="navbar-nav block">
                                                 <li class="nav-item">
                                                     <a class="nav-link color_menu" href="index.php">Inicio</a>
@@ -51,10 +54,9 @@ if(!isset($_SESSION)){
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="carrito.php"><ion-icon name="cart"></ion-icon>Carrito</a>
                                                 </li>
-                                                </ul>
-                                                <?php 
-                                                    } else {
-                                                ?>   
+                                                </ul>');}
+
+                                               else { echo ('
                                                 <ul class="navbar-nav block">
                                                 <li class="nav-item">
                                                     <a class="nav-link color_menu" href="index.php">Inicio</a>
@@ -77,8 +79,9 @@ if(!isset($_SESSION)){
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="logOut.php">LogOut</a> 
                                                 </li>
-                                                </ul>
-                                                  <?php  } ?>
+                                                </ul>');};
+                                                ?>
+                                                  
 
 
 

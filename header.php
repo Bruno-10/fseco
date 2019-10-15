@@ -17,7 +17,7 @@ $datosUsuario = $_SESSION["usuario"];
                                 <div class="logo col-sm-12 col-md-6 col-lg-3 justify-content-center">
                                     <a class="navbar-brand" href="index.php"><img class="col-sm-12 col-md-6 col-lg-12" src="img/logoppal.png" alt="logoprincipal"></a>
                                 </div>
-                                <nav class="col-sm-12 col-md-6 col-lg-6 navbar navbar-light justify-content-center ">
+                                <nav class="col-sm-12 col-md-6 col-lg-4 buscar navbar navbar-light">
                                         <form class="form-inline flex-wrap ">
                                             <input class="caja_busc" type="search" placeholder="¿Qué estas buscando?" aria-label="Search">
                                             <button type="submit"><ion-icon name="search" class="icono"></ion-icon></button>

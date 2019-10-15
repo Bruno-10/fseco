@@ -1,6 +1,10 @@
+ #carousel{
+     margin-top: 10px;;
+ }
+ 
  .carousel-item img {
-    height: 50vh;
-    width: 150vh;
+    height: 40vh;
+    width: 100%;
   } 
 
 #carouselExampleControls{
@@ -24,17 +28,27 @@
     text-align: center;
 }
 .cat-indiv{
+
+    margin: 10px 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    background-color: rgb(228, 88, 32);
     
 }
 .cat-indiv div{
-    border: 1px solid black;
     padding: 5px;
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
+    padding-bottom: 10px;
+}
+
+.cat-indiv div a{
+    padding: 4px;
+    color: white;
+    font-size: 22px;
+    border: 2px solid rgba(255, 255, 255, 0.931);
 }
 
 main{
@@ -53,5 +67,13 @@ main{
 }
 .contenedorcarrusel{
     padding: 0px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .buscar{
+        margin-left: 45%; 
+    }
+
 }
 

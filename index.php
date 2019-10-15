@@ -22,13 +22,13 @@
                                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                            <img src="img/logo_cartri.jpg" class="d-block " alt="...">
+                                                <img src="img/logo_cartri.jpg" class="d-block " alt="...">
                                             </div>
                                             <div class="carousel-item">
-                                            <img src="img/logo_joma.jpg" class="d-block " alt="...">
+                                                <img src="img/logo_joma.jpg" class="d-block " alt="...">
                                             </div>
                                             <div class="carousel-item">
-                                            <img src="img/logo_sidespin.jpg" class="d-block " alt="...">
+                                                <img src="img/logo_sidespin.jpg" class="d-block " alt="...">
                                             </div>
                                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -43,15 +43,8 @@
                                 </div>
                         </div> 
                     </section>
-                    <section class="col-sm-10 col-md-10 col-lg-10 banner">
-                            <div><h3>  <i class="fa fa-credit-card"></i>HASTA 6 CUOTAS SIN INTERES </h3> </div>
-                            <div> <h3> <i class="fa fa-truck"></i> ENVIOS GRATIS </h3> </div>
-                            <div> <h3> <i class="fa fa-money-bill-alt"></i> 10% DE DESCUENTO </h3> </div>                       
-                    </section>
                     <section class="col-sm-10 col-md-10 col-lg-10 categorias">
-                        <div>
-                            <h2> Categorias principales</h2>
-                        </div>
+
                         <div class="cat-indiv ">
                             <div> <a href="#paletas"> PALETAS </a> </div>
                             <div> <a href="#indumentaria"> INDUMENTARIA</a> </div>
@@ -88,6 +81,11 @@
                                 <div> <a href="#blaccrown"> Black crown</a> </div>
                             </a>
                         </div>  
+                    <section class="col-sm-10 col-md-10 col-lg-10 banner">
+                            <div><h3>  <i class="fa fa-credit-card"></i>HASTA 6 CUOTAS SIN INTERES </h3> </div>
+                            <div> <h3> <i class="fa fa-truck"></i> ENVIOS GRATIS </h3> </div>
+                            <div> <h3> <i class="fa fa-money-bill-alt"></i> 10% DE DESCUENTO </h3> </div>                       
+                    </section>
                         <div class="productos col-sm-12 col-md-4 col-lg-3">
                             <a href="detalle.php"> 
                                 <div class="centrar" > <img src="img/sinfondo.jpg" width="200" alt="paleta"> </div>

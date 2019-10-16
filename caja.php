@@ -21,39 +21,39 @@
                             <div class="form-column">
                                 <div class="col-md-7 col-lg-9">
                                     <label for="nombre">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre"  value="<?= $nombre ?>"  required>
+                                    <input type="text" class="form-control" name="nombre" id="nombre"  value=""  required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Apellido</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Ciudad</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Localidad</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Calle</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Numero</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Piso</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Entre Calles</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Telefono</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                             </div>
                         </form>
@@ -86,19 +86,19 @@
                             <div class="form-column">
                                 <div class="col-md-7 col-lg-9">
                                     <label for="nombre">Numero de tarjeta</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre"  value="<?= $nombre ?>"  required>
+                                    <input type="text" class="form-control" name="nombre" id="nombre"  value=""  required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Nombre en la tarjeta</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Expiracion</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="" required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Codigo de seguridad</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="   " required>
                                 </div>
                                 <div class="col-md-7 col-lg-9 recordar">
                                     <input type="checkbox" name="recordar" id="recordar">Recibir confirmacion de pedido por sms   

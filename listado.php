@@ -31,7 +31,7 @@
                             <section class="row col-sm-8 col-md-10 col-lg-10 cvip-products">
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
-                                        <img class="photo col-lg-12" src="img/paleta_2.jpg" alt="pdto 03">
+                                        <img class="photo col-lg-12" src="img/sinfondo.jpg" alt="pdto 03">
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
@@ -40,7 +40,7 @@
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
-                                        <img class="photo col-lg-12" src="img/paleta_1.jpg" alt="pdto 03">
+                                        <img class="photo col-lg-12" src="img/sinfondo.jpg" alt="pdto 03">
 		                    			
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
@@ -50,7 +50,7 @@
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
-		                    			<img class="photo col-lg-12" src="img/paleta_2.jpg" alt="pdto 03">
+		                    			<img class="photo col-lg-12" src="img/sinfondo.jpg" alt="pdto 03">
 		                    			
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
@@ -60,7 +60,7 @@
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
-		                    			<img class="photo col-lg-12" src="img/paleta_2.jpg" alt="pdto 01">
+		                    			<img class="photo col-lg-12" src="img/sinfondo.jpg" alt="pdto 01">
 		                    			
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
@@ -70,7 +70,7 @@
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
-		                    			<img class="photo col-lg-12" src="img/paleta_2.jpg" alt="pdto 02">
+		                    			<img class="photo col-lg-12" src="img/sinfondo.jpg" alt="pdto 02">
 		                    			
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
@@ -80,8 +80,7 @@
 		                    	</article>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
-		                    			<img class="photo col-lg-12" src="img/paleta_3.jpg" alt="pdto 03">
-		                    			
+		                    			<img class="photo col-lg-12" src="img/sinfondo.jpg" alt="pdto 03">	
 		                    		</div>
 		                    		<h2>Lorem ipsum amet</h2>
 		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>

@@ -41,7 +41,7 @@
                                         echo 
                                         ('
                                             <tr>
-                                                <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/pelota.jpg"> </th>
+                                                <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/paleta_2.jpg"> </th>
                                                     <td>' . $value["nombre"] . ' </td>
                                                     <td>' . $value["id"] . ' </td>
                                                     <td><input type="text"></td>

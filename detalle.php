@@ -20,13 +20,13 @@
                         <section class="producto">
 
                                 <div class="imagen">
-                                        <img src="img/pelota.jpg" alt="">
+                                        <img src="img/paleta_2.jpg"  alt="">
                                 </div>
 
                             <div class="desktop">
 
                                 <div class="descripcion">
-                                    <h4>Pelota Oficial Juventus</h4>
+                                    <h4>Black Crown Joke 2018</h4>
                                     <ul>
                                         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident delectus soluta ab sequi repellat dolor illo labore, voluptas porro, error nobis! Cumque eius earum, quas sunt ad a debitis reiciendis.</li>
                                         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa maiores natus enim odio, omnis unde necessitatibus sint veritatis nostrum nesciunt quaerat doloribus soluta cumque esse error repellat tempora dolorem? Ea?</li>
@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div class="precio">
-                                    <h3>$800</h3>
+                                    <h3>$4000</h3>
                                     <p>En stock</p>
                                     <form action="#" method="GET">
                                      <!-- <input type="number" name="numero" id="numero" > -->

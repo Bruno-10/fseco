@@ -84,7 +84,7 @@
                             </table>
                             <div class="row col-sm-12 col-md-12 col-lg-12 justify-content-between"> 
                                 <div class="col-sm-3 col-md-6 col-lg-4 boton">
-                                    <button class="btn btn-success " type="submit">ir a Caja</button>
+                                    <a href="caja.php"> <button class="btn btn-success " type="submit">ir a Caja</button> </a>
                                 </div>
                                 <div class="col-sm-3 col-md-6 col-lg-4 boton">
                                     <button class="btn btn-danger" type="submit">Cancelar</button>

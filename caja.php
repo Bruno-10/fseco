@@ -71,12 +71,43 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-5 caja_form">
-                        <div><h2>MI PEDIDO</h2></div>
-                        <div>Paleta $300</div>
-                        <div>Pelota $300</div>
-                        <div>Envio $400</div>
-                        <div>SUBTOTAL $600</div>
-                        <div>TOTAL $1000</div>
+                    <table class="table border pedido">
+                                <thead class="fondo">
+                                    <tr>
+                                    <th scope="col border"></th>
+                                    <th scope="col border">Producto</th>
+                                    <th scope="col border">Precio</th>
+                                    <th scope="col border">Cantidad</th>
+                                    <th scope="col border">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                                            <tr>
+                                                <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/paleta_2.jpg"> </th>
+                                                    <td>Paleta 2 </td>
+                                                    <td>$3500</td>
+                                                    <td>1</td>
+                                                    <td> </td>
+                                        </tr> 
+                                        
+                                            <tr>
+                                                <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/paleta_2.jpg"> </th>
+                                                    <td>Paleta 2 </td>
+                                                    <td>$4000 </td>
+                                                    <td>3</td>
+                                                    <td></td>  
+                                        </tr> 
+                                        <tr>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td> $15500</td>
+                                        </tr>                               
+                            
+                                </tbody>
+                            </table>
                     </div>
                 </main>
                 <section class="col-sm-12 col-md-12 col-lg-12 caja_pagos">

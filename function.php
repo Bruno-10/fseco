@@ -1,4 +1,31 @@
 <?php
+  function dibujarProductosCarrito($productos){
+    
+    foreach ($productos as $producto => $value){
+        echo 
+        ('
+            <tr>
+                <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/paleta_2.jpg"> </th>
+                    <td>' . $value["nombre"] . ' </td>
+                    <td>' . $value["id"] . ' </td>
+                    <td><input type="text"></td>
+        </tr> 
+        ');
+    }
+  }
+  function dibujarProductosCaja($productos){ 
+    foreach ($productos as $producto => $value){
+        echo 
+        ('
+            <tr>
+                <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/paleta_2.jpg"> </th>
+                    <td>' . $value["nombre"] . ' </td>
+                    <td>' . $value["id"] . ' </td>
+                    <td></td>
+        </tr> 
+        ');
+    }
+  }  
   function guardarImg($imagen){
     $id = rand(0, 2000000000);
     $_POST["imageId"] = $id;

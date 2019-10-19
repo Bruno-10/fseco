@@ -1,4 +1,4 @@
-
+<?php require_once("function.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,25 +34,12 @@
                                 </thead>
                                 <tbody>
                                 <?php 
-                                if (isset($_SESSION["carrito"])){
-                                    $productos = $_SESSION["carrito"];
-                                function dibujarProductos($productos){
-                                    foreach ($productos as $producto => $value){
-                                        echo 
-                                        ('
-                                            <tr>
-                                                <th scope="row" class="tamaño"><img class="col-sm-1 col-md-6 col-lg-4" src="img/paleta_2.jpg"> </th>
-                                                    <td>' . $value["nombre"] . ' </td>
-                                                    <td>' . $value["id"] . ' </td>
-                                                    <td><input type="text"></td>
-                                        </tr> 
-                                        ');
+                                    if (isset($_SESSION["carrito"])){
+                                        $productos = $_SESSION["carrito"];
+                                    
+                                    dibujarProductosCarrito($productos);
                                     }
-                                }    
-
-                                dibujarProductos($productos);
-                                }
-                                
+                                    
                                 ?>
                                 
                             
@@ -82,15 +69,17 @@
                                         </tr> 
                                     </tbody>
                             </table>
-                            <div class="row col-sm-12 col-md-12 col-lg-12 justify-content-between"> 
-                                <div class="col-sm-3 col-md-6 col-lg-4 boton">
-                                    <button class="btn btn-success " type="submit">ir a Caja</button>
-                                </div>
-                                <div class="col-sm-3 col-md-6 col-lg-4 boton">
-                                    <button class="btn btn-danger" type="submit">Cancelar</button>
-                                 </div>
+                            <form action="caja.php" method="POST">
+                                <div class="row col-sm-12 col-md-12 col-lg-12 justify-content-between"> 
+                                        <div class="col-sm-3 col-md-6 col-lg-4 boton">
+                                            <button class="btn btn-success " type="submit">ir a Caja</button>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-4 boton">
+                                            <button class="btn btn-danger" type="submit">Cancelar</button>
+                                        </div>
                                     
-                            </div>
+                                </div>
+                            </form>   
                         </div>  
                     </main>
                     

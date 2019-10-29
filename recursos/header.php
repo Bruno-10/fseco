@@ -15,7 +15,7 @@ $datosUsuario = $_SESSION["usuario"];
                 <header class="row col-sm-12 col-md-12 col-lg-12 margencero" style="background-color:#0E0034;">
                             <div class="col-sm-12 col-md-12 col-lg-12 navbar navbar-expand-md navbar-dark">
                                 <div class="logo col-sm-12 col-md-6 col-lg-3 justify-content-center">
-                                    <a class="navbar-brand" href="index.php"><img class="col-sm-12 col-md-6 col-lg-12" src="img/logoppal.png" alt="logoprincipal"></a>
+                                    <a class="navbar-brand" href="index.php"><img class="col-sm-12 col-md-6 col-lg-12" src="../img/logoppal.png" alt="logoprincipal"></a>
                                 </div>
                                 <nav class="col-sm-12 col-md-6 col-lg-4 buscar navbar navbar-light">
                                         <form class="form-inline flex-wrap ">

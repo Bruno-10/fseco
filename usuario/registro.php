@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once("function.php"); 
+require_once("../funciones/function.php"); 
+require_once("usuario/class-usuario.php");
 $nombre = "";
 $apellido = "";
 $email = "";
@@ -9,22 +10,22 @@ $password = "";
 $rpassword = "";
 $perfil = "";
 
- if ($_POST){
-    $nombre = $_POST["nombre"];
-    $apellido = $_POST["apellido"];
-    $email = $_POST["email"];
-    //$perfil = $_POST["perfil"];
-    $usuario = $_POST["usuario"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $rpassword = $_POST["rpassword"]; 
-    $datos = $_POST;
-    $imagen = $_FILES["perfil"];
-    $errores = validarRegistracion($datos);
+if ($_POST){
+    $usuario = new Usuario(
+    $_POST["nombre"],
+    $_POST["apellido"],
+    $_FILES["perfil"],
+    password_hash($_POST["password"], PASSWORD_DEFAULT),
+    $_POST["rpassword"],
+    $_POST["usuario"],
+    $_POST["email"],
+);
+    $errores = $usuario->validarRegistracion();
     $resultado = [];
     if (empty($errores)) {
         guardarImg($_FILES["perfil"]);
         $_SESSION["usuario"] = $_POST;
-        guardarDatos($datos, "usuarios.json");
+        guardarDatos($datos, "../json/usuarios.json");
         header("location: usuario.php");
     }   
 
@@ -49,7 +50,7 @@ $perfil = "";
         <?php require_once("header.php"); ?>
                 <main class="row col-sm-12 col-md-12 col-lg-12 main margencero">     
                     <div class="col-sm-12 col-md-12 col-lg-6 caja_form">
-                        <form action="registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        <form action="../usuario/procesar_registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                             <h2>Registrate</h2>
                             <div class="form-column">
                                 <div class="col-md-7 col-lg-9">

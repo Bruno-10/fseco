@@ -38,23 +38,23 @@ $datosUsuario = $_SESSION["usuario"];
                                                         echo ('
                                                 <ul class="navbar-nav block">
                                                 <li class="nav-item">
-                                                    <a class="nav-link color_menu" href="index.php">Inicio</a>
+                                                    <a class="nav-link color_menu" href="../recursos/index.php">Inicio</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="listado.php">Productos</a>
+                                                    <a class="nav-link" href="../producto/listado.php">Productos</a>
                                                 </li>
                                                  
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="faq.php">FAQ</a>
+                                                    <a class="nav-link" href="../recursos/faq.php">FAQ</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="contacto.php">Contacto</a>
+                                                    <a class="nav-link" href="../usuario/contacto.php">Contacto</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="registro.php"> <ion-icon name="person"></ion-icon>Registrarse</a>
+                                                    <a class="nav-link" href="../usuario/registro.php"> <ion-icon name="person"></ion-icon>Registrarse</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="login.php"> <ion-icon name="exit"></ion-icon> Iniciar sesion</a>  
+                                                    <a class="nav-link" href="../usuario/login.php"> <ion-icon name="exit"></ion-icon> Iniciar sesion</a>  
                                                 </li>
                                                 
                                                 </ul>');}
@@ -62,25 +62,25 @@ $datosUsuario = $_SESSION["usuario"];
                                                else { echo ('
                                                 <ul class="navbar-nav block">
                                                 <li class="nav-item">
-                                                    <a class="nav-link color_menu" href="index.php">Inicio</a>
+                                                    <a class="nav-link color_menu" href="../recursos/index.php">Inicio</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="listado.php">Productos</a>
+                                                    <a class="nav-link" href="../producto/listado.php">Productos</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="usuario.php">Perfil</a>
+                                                    <a class="nav-link" href="../usuario/usuario.php">Perfil</a>
                                                 </li> 
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="faq.php">FAQ</a>
+                                                    <a class="nav-link" href="../recursos/faq.php">FAQ</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="contacto.php">Contacto</a>
+                                                    <a class="nav-link" href="../usuario/contacto.php">Contacto</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="carrito.php"><ion-icon name="cart"></ion-icon>Carrito</a>
+                                                    <a class="nav-link" href="../producto/carrito.php"><ion-icon name="cart"></ion-icon>Carrito</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="logOut.php">LogOut</a> 
+                                                    <a class="nav-link" href="../funciones/logOut.php">LogOut</a> 
                                                 </li>
                                                 </ul>');};
                                                 ?>

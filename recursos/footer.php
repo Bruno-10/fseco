@@ -11,28 +11,28 @@
 
                 <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
+                            <a class="nav-link" href="../recursos/index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="usuario.php">Perfil</a>
+                            <a class="nav-link" href="../usuario/usuario.php">Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php">Log-In</a>
+                            <a class="nav-link" href="../usuario/login.php">Log-In</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="registro.php">Register</a>
+                            <a class="nav-link" href="../usuario/registro.php">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="faq.php">F.A.Q</a>
+                            <a class="nav-link" href="./recursos/faq.php">F.A.Q</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contacto.php">Contacto</a>
+                            <a class="nav-link" href="../usuario/contacto.php">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="listado.php">Shop</a>
+                            <a class="nav-link" href="../producto/listado.php">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="listado.php"><ion-icon class="cart" name="cart"></ion-icon></a>
+                            <a class="nav-link" href="../producto/carrito.php"><ion-icon class="cart" name="cart"></ion-icon></a>
                         </li>
                 </ul>
         </div>

@@ -1,10 +1,6 @@
 <?php
 session_start();
 require_once("../funciones/function.php"); 
-<<<<<<< HEAD
-=======
-require_once("usuario/class-usuario.php");
->>>>>>> 189fc45cf52ba7d8b7b0bee22a7fdb83f1aa47c0
 $nombre = "";
 $apellido = "";
 $email = "";

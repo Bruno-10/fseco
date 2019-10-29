@@ -77,7 +77,7 @@ function datoPreexistente($datos, $archivo, $que){
 function validarRegistracion($datos){
   $datos["perfil"] = $_FILES["perfil"]; 
   $errores = [];
-  $archivo = "usuarios.json";
+  $archivo = "../json/usuarios.json";
   //validar si el mail ya existe
   if (datoPreexistente($datos, $archivo, $datos["email"]) == " ") {
       $errores = [];

@@ -7,11 +7,11 @@ $password = "";
     $usuario = $_POST["usuario"];
     $password = $_POST["password"];
     $datos = $_POST;
-    $archivo = "usuarios.json";
+    $archivo = "../json/usuarios.json";
     $resultado = validarLogin($datos,$archivo);
     if ($resultado != []){ 
      $_SESSION["usuario"] = $resultado;
-    header("location: usuario.php");
+    header("location: ../usuario/usuario.php");
   }
     else {
       header("location: login.php?error=true");
@@ -29,14 +29,14 @@ $password = "";
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
-        <link rel="stylesheet" href="css/master.css">
-        <link rel="stylesheet" href="css/login_1.css">
-        <link rel="stylesheet" href="css/footer1.css">
+        <link rel="stylesheet" href="../css/master.css">
+        <link rel="stylesheet" href="../css/login_1.css">
+        <link rel="stylesheet" href="../css/footer1.css">
         <title>LOGIN</title> 
     </head>
     <body>
       <div>
-        <?php require_once("header.php");?>
+        <?php require_once("../recursos/header.php");?>
       </div>
       <div class="col-sm-4 col-md-4 col-lg-4">
           <h2>Login</h2>
@@ -44,7 +44,7 @@ $password = "";
       <div class="col-sm-4 col-md-4 col-lg-4">
         <form action="login.php" method="POST" enctype="multipart/form-data">
             <div class="imgcontainer">
-              <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
+              <img src="../img/img_avatar2.png" alt="Avatar" class="avatar">
             </div>
             <div class="container">
             <p id="errorLogin"> <?php
@@ -69,7 +69,7 @@ $password = "";
         </form>
       </div>
       <div>
-        <?php require_once("footer.php"); ?>
+        <?php require_once("../recursos/footer.php"); ?>
       </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -6,17 +6,17 @@ class Usuario{
     protected $imgPerfil;
     protected $password;
     protected $rpassword;
-    protected $usuario;
+    protected $nombreUsuario;
     protected $email;
     protected $carrito;
 
-    public function __construct($nombre,$apellido,$imgPerfil,$password,$rpassword,$usuario,$email){
+    public function __construct($nombre,$apellido,$imgPerfil,$password,$rpassword,$nombreUsuario,$email){
         $this->nombre = $nombre;
         $this->apellido = $apellido;  
         $this->imgPerfil = $imgPerfil;
         $this->password = $password;
         $this->rpassword = $rpassword;
-        $this->usuario = $usuario;
+        $this->nombreUsuario = $nombreUsuario;
         $this->email = $email;
     }
     private function datoPreexistente($archivo, $que){
@@ -42,7 +42,7 @@ class Usuario{
     public function validarRegistracion(){
          
         $errores = [];
-        $archivo = "usuarios.json";
+        $archivo = "../json/usuarios.json";
         //validar si el mail ya existe
         if ($this->datoPreexistente($archivo, $this->email) == "") {
             $errores = [];
@@ -51,7 +51,7 @@ class Usuario{
             $errores[] = "<p>Mail ya existente</p>";
           } 
         // validar si el usuario ya existe
-        if ($this->datoPreexistente($archivo, $this->usuario) == "") {
+        if ($this->datoPreexistente($archivo, $this->nombreUsuario) == "") {
             $errores = [];
           }
         else {
@@ -77,7 +77,7 @@ class Usuario{
         if (filter_var($this->email, FILTER_VALIDATE_EMAIL) == false) {
           $errores [] = "<p>*El email ingresado no es valido <br></p>";
         }
-        if ((strlen($this->usuario) < 8)){
+        if ((strlen($this->nombreUsuario) < 8)){
           $errores [] = "<p>*El usuario debe tener mas de 8 caracteres <br></p>";
         }
         //validar imagen //
@@ -175,9 +175,9 @@ class Usuario{
     /**
      * Get the value of usuario
      */ 
-    public function getUsuario()
+    public function getNombreUsuario()
     {
-        return $this->usuario;
+        return $this->nombreUsuario;
     }
 
     /**
@@ -185,9 +185,9 @@ class Usuario{
      *
      * @return  self
      */ 
-    public function setUsuario($usuario)
+    public function setNombreUsuario($nombreUsuario)
     {
-        $this->usuario = $usuario;
+        $this->nombreUsuario = $nombreUsuario;
 
         return $this;
     }
@@ -275,5 +275,5 @@ class Usuario{
     public function removerProducto(){
         return true;   
     }
-
+}
 ?>

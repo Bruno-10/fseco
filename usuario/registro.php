@@ -1,10 +1,11 @@
 <?php
 session_start();
 require_once("../funciones/function.php"); 
+require_once("class-usuario.php");
 $nombre = "";
 $apellido = "";
 $email = "";
-$usuario = "";
+$nombreUsuario = "";
 $password = "";
 $rpassword = "";
 $perfil = "";
@@ -16,7 +17,7 @@ if ($_POST){
     $_FILES["perfil"],
     password_hash($_POST["password"], PASSWORD_DEFAULT),
     $_POST["rpassword"],
-    $_POST["usuario"],
+    $_POST["nombreUsuario"],
     $_POST["email"],
 );
     $errores = $usuario->validarRegistracion();
@@ -49,7 +50,7 @@ if ($_POST){
         <?php require_once("../recursos/header.php"); ?>
                 <main class="row col-sm-12 col-md-12 col-lg-12 main margencero">     
                     <div class="col-sm-12 col-md-12 col-lg-6 caja_form">
-                        <form action="../usuario/procesar_registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        <form action="registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                             <h2>Registrate</h2>
                             <div class="form-column">
                                 <div class="col-md-7 col-lg-9">
@@ -74,7 +75,7 @@ if ($_POST){
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">@</span>
                                         </div>
-                                        <input type="text" class="form-control"  aria-describedby="inputGroupPrepend"  name="usuario" id="usuario" value="<?=$usuario?>"  required>
+                                        <input type="text" class="form-control"  aria-describedby="inputGroupPrepend"  name="nombreUsuario" id="nombreUsuario" value="<?= $nombreUsuario ?>"  required>
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-lg-9">

@@ -1,6 +1,6 @@
 <footer>
     <div class="logotipo" >
-        <img src="../img/logo_footer.png" alt="logo de la empresa">
+    <a class="nav-link" href="../recursos/index.php"><img src="../img/logo_footer.png" alt="logo de la empresa"></a>
     </div>
 
     <hr>

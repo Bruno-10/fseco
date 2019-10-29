@@ -1,3 +1,4 @@
+<?php require_once("function.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -72,11 +73,16 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-5 caja_form">
                         <div><h2>MI PEDIDO</h2></div>
-                        <div>Paleta $300</div>
-                        <div>Pelota $300</div>
-                        <div>Envio $400</div>
-                        <div>SUBTOTAL $600</div>
-                        <div>TOTAL $1000</div>
+                            <?php 
+                                if (isset($_SESSION["carrito"])){
+                                    $productos = $_SESSION["carrito"];
+                                   
+                                dibujarProductosCaja($productos);
+                                }
+                                else {
+                                    header("location:carrito.php");
+                                }
+                            ?>
                     </div>
                 </main>
                 <section class="col-sm-12 col-md-12 col-lg-12 caja_pagos">

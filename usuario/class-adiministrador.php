@@ -1,5 +1,6 @@
 <?php 
     require_once("class-usuario.php");
+    require_once("../producto/class-producto.php");
 
 
     class Administrador extends Usuario {

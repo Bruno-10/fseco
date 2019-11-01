@@ -1,5 +1,5 @@
 <?php 
     session_start();
     $_SESSION["usuario"] = [];
-    header("location: login.php");
+    header("location: ../usuario/login.php");
 ?>

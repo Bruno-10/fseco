@@ -260,20 +260,10 @@ class Usuario{
     public function cerrarSesion(){
         return true;
     }
-    public function generarEmail(){
-        return true;
-    }
-    public function comprar(){
-        return true;
-    }
+    
     public function editarPerfil(){
         return true;
     }
-    public function agregar(){
-        return true;
-    }
-    public function removerProducto(){
-        return true;   
-    }
+    
 }
 ?>

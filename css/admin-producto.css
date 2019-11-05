@@ -1,0 +1,25 @@
+.margencero {
+    margin: 0px;
+}
+.logo{
+    text-align: center;
+}
+.barra{
+    justify-content: center;
+}
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    height: auto;
+}
+.caja_izquierda{
+        height: 100%;
+        padding: 0px;   
+}
+.caja_derecha{
+    border: solid 1px rgb(230, 227, 227);
+    
+}

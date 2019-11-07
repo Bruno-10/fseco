@@ -1,40 +1,19 @@
 <?php 
     class Producto{
-        protected $id;
-        protected $titulo;   
-        protected $descripcion;
-        protected $precio;
-        protected $cantidad;
-        protected $imgProducto;
+        public $titulo;   
+        public $descripcion;
+        public $precio;
+        public $cantidad;
+        public $categoria;
     
-        public function __construct($id,$titulo,$descripcion,$precio,$cantidad,$imgProducto){
-            $this->id = $id;
+        public function __construct($titulo,$descripcion,$precio,$cantidad, $categoria){
             $this->titulo = $titulo;  
             $this->descripcion = $descripcion;
             $this->precio = $precio;
             $this->cantidad = $cantidad;
-            $this->imgProducto = $imgProducto;
+            $this->categoria = $categoria;
         }
 
-        /**
-         * Get the value of id
-         */ 
-        public function getId()
-        {
-                return $this->id;
-        }
-
-        /**
-         * Set the value of id
-         *
-         * @return  self
-         */ 
-        public function setId($id)
-        {
-                $this->id = $id;
-
-                return $this;
-        }
 
         /**
          * Get the value of titulo
@@ -114,24 +93,24 @@
                 $this->cantidad = $cantidad;
 
                 return $this;
-        }
+        }     
 
         /**
-         * Get the value of imgProducto
+         * Get the value of categoria
          */ 
-        public function getImgProducto()
+        public function getCategoria()
         {
-                return $this->imgProducto;
+                return $this->categoria;
         }
 
         /**
-         * Set the value of imgProducto
+         * Set the value of categoria
          *
          * @return  self
          */ 
-        public function setImgProducto($imgProducto)
+        public function setCategoria($categoria)
         {
-                $this->imgProducto = $imgProducto;
+                $this->categoria = $categoria;
 
                 return $this;
         }

@@ -1,3 +1,10 @@
+<?php
+    $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+    $query = $db->prepare("SELECT * FROM `producto`");
+    $query -> execute();
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,54 +28,49 @@
                             <th scope="col border">Cantidad</th>
                             <th scope="col border">Imagen</th>
                         </tr>
-                        <tr>
-                            <td scope="col border">1</td>
-                            <td scope="col border">Paleta</td>
-                            <td scope="col border">10</th>
-                            <td scope="col border">vacia</td>
-                        </tr>
-                        <tr>
-                                <td scope="col border">2</td>
-                                <td scope="col border">Pelota</td>
-                                <td scope="col border">29</td>
-                                <td scope="col border">vacia</td>
-                        </tr>
-                        <tr>
-                                <td scope="col border">3</td>
-                                <td scope="col border">Short</td>
-                                <td scope="col border">9</td>
-                                <td scope="col border">vacia</td>
+                        <?php foreach ($result as $producto){ ?>
+                            <tr>
+                                <td scope="col border"><?php echo $producto["id_prod"]; ?> </td>
+                                <td scope="col border"><?php echo $producto["titulo"]; ?></td>
+                                <td scope="col border"><?php echo $producto["cantidad"]; ?></td>
+                                <td scope="col border">imagen</td>
                             </tr>
+                        <?php } ?>
                 </table>         
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 caja_derecha">
-                <form action="registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <form action="procesar-agregar.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                     <div class="form-column">
                         <div class="col-md-7 col-lg-9">
-                            <label for="nombre">Id</label>
-                            <input type="text" class="form-control" name="nombre" id="nombre"  value="" required>
+                            <label for="titulo">Titulo</label>
+                            <input type="text" class="form-control" name="titulo" id="titulo" value=" " required>
                         </div>
                         <div class="col-md-7 col-lg-9">
-                            <label for="apellido">Titulo</label>
-                            <input type="text" class="form-control" name="apellido" id="apellido" value=" " required>
-                        </div>
-                        <div class="col-md-7 col-lg-9">
-                            <label for="perfil">Descripcion</label>
-                            <input type="text" class="form-control" name="email" id="email" value=" "  required>
+                            <label for="descripcion">Descripcion</label>
+                            <input type="text" class="form-control" name="descripcion" id="descripcion" value=" "  required>
                         </div>
                         <div class="col-md-7 col-lg-9">
                             <label for="precio">Precio</label>
-                            <input type="text" class="form-control" name="email" id="email" value=" "  required>
+                            <input type="text" class="form-control" name="precio" id="precio" value=" "  required>
                         </div>
                         <div class="col-md-7 col-lg-9">
-                                <label for="email">Cantidad</label>
-                                <input type="email" class="form-control" name="email" id="email" value=" "  required>
+                                <label for="cantidad">Cantidad</label>
+                                <input type="email" class="form-control" name="cantidad" id="cantidad" value=" "  required>
                             </div>
-                            <div class="col-md-7 col-lg-9">
-                                    <label for="email">Imagen</label>
-                                    <input type="file" class="form-control" name="perfil" id="perfil"   required>
-                                    
-                                </div>
+                        <!-- <div class="col-md-7 col-lg-9">
+                                <label for="imgProducto">Imagen</label>
+                                <input type="file" class="form-control" name="imgProducto" id="imgProducto"  value=" " required>            
+                        </div>  -->
+                        <div class="col-md-7 col-lg-9">
+                                <label for="categoria">Categoria</label>
+                                <br>
+                                <select name="categoria" id="categoria">
+                                    <option value="0">...</option>
+                                    <option value="1">Paletas</option>
+                                    <option value="2">Pelotas</option>
+                                    <option value="3">Indumentaria</option>
+                                    <option value="4">Zapatillas</option>
+                                </select>
                         </div>
                         <div class="col-md-7 col-lg-9"> 
                             <br>

@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once("../funciones/function.php"); 
-require_once("class-usuario.php");
 $nombre = "";
 $apellido = "";
 $email = "";
@@ -10,26 +9,10 @@ $password = "";
 $rpassword = "";
 $perfil = "";
 
-if ($_POST){
-    $usuario = new Usuario(
-    $_POST["nombre"],
-    $_POST["apellido"],
-    $_FILES["perfil"],
-    password_hash($_POST["password"], PASSWORD_DEFAULT),
-    $_POST["rpassword"],
-    $_POST["nombreUsuario"],
-    $_POST["email"],
-);
-    $errores = $usuario->validarRegistracion();
-    $resultado = [];
-    if (empty($errores)) {
-        guardarImg($_FILES["perfil"]);
-        $_SESSION["usuario"] = $_POST;
-        guardarDatos($datos, "../json/usuarios.json");
-        header("location: usuario.php");
-    }   
-
+if(isset($_SESSION["errores"])){
+    $errores;
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -50,16 +33,16 @@ if ($_POST){
         <?php require_once("../recursos/header.php"); ?>
                 <main class="row col-sm-12 col-md-12 col-lg-12 main margencero">     
                     <div class="col-sm-12 col-md-12 col-lg-6 caja_form">
-                        <form action="registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        <form action="../funciones/procesar_registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                             <h2>Registrate</h2>
                             <div class="form-column">
                                 <div class="col-md-7 col-lg-9">
                                     <label for="nombre">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre"  value="<?= $nombre ?>"  required>
+                                    <input type="text" class="form-control" name="nombre" id="nombre" value="<?= $nombre ?>"    required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Apellido</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>" required>
+                                    <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>"  required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="perfil">Foto de perfil</label>
@@ -67,7 +50,7 @@ if ($_POST){
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" value="<?= $email ?>"  required>
+                                    <input type="email" class="form-control" name="email" id="email" value="<?= $email ?>"   required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="usuario">Usuario</label>
@@ -75,16 +58,16 @@ if ($_POST){
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">@</span>
                                         </div>
-                                        <input type="text" class="form-control"  aria-describedby="inputGroupPrepend"  name="nombreUsuario" id="nombreUsuario" value="<?= $nombreUsuario ?>"  required>
+                                        <input type="text" class="form-control"  aria-describedby="inputGroupPrepend"  name="nombreUsuario" id="nombreUsuario" value="<?= $nombreUsuario ?>"   required>
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="password">Contraseña</label>
-                                    <input type="password" class="form-control" name="password" id="password" required>
+                                    <input type="password" class="form-control" name="password" id="password"  required>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="rpassword">Repetir contraseña</label>
-                                    <input type="password" class="form-control" name="rpassword" id="rpassword" required>
+                                    <input type="password" class="form-control" name="rpassword" id="rpassword"  required>
                                 </div>
                                 <div class="col-md-7 col-lg-9 recordar">
                                     <input type="checkbox" name="recordar" id="recordar">Recordar Usuario

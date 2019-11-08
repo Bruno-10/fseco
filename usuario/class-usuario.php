@@ -1,14 +1,14 @@
 <?php 
 
 class Usuario{
-    protected $nombre;
-    protected $apellido;   
-    protected $imgPerfil;
-    protected $password;
-    protected $rpassword;
-    protected $nombreUsuario;
-    protected $email;
-    protected $carrito;
+    public $nombre;
+    public $apellido;   
+    public $imgPerfil;
+    public $password;
+    public $rpassword;
+    public $nombreUsuario;
+    public $email;
+    public $carrito;
 
     public function __construct($nombre,$apellido,$imgPerfil,$password,$rpassword,$nombreUsuario,$email){
         $this->nombre = $nombre;
@@ -19,10 +19,12 @@ class Usuario{
         $this->nombreUsuario = $nombreUsuario;
         $this->email = $email;
     }
-    private function datoPreexistente($archivo, $que){
+    public function datoPreexistente($archivo, $que, $select){
         // $que es el dato a verificar
-              $usuarios_json = file_get_contents($archivo);
-              $usuarios = json_decode($usuarios_json, true);
+
+              $query = $archivo->prepare("SELECT $select FROM cliente ");
+              $query -> execute();
+              $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);   
               $resultado = "dato existente";
               foreach ($usuarios as $arrayUsuario) {
                       foreach ($arrayUsuario as $usuario => $valor) {
@@ -42,16 +44,16 @@ class Usuario{
     public function validarRegistracion(){
          
         $errores = [];
-        $archivo = "../json/usuarios.json";
+        $archivo = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
         //validar si el mail ya existe
-        if ($this->datoPreexistente($archivo, $this->email) == "") {
+        if ($this->datoPreexistente($archivo, $this->email, "email") == "") {
             $errores = [];
           }
           else {
             $errores[] = "<p>Mail ya existente</p>";
           } 
         // validar si el usuario ya existe
-        if ($this->datoPreexistente($archivo, $this->nombreUsuario) == "") {
+        if ($this->datoPreexistente($archivo, $this->nombreUsuario, "nom_usuario") == "") {
             $errores = [];
           }
         else {

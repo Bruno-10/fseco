@@ -19,24 +19,24 @@
     <main>
         <div class="flex">
             <div class="container">
-                <form action="index.php">
+                <form action="../funciones/mail.php" method="POST">
 
                         <h3>Ecribinos</h3>
 
-                        <label for="fname">Nombre</label>
-                        <input type="text" id="fname" name="firstname" required placeholder="Nombre..">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Nombre..">
 
-                        <label for="lname">Apellido</label>
-                        <input type="text" id="lname" name="lastname" required placeholder="Apellido..">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" required placeholder="Apellido..">
 
                         <label for="email">Email</label>
                         <br>
                         <input type="email" id="email" name="email" required placeholder="Email..">
 
-                        <label for="subject">Motivo</label>
-                        <textarea id="subject" name="subject" placeholder="Escribenos algo.." style="height:200px"></textarea>
+                        <label for="motivo">Motivo</label>
+                        <textarea id="motivo" name="motivo" placeholder="Escribenos algo.." style="height:200px"></textarea>
 
-                        <input type="submit" value="Enviar">
+                        <button type="submit" name="submit">Enviar</button>
                         <input type="reset" value="Borrar">
                 </form>
             </div>

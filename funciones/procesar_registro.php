@@ -19,8 +19,7 @@
             var_dump($_SESSION["usuario"]);
         }  else{
             $_SESSION["errores"] = $errores;
-            $_SESSION["usuario"] = $cliente;
-            header("location:../usuario/registro.php ");
+            header("location:../usuario/registro.php?errores ");
         } 
        
            

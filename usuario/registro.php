@@ -10,7 +10,7 @@ $rpassword = "";
 $perfil = "";
 
 if(isset($_SESSION["errores"])){
-    $errores;
+    $errores = $_SESSION["errores"];
 }
 
 
@@ -82,7 +82,7 @@ if(isset($_SESSION["errores"])){
                         </form>
                         <div class="col-md-7 col-lg-9 errores">
                         <?php 
-                            if($_POST){
+                            if(isset($_SESSION["errores"])){
                                 foreach($errores as $error){
                         
                                    echo $error;

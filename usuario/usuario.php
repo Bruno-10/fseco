@@ -1,3 +1,11 @@
+<?php
+    require_once("../usuario/class-usuario.php");
+    session_start();
+    $datosUsuario = $_SESSION["usuario"];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +28,13 @@
                                 <div class="row col-sm-12 col-md-12 col-lg-12">
                                     <div class="col-md-6  cajausuario">
                                         <div class="profile-img marco row">
-                                            <img src=<?php echo ("archivo/ImgUser" . $datosUsuario["imageId"] . "." . $datosUsuario["imageExt"]);?> alt="profile picture" class=""/>
+
+                                            <!-- <img src=<?php /* echo ("../archivo/ImgUser" . $datosUsuario["imageId"] . "." . $datosUsuario["imageExt"]); */?> alt="profile picture" class=""/> -->
+                                            
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>
-                                                        <?= $datosUsuario["usuario"]; ?>
+                                                        <?= $datosUsuario["nombreUsuario"]; ?>
                                                     </h5>
                                                     
                                                 </div>

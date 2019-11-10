@@ -20,12 +20,11 @@ class Usuario{
         $this->email = $email;
     }
     public function datoPreexistente($archivo, $que, $select){
-        // $que es el dato a verificar
-
+              // $que es el dato a verificar
               $query = $archivo->prepare("SELECT $select FROM cliente ");
               $query -> execute();
-              $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);   
-              $resultado = "dato existente";
+              $usuarios = $query->fetchAll(PDO::FETCH_ASSOC); 
+              $resultado = "";             
               foreach ($usuarios as $arrayUsuario) {
                       foreach ($arrayUsuario as $usuario => $valor) {
                               if ($que == $valor) {
@@ -33,11 +32,10 @@ class Usuario{
                                   return $resultado;
                               }
               else {
-                  $resultado = "";
+                  return $resultado;
               }
                       }
-            }
-            return $resultado;
+            }   
       }
 
 
@@ -49,50 +47,61 @@ class Usuario{
         if ($this->datoPreexistente($archivo, $this->email, "email") == "") {
             $errores = [];
           }
-          else {
-            $errores[] = "<p>Mail ya existente</p>";
+         else{
+            $errores["mail"] = "<p>Mail ya existente</p>";
           } 
         // validar si el usuario ya existe
         if ($this->datoPreexistente($archivo, $this->nombreUsuario, "nom_usuario") == "") {
             $errores = [];
           }
         else {
-            $errores[] = "<p>Usuario ya existente</p>";
+            $errores["usuario"] = "<p>Usuario ya existente</p>";
           }  
         //validar password//
         if (($this->password == "") && ($this->password == "")) {
-          $errores []= "<p>*Los dos campos de contraseña estan vacios</p>";
-        } else if ($this->password == "") { 
-          $errores []= "<p>La contraseña esta vacia</p>";
+          $errores ["pass"]= "<p>*Los dos campos de contraseña estan vacios</p>";
+        } 
+        if ($this->password == "") { 
+          $errores ["contrasenia"] = "<p>La contraseña esta vacia</p>";
         } else if ($this->password == "") {
-          $errores [] = "<p>*Falta la confirmacion de contraseña</p>";
+          $errores ["confirmacion"] = "<p>*Falta la confirmacion de contraseña</p>";
         } else if ($this->password != $this->password) {
-          $errores []= "<p>*Las contraseñas no verifican</p>";
+          $errores ["verificacion"]= "<p>*Las contraseñas no verifican</p>";
         } 
         //validar registro
         if (strlen($this->nombre) == 0){
-          $errores [] =  "<p>*No llenaste el Nombre <br></p>";
+          $errores ["nombre"] =  "<p>*No llenaste el Nombre <br></p>";
         }
         if (strlen($this->apellido) == 0){
-          $errores [] = "<p>*No llenaste el Apellido <br></p>";
+          $errores ["apellido"] = "<p>*No llenaste el Apellido <br></p>";
         }
         if (filter_var($this->email, FILTER_VALIDATE_EMAIL) == false) {
-          $errores [] = "<p>*El email ingresado no es valido <br></p>";
+          $errores ["valido"] = "<p>*El email ingresado no es valido <br></p>";
         }
         if ((strlen($this->nombreUsuario) < 8)){
-          $errores [] = "<p>*El usuario debe tener mas de 8 caracteres <br></p>";
+          $errores ["caracteres"] = "<p>*El usuario debe tener mas de 8 caracteres <br></p>";
         }
         //validar imagen //
         if ($this->imgPerfil["error"] != 0){
-            $errores [] = "<P>*Hubo error al cargar la imagen</p>";
+            $errores ["img"] = "<P>*Hubo error al cargar la imagen</p>";
          } else {
            $ext = pathinfo($this->imgPerfil["name"], PATHINFO_EXTENSION);
            if ($ext != "jpg" && $ext != "jpeg" && $ext != "png"){
-             $errores [] = "<p>*La imagen debe ser jpg, jpeg o png </p>";
+             $errores ["imagen"] = "<p>*La imagen debe ser jpg, jpeg o png </p>";
            } 
          }  
          return $errores;
       }   
+
+      
+
+
+
+
+
+
+
+
 
     /**
      * Get the value of nombre

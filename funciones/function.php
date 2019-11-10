@@ -53,101 +53,39 @@
 
 
 }
-
-function datoPreexistente($datos, $archivo, $que){
-  // $que es el dato a verificar
-        $usuarios_json = file_get_contents($archivo);
-        $usuarios = json_decode($usuarios_json, true);
-        $resultado = "dato existente";
-        foreach ($usuarios as $arrayUsuario) {
-                foreach ($arrayUsuario as $usuario => $valor) {
-                        if ($que == $valor) {
-                            $resultado = $arrayUsuario;
-                            return $resultado;
-                        }
-        else {
-            $resultado = " ";
-        }
-                }
-      }
-      return $resultado;
+function validarLogin($datos){
+  $usuario = $datos["usuario"];
+  $pass = $datos["password"];
+  $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+  $query = $db->prepare('SELECT id_cliente,nombre,apellido FROM `cliente` WHERE nom_usuario = :usuario AND password = :pass
+  ');
+  $query->bindValue(':usuario',$usuario);
+  $query->bindValue(':pass',$pass);
+  $query->execute();
+  $resultado = $query->fetch(PDO::FETCH_ASSOC); 
+  return $resultado; 
 }
 
 
-function validarRegistracion($datos){
-  $datos["perfil"] = $_FILES["perfil"]; 
-  $errores = [];
-  $archivo = "../json/usuarios.json";
-  //validar si el mail ya existe
-  if (datoPreexistente($datos, $archivo, $datos["email"]) == " ") {
-      $errores = [];
+
+
+  function verificarErrores($key){
+    $errores = "";
+    if(isset($_SESSION[$key]) && $_SESSION[$key] != ""){
+      $errores = $_SESSION[$key];
+      $_SESSION[$key] = "";
+      
+  }
+      return $errores;
+  }
+  function mostrarErrores($errores,$campo){
+    if(isset($errores) && ($errores != "")){
+      /* foreach($errores as $error){       
+        echo $error;    */    
+        echo $errores[$campo];                   
     }
-    else {
-      $errores[] = "<p>Mail ya existente</p>";
-    } 
-  // validar si el usuario ya existe
-  if (datoPreexistente($datos, $archivo, $datos["usuario"]) == " ") {
-      $errores = [];
-    }
-  else {
-      $errores[] = "<p>Usuario ya existente</p>";
-    }  
-  //validar password//
-  if (($datos["password"] == "") && ($datos["rpassword"] == "")) {
-    $errores []= "<p>*Los dos campos de contraseña estan vacios</p>";
-  } else if ($datos["password"] == "") { 
-    $errores []= "<p>La contraseña esta vacia</p>";
-  } else if ($datos["rpassword"] == "") {
-    $errores [] = "<p>*Falta la confirmacion de contraseña</p>";
-  } else if ($datos["password"] != $datos["rpassword"]) {
-    $errores []= "<p>*Las contraseñas no verifican</p>";
   } 
-  //validar registro
-  if (strlen($datos["nombre"]) == 0){
-    $errores [] =  "<p>*No llenaste el Nombre <br></p>";
-  }
-  if (strlen($datos["apellido"]) == 0){
-    $errores [] = "<p>*No llenaste el Apellido <br></p>";
-  }
-  if (filter_var($datos["email"], FILTER_VALIDATE_EMAIL) == false) {
-    $errores [] = "<p>*El email ingresado no es valido <br></p>";
-  }
-  if ((strlen($datos["usuario"]) < 8)){
-    $errores [] = "<p>*El usuario debe tener mas de 8 caracteres <br></p>";
-  }
-  //validar imagen //
-  if ($datos["perfil"]["error"] != 0){
-      $errores [] = "<P>*Hubo error al cargar la imagen</p>";
-   } else {
-     $ext = pathinfo($datos["perfil"]["name"], PATHINFO_EXTENSION);
-     if ($ext != "jpg" && $ext != "jpeg" && $ext != "png"){
-       $errores [] = "<p>*La imagen debe ser jpg, jpeg o png </p>";
-     } 
-   }  
-   return $errores;
-}
-
-function validarLogin($datos, $archivo){
-    // $dato = $_POST["usuario"];
-    $usuarios_json = file_get_contents($archivo);
-    $usuarios = json_decode($usuarios_json, true);
-    $resultado = [];
-    foreach ($usuarios as $arrayUsuario) {
-     foreach ($arrayUsuario as $usuario => $valor) {
-     if ($datos["usuario"] == $valor) {
-       $resultado = $arrayUsuario;
-       return $resultado;
-     }
-     else {
-         $resultado = NULL;
-     }
-    }
-   }
-   return $resultado;
-  }
-
-
-
+  // }
 
 
 

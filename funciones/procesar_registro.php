@@ -5,8 +5,8 @@
     $cliente = new cliente ($_POST["nombre"],
         $_POST["apellido"],
         $_FILES["perfil"],
-        password_hash($_POST["password"], PASSWORD_DEFAULT),
-        $_POST["rpassword"],
+        $_POST["password"],
+        password_hash($_POST["rpassword"], PASSWORD_DEFAULT),
         $_POST["nombreUsuario"],
         $_POST["email"], )  ;
         $errores = $cliente->validarRegistracion();
@@ -16,10 +16,10 @@
             $query = $db->prepare("INSERT INTO cliente (nombre, apellido, img_perfil, password, rpassword, nom_usuario,email) VALUES ('$cliente->nombre','$cliente->apellido','$cliente->nombre','$cliente->password','$cliente->rpassword','$cliente->nombreUsuario','$cliente->email')");
             $query->execute();
             $_SESSION["usuario"] = $cliente;
-            var_dump($_SESSION["usuario"]);
+            header("location:../usuario/usuario.php ");
         }  else{
             $_SESSION["errores"] = $errores;
-            header("location:../usuario/registro.php?errores ");
+            header("location:../usuario/registro.php ");
         } 
        
            

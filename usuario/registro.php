@@ -9,9 +9,7 @@ $password = "";
 $rpassword = "";
 $perfil = "";
 
-if(isset($_SESSION["errores"])){
-    $errores = $_SESSION["errores"];
-}
+$errores = verificarErrores("errores");
 
 
 ?>
@@ -39,18 +37,26 @@ if(isset($_SESSION["errores"])){
                                 <div class="col-md-7 col-lg-9">
                                     <label for="nombre">Nombre</label>
                                     <input type="text" class="form-control" name="nombre" id="nombre" value="<?= $nombre ?>"    required>
+                                    <?php mostrarErrores($errores,"nombre");?>   
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="apellido">Apellido</label>
                                     <input type="text" class="form-control" name="apellido" id="apellido" value="<?= $apellido ?>"  required>
+                                    <?php mostrarErrores($errores,"apellido");?>  
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="perfil">Foto de perfil</label>
                                     <input type="file" class="form-control" name="perfil" id="perfil"   required>
+                                    <?php mostrarErrores($errores,"img");
+                                        mostrarErrores($errores,"imagen");
+                                    ?> 
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" name="email" id="email" value="<?= $email ?>"   required>
+                                    <?php mostrarErrores($errores,"mail");
+                                       mostrarErrores($errores,"valido");
+                                    ?>  
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="usuario">Usuario</label>
@@ -59,15 +65,22 @@ if(isset($_SESSION["errores"])){
                                             <span class="input-group-text">@</span>
                                         </div>
                                         <input type="text" class="form-control"  aria-describedby="inputGroupPrepend"  name="nombreUsuario" id="nombreUsuario" value="<?= $nombreUsuario ?>"   required>
+                                        <?php mostrarErrores($errores,"usuario");
+                                           mostrarErrores($errores,"caracteres");
+                                        ?>  
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="password">Contraseña</label>
                                     <input type="password" class="form-control" name="password" id="password"  required>
+                                    <?php mostrarErrores($errores,"contrasenia");
+                                            mostrarErrores($errores,"verificacion");  
+                                    ?>  
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="rpassword">Repetir contraseña</label>
                                     <input type="password" class="form-control" name="rpassword" id="rpassword"  required>
+                                    <?php mostrarErrores($errores,"pass");?>  
                                 </div>
                                 <div class="col-md-7 col-lg-9 recordar">
                                     <input type="checkbox" name="recordar" id="recordar">Recordar Usuario
@@ -82,13 +95,8 @@ if(isset($_SESSION["errores"])){
                         </form>
                         <div class="col-md-7 col-lg-9 errores">
                         <?php 
-                            if(isset($_SESSION["errores"])){
-                                foreach($errores as $error){
-                        
-                                   echo $error;
-                            } 
-                        }
                             
+                            // mostrarErrores($errores);
                         
                         ?>
                         </div>

@@ -10,7 +10,7 @@ $rpassword = "";
 $perfil = "";
 
 $errores = verificarErrores("errores");
-
+var_dump($_FILES);
 
 ?>
 <!DOCTYPE html>

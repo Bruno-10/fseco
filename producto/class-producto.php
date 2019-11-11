@@ -4,13 +4,15 @@
         public $descripcion;
         public $precio;
         public $cantidad;
+        public $imagen;
         public $categoria;
     
-        public function __construct($titulo,$descripcion,$precio,$cantidad, $categoria){
+        public function __construct($titulo,$descripcion,$precio,$cantidad, $imagen, $categoria){
             $this->titulo = $titulo;  
             $this->descripcion = $descripcion;
             $this->precio = $precio;
             $this->cantidad = $cantidad;
+            $this->imagen = $imagen;
             $this->categoria = $categoria;
         }
 

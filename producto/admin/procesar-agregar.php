@@ -16,9 +16,11 @@
 
     require_once("../class-producto.php");
     $qs = $_POST;
-    $producto1 = new Producto($qs["titulo"], $qs["descripcion"], $qs["precio"], $qs["cantidad"], $qs["categoria"]);
+    $imagen = $_FILES["imgProducto"];
+    $producto1 = new Producto($qs["titulo"], $qs["descripcion"], $qs["precio"], $qs["cantidad"], $imagen, $qs["categoria"]);
     $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
-    $query = $db->prepare("INSERT INTO producto (titulo, descripcion, precio, cantidad, categoria) VALUES ('$producto1->titulo','$producto1->descripcion','$producto1->precio','$producto1->cantidad','$producto1->categoria')");
+    $imagenBD = addslashes(file_get_contents($producto1->imagen["tmp_name"]));
+    $query = $db->prepare("INSERT INTO producto (titulo, descripcion, precio, cantidad, imgProducto, categoria) VALUES ('$producto1->titulo','$producto1->descripcion','$producto1->precio','$producto1->cantidad', '$imagenBD', '$producto1->categoria')");
     $query->execute();
     echo "Se ha creado un nuevo registro!";
     header("location: agregar-admin.php");    

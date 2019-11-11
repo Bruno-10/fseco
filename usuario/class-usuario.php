@@ -62,7 +62,7 @@ class Usuario{
           $errores ["pass"]= "<p>*Los dos campos de contraseña estan vacios</p>";
         } 
         if ($this->password == "") { 
-          $errores ["contrasenia"] = "<p>La contraseña esta vacia</p>";
+          $errores ["contrasenia"] = "<p>*La contraseña esta vacia</p>";
         } else if ($this->password == "") {
           $errores ["confirmacion"] = "<p>*Falta la confirmacion de contraseña</p>";
         } else if ($this->password != $this->password) {

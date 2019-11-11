@@ -33,7 +33,7 @@
                                 <td scope="col border"><?php echo $producto["id_prod"]; ?> </td>
                                 <td scope="col border"><?php echo $producto["titulo"]; ?></td>
                                 <td scope="col border"><?php echo $producto["cantidad"]; ?></td>
-                                <td scope="col border">imagen</td>
+                                <td scope="col border"><img src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>'></td>
                             </tr>
                         <?php } ?>
                 </table>         
@@ -57,10 +57,10 @@
                                 <label for="cantidad">Cantidad</label>
                                 <input type="email" class="form-control" name="cantidad" id="cantidad" value=" "  required>
                             </div>
-                        <!-- <div class="col-md-7 col-lg-9">
+                         <div class="col-md-7 col-lg-9">
                                 <label for="imgProducto">Imagen</label>
                                 <input type="file" class="form-control" name="imgProducto" id="imgProducto"  value=" " required>            
-                        </div>  -->
+                        </div>  
                         <div class="col-md-7 col-lg-9">
                                 <label for="categoria">Categoria</label>
                                 <br>

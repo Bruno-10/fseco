@@ -79,10 +79,10 @@ function validarLogin($datos){
       return $errores;
   }
   function mostrarErrores($errores,$campo){
-    if(isset($errores) && ($errores != "")){
+    if(isset($errores[$campo]) && ($errores != "")){
       /* foreach($errores as $error){       
         echo $error;    */    
-        echo $errores[$campo];                   
+        echo "<p>" . $errores[$campo] . "<p>";                   
     }
   } 
   // }

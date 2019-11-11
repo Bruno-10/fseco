@@ -65,10 +65,10 @@ $errores = verificarErrores("errores");
                                             <span class="input-group-text">@</span>
                                         </div>
                                         <input type="text" class="form-control"  aria-describedby="inputGroupPrepend"  name="nombreUsuario" id="nombreUsuario" value="<?= $nombreUsuario ?>"   required>
+                                    </div>
                                         <?php mostrarErrores($errores,"usuario");
                                            mostrarErrores($errores,"caracteres");
                                         ?>  
-                                    </div>
                                 </div>
                                 <div class="col-md-7 col-lg-9">
                                     <label for="password">Contraseña</label>

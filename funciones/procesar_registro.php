@@ -5,7 +5,7 @@
     $cliente = new cliente ($_POST["nombre"],
         $_POST["apellido"],
         $_FILES["perfil"],
-        $_POST["password"],
+        password_hash($_POST["password"], PASSWORD_DEFAULT),
         password_hash($_POST["rpassword"], PASSWORD_DEFAULT),
         $_POST["nombreUsuario"],
         $_POST["email"], )  ;

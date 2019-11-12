@@ -29,13 +29,14 @@ class Usuario{
                       foreach ($arrayUsuario as $usuario => $valor) {
                               if ($que == $valor) {
                                   $resultado = $arrayUsuario;
-                                  return $resultado;
+                                  // return $resultado;
                               }
               else {
-                  return $resultado;
+                $resultado = "";
               }
                       }
             }   
+            return $resultado;
       }
 
 
@@ -45,18 +46,14 @@ class Usuario{
         $archivo = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
         //validar si el mail ya existe
         if ($this->datoPreexistente($archivo, $this->email, "email") == "") {
-<<<<<<< HEAD
             $errores ["mail"]= [];
-=======
-            $errores["mail"] = [];
->>>>>>> 4fcf943f8939ed6e5a4cf77e7a7e0f89121c49a2
           }
          else{
             $errores["mail"] = "<p>Mail ya existente</p>";
           }
         // validar si el usuario ya existe
         if ($this->datoPreexistente($archivo, $this->nombreUsuario, "nom_usuario") == "") {
-            $errores ["usuario"] = [];
+            $errores["usuario"] = [];
           }
         else {
             $errores["usuario"] = "<p>Usuario ya existente</p>";

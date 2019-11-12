@@ -67,7 +67,7 @@ $errores = verificarErrores("errores");
                                         </div>
                                         <input type="text" class="form-control"  aria-describedby="inputGroupPrepend"  name="nombreUsuario" id="nombreUsuario" value="<?= $nombreUsuario ?>"   required>
                                     </div>
-                                        <?php mostrarErrores($errores,"usuario2");
+                                        <?php mostrarErrores($errores,"usuario");
                                            mostrarErrores($errores,"caracteres");
                                         ?>  
                                 </div>

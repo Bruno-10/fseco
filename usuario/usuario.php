@@ -4,6 +4,8 @@
     session_start();
     $datosUsuario = traerCliente($_SESSION["usuario"]["email"]);
     $imgPerfil = $datosUsuario[0]["img_perfil"];
+    $nom_usuario = $datosUsuario[0]["nom_usuario"];
+    $nombre = $datosUsuario[0]["nombre"];
 
 ?>
 
@@ -35,7 +37,7 @@
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>
-                                                        <?= $datosUsuario["nombreUsuario"]; ?>
+                                                        <?= $nom_usuario; ?>
                                                     </h5>
                                                     
                                                 </div>
@@ -62,7 +64,7 @@
                                                                 <label>Usuario</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p><?= $datosUsuario["nombreUsuario"]; ?></p>
+                                                                <p><?= $nom_usuario; ?></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -70,7 +72,7 @@
                                                                 <label>Nombre</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p><?= $datosUsuario["nombre"]; ?></p>
+                                                                <p><?= $nombre; ?></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">

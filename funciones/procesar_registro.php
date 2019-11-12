@@ -25,14 +25,7 @@
     
 
         $_SESSION["usuario"] =  [
-            "nombre" => $cliente->getNombre(),
-            "apellido" => $cliente->getApellido(),
-            "imgPerfil" => $imagenBD,
-            "password" => $cliente->getPassword(),
-            "rpassword" =>$cliente->getRpassword(),
-            "nombreUsuario" => $cliente->getNombreUsuario(),
             "email" => $cliente->getEmail(),
-            "carrito" => $cliente->getCarrito()
         ];
 
         if (empty($errores)) {

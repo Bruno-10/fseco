@@ -29,12 +29,12 @@
                                     <div class="col-md-6  cajausuario">
                                         <div class="profile-img marco row">
 
-                                            <!-- <img src=<?php /* echo ("../archivo/ImgUser" . $datosUsuario["imageId"] . "." . $datosUsuario["imageExt"]); */?> alt="profile picture" class=""/> -->
+                                        <img src='data:image/jpg;base64,<?php echo base64_encode($datosUsuario["img_perfil"])?>' alt="imagen perfil" class="">
                                             
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>
-                                                        <?= $datosUsuario["nombreUsuario"]; ?>
+                                                        <?= $datosUsuario["nom_usuario"]; ?>
                                                     </h5>
                                                     
                                                 </div>
@@ -61,7 +61,7 @@
                                                                 <label>Usuario</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p><?= $datosUsuario["usuario"]; ?></p>
+                                                                <p><?= $datosUsuario["nom_usuario"]; ?></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">

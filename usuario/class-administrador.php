@@ -3,7 +3,7 @@
     require_once("../producto/class-producto.php");
 
 
-    class Administrador extends Usuario {
+    class administrador extends Usuario {
 
 
         public function agregarProducto(){

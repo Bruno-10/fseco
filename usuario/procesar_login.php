@@ -18,7 +18,7 @@ require_once("../funciones/function.php");
         $resultado = validarLogin($datos,"administrador");
          if ($resultado != []){ 
               $_SESSION["usuario"] = $resultado;
-              header("location: ../producto/admin/agregar-admin.php");
+              header("location: ../producto/admin/index-admin.php");
           }   
             else {
                 header("location: login.php?error=true");

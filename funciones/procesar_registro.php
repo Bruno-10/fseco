@@ -24,11 +24,12 @@
         $imagenBD = addslashes(file_get_contents($cliente->imgPerfil["tmp_name"]));
     
 
-        $_SESSION["usuario"] =  [
-            "email" => $cliente->getEmail(),
-        ];
+        
 
         if (empty($errores)) {
+            $_SESSION["usuario"] =  [
+                "email" => $cliente->getEmail(),
+            ];
             $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
             $imagenBD = addslashes(file_get_contents($cliente->imgPerfil["tmp_name"]));
             $query = $db->prepare("INSERT INTO $clase (nombre, apellido, img_perfil, password, rpassword, nom_usuario,email) VALUES ('$cliente->nombre','$cliente->apellido','$imagenBD','$cliente->password','$cliente->rpassword','$cliente->nombreUsuario','$cliente->email')");

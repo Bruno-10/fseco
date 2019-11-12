@@ -16,13 +16,10 @@
                                             <a class="nav-link color_menu" href="agregar-admin.php">Agregar Productos</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../producto/listado.php">Modificar Productos</a>
+                                            <a class="nav-link" href="modificar-admin.php">Modificar/Eliminar Productos</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../recursos/faq.php">Eliminar Productos</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../funciones/logOut.php">LogOut</a> 
+                                            <a class="nav-link" href="../../funciones/logOut.php">LogOut</a> 
                                         </li>
                                     </ul>
                                 </div>   

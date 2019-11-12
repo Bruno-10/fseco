@@ -68,6 +68,21 @@ function validarLogin($datos, $tabla){
   }
 }
 
+function listarProductos(){
+  $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+  $query = $db->prepare("SELECT * FROM `producto`");
+  $query -> execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  return $result;
+}
+function listarProductosPorCategoria($categoria){
+  $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+  $query = $db->prepare("SELECT * FROM `producto` WHERE categoria = '$categoria' ");
+  $query -> execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  return $result;
+}
+
 
 
 

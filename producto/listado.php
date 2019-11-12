@@ -1,3 +1,6 @@
+<?php
+require_once("../funciones/function.php"); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,72 +24,41 @@
                                 		<h5 class="title">Categorias</h5>
                                     </header>
                                     <ul class="navegacion">
-                                        <li class="secciones"><a href="#">PALETAS</a></li>
-                                        <li class="secciones"><a href="#">INDUMENTARIA</a></li>
-                                        <li class="secciones"><a href="#">ACCESORIOS</a></li>
-                                        <li class="secciones"><a href="#">PALETEROS, MOCHILAS, FUNDAS</a></li>
-                                        <li class="secciones"><a href="#">PELOTAS</a></li>
+                                        <li class="secciones"><a href="listado.php?cat=1">PALETAS</a></li>
+                                        <li class="secciones"><a href="listado.php?cat=2">INDUMENTARIA</a></li>
+                                        <li class="secciones"><a href="listado.php?cat=3">ACCESORIOS</a></li>
+                                        <li class="secciones"><a href="listado.php?cat=4">PALETEROS, MOCHILAS, FUNDAS</a></li>
+                                        <li class="secciones"><a href="listado.php?cat=5">PELOTAS</a></li>
                                     </ul>
                             </nav>
                             <section class="row col-sm-8 col-md-10 col-lg-10 cvip-products">
+							<?php 
+							if($_GET["cat"]== 0) { 
+								$result = listarProductos(); }	
+								else if ($_GET["cat"]== 1) { 
+									$result = listarProductosPorCategoria(1); }
+								else if($_GET["cat"]== 2) { 
+								$result = listarProductosPorCategoria(2); }
+								else if($_GET["cat"]== 3) { 
+									$result = listarProductosPorCategoria(3); }
+								else if($_GET["cat"]== 4) { 
+										$result = listarProductosPorCategoria(4); }	
+								else if($_GET["cat"]== 5) { 
+							$result = listarProductosPorCategoria(5); }	
+				
+                        	foreach ($result as $producto){ 
+                            ?>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
 		                    		<div class="photo-container">
-                                        <img class="photo col-lg-12" src="../img/sinfondo.jpg" alt="pdto 03">
+                                        <img class="photo col-lg-12" src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>' alt="pdto 03">
 		                    		</div>
-		                    		<h2>Lorem ipsum amet</h2>
-		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
+		                    		<h2><?php echo $producto["titulo"]; ?></h2>
+									<p><?php echo $producto["descripcion"]; ?></p>
+									<p><?php echo "$".$producto["precio"]; ?></p>
 		                    		<a class="more" href="detalle.php">ver más</a>
 									<a href="../funciones/agregar.php"><i class="fas fa-cart-plus"></i></a>
-		                    	</article>
-		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
-		                    		<div class="photo-container">
-                                        <img class="photo col-lg-12" src="../img/sinfondo.jpg" alt="pdto 03">
-		                    			
-		                    		</div>
-		                    		<h2>Lorem ipsum amet</h2>
-		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="detalle.php">ver más</a>
-									<a href="../funciones/agregar.php"><i class="fas fa-cart-plus"></i></a>
-		                    	</article>
-		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
-		                    		<div class="photo-container">
-		                    			<img class="photo col-lg-12" src="../img/sinfondo.jpg" alt="pdto 03">
-		                    			
-		                    		</div>
-		                    		<h2>Lorem ipsum amet</h2>
-		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="detalle.php">ver más</a>
-									<a href="../funciones/agregar.php"><i class="fas fa-cart-plus"></i></a>
-		                    	</article>
-		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
-		                    		<div class="photo-container">
-		                    			<img class="photo col-lg-12" src="../img/sinfondo.jpg" alt="pdto 01">
-		                    			
-		                    		</div>
-		                    		<h2>Lorem ipsum amet</h2>
-		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="detalle.php">ver más</a>
-									<a href="../funciones/agregar.php"><i class="fas fa-cart-plus"></i></a>
-		                    	</article>
-		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
-		                    		<div class="photo-container">
-		                    			<img class="photo col-lg-12" src="../img/sinfondo.jpg" alt="pdto 02">
-		                    			
-		                    		</div>
-		                    		<h2>Lorem ipsum amet</h2>
-		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="detalle.php">ver más</a>
-									<a href="../funciones/agregar.php"><i class="fas fa-cart-plus"></i></a>
-		                    	</article>
-		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
-		                    		<div class="photo-container">
-		                    			<img class="photo col-lg-12" src="../img/sinfondo.jpg" alt="pdto 03">	
-		                    		</div>
-		                    		<h2>Lorem ipsum amet</h2>
-		                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-		                    		<a class="more" href="detalle.php">ver más</a>
-									<a href="../funciones/agregar.php"><i class="fas fa-cart-plus"></i></a>
-		                    	</article>
+								</article>
+								<?php } ?>
 		                    </section>
                     </main>  
                     <?php require_once("../recursos/footer.php"); ?>

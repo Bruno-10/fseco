@@ -41,7 +41,7 @@ $datosUsuario = $_SESSION["usuario"];
                                                     <a class="nav-link color_menu" href="../recursos/index.php">Inicio</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="../producto/listado.php">Productos</a>
+                                                    <a class="nav-link" href="../producto/listado.php?cat=0">Productos</a>
                                                 </li>
                                                  
                                                 <li class="nav-item">

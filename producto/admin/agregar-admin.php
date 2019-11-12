@@ -1,10 +1,6 @@
 <?php
-    $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
-    $query = $db->prepare("SELECT * FROM `producto`");
-    $query -> execute();
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    require_once("../../funciones/function.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +24,11 @@
                             <th scope="col border">Cantidad</th>
                             <th scope="col border">Imagen</th>
                         </tr>
-                        <?php foreach ($result as $producto){ ?>
+                        <?php 
+                         
+                        $result = listarProductos();
+                        foreach ($result as $producto){ 
+                            ?>
                             <tr>
                                 <td scope="col border"><?php echo $producto["id_prod"]; ?> </td>
                                 <td scope="col border"><?php echo $producto["titulo"]; ?></td>
@@ -67,9 +67,10 @@
                                 <select name="categoria" id="categoria">
                                     <option value="0">...</option>
                                     <option value="1">Paletas</option>
-                                    <option value="2">Pelotas</option>
-                                    <option value="3">Indumentaria</option>
-                                    <option value="4">Zapatillas</option>
+                                    <option value="2">Indumentaria</option>
+                                    <option value="3">Accesorios</option>
+                                    <option value="4">Paleteros/mochilas</option>
+                                    <option value="5">Pelotas</option>
                                 </select>
                         </div>
                         <div class="col-md-7 col-lg-9"> 

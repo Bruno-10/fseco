@@ -146,22 +146,22 @@ class Usuario{
     /**
      * Get the value of imgPerfil
      */ 
-   /*  public function getImgPerfil()
+     public function getImgPerfil()
     {
         return $this->imgPerfil;
     }
- */
+ 
     /**
      * Set the value of imgPerfil
      *
      * @return  self
      */ 
-   /*  public function setImgPerfil($imgPerfil)
+     public function setImgPerfil($imgPerfil)
     {
         $this->imgPerfil = $imgPerfil;
 
         return $this;
-    } */
+    } 
 
     /**
      * Get the value of password

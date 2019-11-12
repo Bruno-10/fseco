@@ -83,6 +83,14 @@ function listarProductosPorCategoria($categoria){
   return $result;
 }
 
+function traerCliente($email){
+  $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+  $query = $db->prepare("SELECT nombre, img_perfil, nom_usuario, email FROM `cliente` WHERE email = '$email' ");
+  $query -> execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  return $result;
+}
+
 
 
 

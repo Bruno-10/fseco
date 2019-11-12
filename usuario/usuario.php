@@ -1,8 +1,9 @@
 <?php
     require_once("../usuario/class-usuario.php");
+    require_once("../funciones/function.php");
     session_start();
-    $datosUsuario = $_SESSION["usuario"];
-
+    $datosUsuario = traerCliente($_SESSION["usuario"]["email"]);
+    $imgPerfil = $datosUsuario[0]["img_perfil"];
 
 ?>
 
@@ -29,12 +30,12 @@
                                     <div class="col-md-6  cajausuario">
                                         <div class="profile-img marco row">
 
-                                        <img src='data:image/jpg;base64,<?php echo base64_encode($datosUsuario["img_perfil"])?>' alt="imagen perfil" class="">
+                                        <img src='data:image/jpg;base64,<?php echo base64_encode($imgPerfil)?>'>
                                             
                                             <div class="col-md-4 col-lg-8 col-sm-2">
                                                 <div class="profile-head">
                                                     <h5>
-                                                        <?= $datosUsuario["nom_usuario"]; ?>
+                                                        <?= $datosUsuario["nombreUsuario"]; ?>
                                                     </h5>
                                                     
                                                 </div>
@@ -61,7 +62,7 @@
                                                                 <label>Usuario</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p><?= $datosUsuario["nom_usuario"]; ?></p>
+                                                                <p><?= $datosUsuario["nombreUsuario"]; ?></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">

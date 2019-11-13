@@ -121,6 +121,29 @@ function traerCliente($email){
     return $result;
   }
 
+  function conectarseBD(){
+      try {
+        $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+      } catch (\Throwable $th) {
+        $db = false;
+      }
+      return $db;
+  }
+
+
+  function  eliminarProductoID($id){
+    $db = conectarseBD();
+    if ($db != false){
+      $query = $db->prepare("DELETE FROM `producto` WHERE id_prod = :id ");
+      $query->bindValue(":id", $id);
+      $query -> execute();
+      $result = "exito" ;
+    } else {
+      $result =  "hubo un error al eliminar el producto";
+    }
+    return $result;
+  }
+
 
 
 ?>

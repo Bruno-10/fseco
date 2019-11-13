@@ -15,6 +15,9 @@
 </head>
 <body>
 <?php require_once("header-admin.php");?>
+    <?php if(isset($_GET["error"])){
+        echo "<p>" . "*Ah ocurrido un error al elimnar el producto" . "<p>";
+    } ?>
     <div class="contenedor col-sm-12 col-md-12 col-lg-12">
         <div class="col-sm-12 col-md-12 col-lg-6 caja_izquierda">
                 <table class="table border">

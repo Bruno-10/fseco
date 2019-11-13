@@ -37,10 +37,10 @@
                                 <td scope="col border"><?php echo $producto["cantidad"]; ?></td>
                                 <td scope="col border"><img src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>'></td>
                                 <td scope="col border">
-                                    <a class="btn btn-success" href="procesar-modificar.php"> Modificar </a>
+                                    <a class="btn btn-success" href="procesar-modificar.php?id=<?=$producto["id_prod"]; ?>"> Modificar </a>
                                 </td>
                                 <td scope="col border">
-                                <a class="btn btn-danger" href="procesar-modificar.php"> Eliminar</a></td>
+                                <a class="btn btn-danger" href="procesar-eliminar.php?id=<?=$producto["id_prod"]; ?>"> Eliminar</a></td>
                             </tr>
                         <?php } ?>
                 </table>         

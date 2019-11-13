@@ -112,6 +112,14 @@ function traerCliente($email){
   } 
   // }
 
+  function traerProductoID($id){
+    $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+    $query = $db->prepare("SELECT * FROM `producto` WHERE id_prod = :id ");
+    $query->bindValue(":id", $id);
+    $query -> execute();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    return $result;
+  }
 
 
 

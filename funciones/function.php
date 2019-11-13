@@ -144,6 +144,24 @@ function traerCliente($email){
     return $result;
   }
 
+  function modificarProducto($dato){
+    $db = conectarseBD();
+    $titulo = $dato["titulo"];
+    $precio = $dato["precio"];
+    $categoria = $dato["cat"];
+    $descripcion = $dato["descripcion"];
+    if($db != false){
+      $query = $db->prepare("UPDATE producto SET titulo= '$titulo', precio = '$precio', categoria = '$categoria', descripcion = '$descripcion' WHERE id_prod = :id");
+      $query->bindValue(":id", $dato["id"]);
+      $query -> execute();
+      $result = "exito" ;
+    } else {
+      $result =  "hubo un error al eliminar el producto";
+    }
+    return $result;
+    }
+  
+
 
 
 ?>

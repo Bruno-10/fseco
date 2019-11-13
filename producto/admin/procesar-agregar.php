@@ -23,7 +23,7 @@
     $query = $db->prepare("INSERT INTO producto (titulo, descripcion, precio, cantidad, imgProducto, categoria) VALUES ('$producto1->titulo','$producto1->descripcion','$producto1->precio','$producto1->cantidad', '$imagenBD', '$producto1->categoria')");
     $query->execute();
     echo "Se ha creado un nuevo registro!";
-    header("location: agregar-admin.php");    
+    header("location: consulta-admin.php");    
 ?>
 
 

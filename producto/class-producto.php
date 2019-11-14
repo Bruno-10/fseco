@@ -1,11 +1,11 @@
 <?php 
     class Producto{
-        public $titulo;   
-        public $descripcion;
-        public $precio;
-        public $cantidad;
-        public $imagen;
-        public $categoria;
+        protected $titulo;   
+        protected $descripcion;
+        protected $precio;
+        protected $cantidad;
+        protected $imagen;
+        protected $categoria;
     
         public function __construct($titulo,$descripcion,$precio,$cantidad, $imagen, $categoria){
             $this->titulo = $titulo;  
@@ -96,6 +96,11 @@
 
                 return $this;
         }     
+
+        public function getImagen()
+        {
+                return $this->imagen;
+        }
 
         /**
          * Get the value of categoria

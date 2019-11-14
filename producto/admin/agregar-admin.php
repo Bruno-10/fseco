@@ -16,29 +16,10 @@
 <body>  
     <?php require_once("header-admin.php");?>
     <div class="contenedor col-sm-12 col-md-12 col-lg-12">
-        <div class="col-sm-12 col-md-12 col-lg-6 caja_izquierda">
-                <table class="table border">
-                        <tr>
-                            <th scope="col border">Id</th>
-                            <th scope="col border">Titulo</th>
-                            <th scope="col border">Cantidad</th>
-                            <th scope="col border">Imagen</th>
-                        </tr>
-                        <?php 
-                         
-                        $result = listarProductos();
-                        foreach ($result as $producto){ 
-                            ?>
-                            <tr>
-                                <td scope="col border"><?php echo $producto["id_prod"]; ?> </td>
-                                <td scope="col border"><?php echo $producto["titulo"]; ?></td>
-                                <td scope="col border"><?php echo $producto["cantidad"]; ?></td>
-                                <td scope="col border"><img src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>'></td>
-                            </tr>
-                        <?php } ?>
-                </table>         
-        </div>
         <div class="col-sm-12 col-md-12 col-lg-4 caja_derecha">
+                <div>
+                    <h2> AGREGAR PRODUCTO  </h1>
+                </div>
                 <form action="procesar-agregar.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                     <div class="form-column">
                         <div class="col-md-7 col-lg-9">

@@ -38,7 +38,7 @@
 
     $query->execute();
     echo "Se ha creado un nuevo registro!";
-    header("location: agregar-admin.php");    
+    header("location: consulta-admin.php");    
 ?>
 
 

@@ -13,12 +13,6 @@
                                 <div class="collapse navbar-collapse barra" id="collapsibleNavbar">                                   
                                     <ul class="navbar-nav block">
                                         <li class="nav-item">
-                                            <a class="nav-link color_menu" href="agregar-admin.php">Agregar Productos</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="modificar-admin.php">Modificar/Eliminar Productos</a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a class="nav-link" href="../../funciones/logOut.php">LogOut</a> 
                                         </li>
                                     </ul>

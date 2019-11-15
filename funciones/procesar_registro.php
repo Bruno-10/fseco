@@ -3,6 +3,8 @@
      require_once("../usuario/class-usuario.php");
      require_once("../usuario/class-cliente.php");
      require_once("../usuario/class-administrador.php");
+     require_once("function.php");
+     
 
     if ($_POST["nombreUsuario"] == "administrador"){
         $clase = 'administrador';
@@ -25,7 +27,7 @@
     
 
         
-        if (empty($errores)) {
+        if ($errores["mail"] == "" && $errores["usuario"] == "") {
             $_SESSION["usuario"] =  [
                 "email" => $cliente->getEmail(),
             ];

@@ -1,80 +1,82 @@
 <?php 
-    class Carrito{
-        protected $productos;
-        protected $imgProducto;   
-        protected $precio;
+    class Carrito{  
+        protected $id_produ;
+        protected $id_cliente;
+        protected $precio_uni;
         protected $cantidad;
-        protected $subTotal;
-        protected $precioEnvio;
-        protected $total;
-    
-        public function __construct($productos,$imgProducto,$precio,$cantidad,$subTotal, $precioEnvio, $total){
-            $this->productos = $productos;
-            $this->imgProducto = $imgProducto;  
-            $this->precio = $precio;
-            $this->cantidad = $cantidad;
-            $this->subTotal = $subTotal;
-            $this->precioEnvio = $precioEnvio;
-            $this->total = $total;
-        }
         
+    
+        public function __construct($id_produ,$id_cliente,$precio_uni, $cantidad){
+            $this->id_produ = $id_produ;
+            $this->id_cliente = $id_cliente;  
+            $this->precio_uni = $precio_uni;
+            $this->cantidad = $cantidad;
+        }
 
-        /**
-         * Get the value of productos
-         */ 
-        public function getProductos()
-        {
-                return $this->productos;
+        public function agregarACarrito(){ 
+        $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+        $query = $db->prepare("INSERT INTO carrito (id_produ, id_cliente, precio_uni, cantidad) VALUES ('$this->id_produ','$this->id_cliente','$this->precio_uni', ' $this->cantidad')");
+        $query->execute();
+        echo "Se ha creado un nuevo carrito!";
+        header("location: carrito.php");    
         }
 
         /**
-         * Set the value of productos
+         * Get the value of id_produ
+         */ 
+        public function getId_produ()
+        {
+                return $this->id_produ;
+        }
+
+        /**
+         * Set the value of id_produ
          *
          * @return  self
          */ 
-        public function setProductos($productos)
+        public function setId_produ($id_produ)
         {
-                $this->productos = $productos;
+                $this->id_produ = $id_produ;
 
                 return $this;
         }
 
         /**
-         * Get the value of imgProducto
+         * Get the value of id_cliente
          */ 
-        public function getImgProducto()
+        public function getId_cliente()
         {
-                return $this->imgProducto;
+                return $this->id_cliente;
         }
 
         /**
-         * Set the value of imgProducto
+         * Set the value of id_cliente
          *
          * @return  self
          */ 
-        public function setImgProducto($imgProducto)
+        public function setId_cliente($id_cliente)
         {
-                $this->imgProducto = $imgProducto;
+                $this->id_cliente = $id_cliente;
 
                 return $this;
         }
 
         /**
-         * Get the value of precio
+         * Get the value of precio_uni
          */ 
-        public function getPrecio()
+        public function getPrecio_uni()
         {
-                return $this->precio;
+                return $this->precio_uni;
         }
 
         /**
-         * Set the value of precio
+         * Set the value of precio_uni
          *
          * @return  self
          */ 
-        public function setPrecio($precio)
+        public function setPrecio_uni($precio_uni)
         {
-                $this->precio = $precio;
+                $this->precio_uni = $precio_uni;
 
                 return $this;
         }
@@ -99,73 +101,11 @@
                 return $this;
         }
 
-        /**
-         * Get the value of subTotal
-         */ 
-        public function getSubTotal()
-        {
-                return $this->subTotal;
-        }
 
-        /**
-         * Set the value of subTotal
-         *
-         * @return  self
-         */ 
-        public function setSubTotal($subTotal)
-        {
-                $this->subTotal = $subTotal;
+}
 
-                return $this;
-        }
 
-        /**
-         * Get the value of precioEnvio
-         */ 
-        public function getPrecioEnvio()
-        {
-                return $this->precioEnvio;
-        }
-
-        /**
-         * Set the value of precioEnvio
-         *
-         * @return  self
-         */ 
-        public function setPrecioEnvio($precioEnvio)
-        {
-                $this->precioEnvio = $precioEnvio;
-
-                return $this;
-        }
-
-        /**
-         * Get the value of total
-         */ 
-        public function getTotal()
-        {
-                return $this->total;
-        }
-
-        /**
-         * Set the value of total
-         *
-         * @return  self
-         */ 
-        public function setTotal($total)
-        {
-                $this->total = $total;
-
-                return $this;
-        }
-
-        public function calcularSubtotal (){
-            
-        }
-        public function calcularTotal (){
-            
-        }
         
         
-    }
+
 ?>  

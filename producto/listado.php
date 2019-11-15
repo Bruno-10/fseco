@@ -33,7 +33,7 @@ require_once("../funciones/function.php");
                             </nav>
                             <section class="row col-sm-8 col-md-10 col-lg-10 cvip-products">
 							<?php 
-							if($_GET["cat"]== 0) { 
+							if($_GET == []) { 
 								$result = listarProductos(); }	
 								else if ($_GET["cat"]== 1) { 
 									$result = listarProductosPorCategoria(1); }
@@ -44,8 +44,8 @@ require_once("../funciones/function.php");
 								else if($_GET["cat"]== 4) { 
 										$result = listarProductosPorCategoria(4); }	
 								else if($_GET["cat"]== 5) { 
-							$result = listarProductosPorCategoria(5); }	
-				
+                            $result = listarProductosPorCategoria(5); }	
+
                         	foreach ($result as $producto){ 
                             ?>
 		                    	<article class="product col-sm-8 col-md-4 col-lg-3">
@@ -53,10 +53,10 @@ require_once("../funciones/function.php");
                                         <img class="photo col-lg-12" src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>' alt="pdto 03">
 		                    		</div>
 		                    		<h2><?php echo $producto["titulo"]; ?></h2>
-									<p><?php echo $producto["descripcion"]; ?></p>
+									<p><?php /* echo $producto["descripcion"]; */ ?></p>
 									<p><?php echo "$".$producto["precio"]; ?></p>
-		                    		<a class="more" href="detalle.php">ver más</a>
-									<a href="../funciones/agregar.php"><i class="fas fa-cart-plus"></i></a>
+                                    <a class="btn btn-success" href="detalle.php?id=<?=$producto["id_prod"]; ?>"> Ver Mas </a>
+									
 								</article>
 								<?php } ?>
 		                    </section>

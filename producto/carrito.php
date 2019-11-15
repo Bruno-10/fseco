@@ -1,4 +1,23 @@
-<?php require_once("../funciones/function.php") ?>
+<?php 
+    require_once("../funciones/function.php");
+    session_start();
+
+
+    $cliente = $_SESSION["usuario"]["id_cliente"];
+    $resultado = traerIdProductos($cliente);
+    foreach ($resultado as $id){
+        foreach($id as $valor) {
+    $productos [] = traerProductoID($valor);
+    }
+}
+   
+
+
+
+
+/*     $id = $_GET["id"];
+    $producto = traerProductoID($id); */ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,14 +52,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php 
-                                    if (isset($_SESSION["carrito"])){
-                                        $productos = $_SESSION["carrito"];
-                                    
-                                    dibujarProductosCarrito($productos);
-                                    }
-                                    
-                                ?>
+                                <?php foreach ($productos as $producto){ 
+                            ?>
+                            <tr>
+                                <td scope="col border"><img src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>'></td>
+                                <td scope="col border"><?php echo $producto["titulo"]; ?></td>
+                                <td scope="col border"><?php echo $producto["precio"]; ?> </td>
+                                <td scope="col border"><?php echo 1; ?></td>
+
+                                
+                            </tr>
+                        <?php } ?>
                                 
                             
                                 </tbody>

@@ -1,3 +1,12 @@
+<?php
+require_once("../funciones/function.php");
+$id = $_GET["id"];
+
+$producto = traerProductoID($id); 
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,28 +27,25 @@
 
                     <main>
                         <section class="producto">
-
                                 <div class="imagen">
-                                        <img src="../img/paleta_2.jpg"  alt="">
+                                <img src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>'>
                                 </div>
-
                             <div class="desktop">
-
                                 <div class="descripcion">
-                                    <h4>Black Crown Joke 2018</h4>
+                                <h2> <?= $producto["titulo"]?> </h2>
                                     <ul>
-                                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident delectus soluta ab sequi repellat dolor illo labore, voluptas porro, error nobis! Cumque eius earum, quas sunt ad a debitis reiciendis.</li>
-                                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa maiores natus enim odio, omnis unde necessitatibus sint veritatis nostrum nesciunt quaerat doloribus soluta cumque esse error repellat tempora dolorem? Ea?</li>
+                                        <li><?= $producto["descripcion"]?></li>
+                                        
                                     </ul>
                                 </div>
 
                                 <div class="precio">
-                                    <h3>$4000</h3>
+                                    <h3><?= $producto["precio"]?></h3>
                                     <p>En stock</p>
                                     <form action="#" method="GET">
                                      <!-- <input type="number" name="numero" id="numero" > -->
                                         <br>
-                                        <a href="agregar.php?producto_id=34" ><input type="button"  value="Agregar al Carrito"></a>
+                                        <a href="procesar-compra.php?id=<?=$producto["id_prod"]; ?>" ><input type="button"  value="Agregar al Carrito"></a>
                                     </form>
                                 </div>
 

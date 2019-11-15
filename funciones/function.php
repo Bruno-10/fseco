@@ -130,6 +130,23 @@ function traerCliente($email){
       return $db;
   }
 
+  function traerIdProductos($cliente){
+    $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+    $query = $db->prepare("SELECT id_produ FROM carrito WHERE id_cliente = $cliente");
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $result;      
+}
+/* 
+  function traerIdProductosJoin(){
+    $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+    $query = $db->prepare
+    ("SELECT * 
+    FROM producto 
+    INNER JOIN carrito ON productos.id_marca = marcas.id);
+  } */
+
+
 
   function  eliminarProductoID($id){
     $db = conectarseBD();
@@ -161,6 +178,7 @@ function traerCliente($email){
     return $result;
     }
   
+    
 
 
 

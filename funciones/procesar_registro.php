@@ -38,8 +38,8 @@
             $_SESSION["usuario"] =  [
                 "email" => $cliente->getEmail(),
             ];
-            $usuariosDatos = traerCliente($_SESSION["usuario"]["mail"]);
-            $_SESSION["usuario"] = $usuariosDatos;
+            $result = traerCliente($_SESSION["usuario"]["email"]);
+            $_SESSION["usuario"] = $result;
             header("location:../usuario/usuario.php ");
         }  else{
             $_SESSION["errores"] = $errores;

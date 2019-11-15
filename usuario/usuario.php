@@ -3,9 +3,9 @@
     require_once("../funciones/function.php");
     session_start();
     $datosUsuario = traerCliente($_SESSION["usuario"]["email"]);
-    $imgPerfil = $datosUsuario[0]["img_perfil"];
-    $nom_usuario = $datosUsuario[0]["nom_usuario"];
-    $nombre = $datosUsuario[0]["nombre"];
+    $imgPerfil = $datosUsuario["img_perfil"];
+    $nom_usuario = $datosUsuario["nom_usuario"];
+    $nombre = $datosUsuario["nombre"];
 
 ?>
 

@@ -57,7 +57,7 @@ function validarLogin($datos, $tabla){
   $errores = [];
   $usuario = $datos["usuario"];
   $pass = $datos["password"];
-  $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+  $db = conectarseBD();
   $query = $db->prepare("SELECT * FROM $tabla WHERE nom_usuario = :usuario");
   $query->bindValue(':usuario',$usuario);
   // $query->bindValue(':pass',$pass);
@@ -69,14 +69,14 @@ function validarLogin($datos, $tabla){
 }
 
 function listarProductos(){
-  $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+  $db = conectarseBD();
   $query = $db->prepare("SELECT * FROM `producto`");
   $query -> execute();
   $result = $query->fetchAll(PDO::FETCH_ASSOC);
   return $result;
 }
 function listarProductosPorCategoria($categoria){
-  $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+  $db = conectarseBD();
   $query = $db->prepare("SELECT * FROM `producto` WHERE categoria = '$categoria' ");
   $query -> execute();
   $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -84,7 +84,7 @@ function listarProductosPorCategoria($categoria){
 }
 
 function traerCliente($email){
-  $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+  $db = conectarseBD();
   $query = $db->prepare("SELECT nombre, img_perfil, nom_usuario, email FROM `cliente` WHERE email = '$email' ");
   $query -> execute();
   $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -113,7 +113,7 @@ function traerCliente($email){
   // }
 
   function traerProductoID($id){
-    $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+    $db = conectarseBD();
     $query = $db->prepare("SELECT * FROM `producto` WHERE id_prod = :id ");
     $query->bindValue(":id", $id);
     $query -> execute();

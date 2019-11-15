@@ -3,6 +3,8 @@
      require_once("../usuario/class-usuario.php");
      require_once("../usuario/class-cliente.php");
      require_once("../usuario/class-administrador.php");
+     require_once("function.php");
+     
 
     if ($_POST["nombreUsuario"] == "administrador"){
         $clase = 'administrador';
@@ -25,11 +27,11 @@
     
 
         
-        if (empty($errores)) {
+        if ($errores["mail"] == "" && $errores["usuario"] == "") {
             $_SESSION["usuario"] =  [
                 "email" => $cliente->getEmail(),
             ];
-            $db = new PDO ("mysql:host=127.0.0.1;dbname=padelsport_db;port=3306","root","",);
+            $db = conectarseBD();
             $imagenBD = addslashes(file_get_contents($cliente->imgPerfil["tmp_name"]));
             $query = $db->prepare("INSERT INTO $clase (nombre, apellido, img_perfil, password, rpassword, nom_usuario,email) VALUES ('$cliente->nombre','$cliente->apellido','$imagenBD','$cliente->password','$cliente->rpassword','$cliente->nombreUsuario','$cliente->email')");
             $query->execute();

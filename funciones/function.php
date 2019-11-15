@@ -85,7 +85,7 @@ function listarProductosPorCategoria($categoria){
 
 function traerCliente($email){
   $db = conectarseBD();
-  $query = $db->prepare("SELECT nombre, img_perfil, nom_usuario, email FROM `cliente` WHERE email = '$email' ");
+  $query = $db->prepare("SELECT id_cliente, nombre, img_perfil, nom_usuario, email FROM `cliente` WHERE email = '$email' ");
   $query -> execute();
   $result = $query->fetchAll(PDO::FETCH_ASSOC);
   return $result;

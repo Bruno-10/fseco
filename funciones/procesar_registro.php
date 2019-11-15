@@ -35,9 +35,11 @@
             $imagenBD = addslashes(file_get_contents($cliente->imgPerfil["tmp_name"]));
             $query = $db->prepare("INSERT INTO $clase (nombre, apellido, img_perfil, password, rpassword, nom_usuario,email) VALUES ('$cliente->nombre','$cliente->apellido','$imagenBD','$cliente->password','$cliente->rpassword','$cliente->nombreUsuario','$cliente->email')");
             $query->execute();
-                        $_SESSION["usuario"] =  [
-                            "email" => $cliente->getEmail(),
-                        ];
+            $_SESSION["usuario"] =  [
+                "email" => $cliente->getEmail(),
+            ];
+            $usuariosDatos = traerCliente($_SESSION["usuario"]["mail"]);
+            $_SESSION["usuario"] = $usuariosDatos;
             header("location:../usuario/usuario.php ");
         }  else{
             $_SESSION["errores"] = $errores;

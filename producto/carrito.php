@@ -1,8 +1,6 @@
 <?php 
     require_once("../funciones/function.php");
     session_start();
-
-
     $cliente = $_SESSION["usuario"]["id_cliente"];
     $resultado = traerIdProductos($cliente);
     foreach ($resultado as $id){
@@ -52,7 +50,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($productos as $producto){ 
+                                <?php 
+                                    if  (isset($productos)){ 
+                                    foreach ($productos as $producto){ 
                             ?>
                             <tr>
                                 <td scope="col border"><img src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>'></td>
@@ -62,7 +62,7 @@
 
                                 
                             </tr>
-                        <?php } ?>
+                        <?php } }?>
                                 
                             
                                 </tbody>

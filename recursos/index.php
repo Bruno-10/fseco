@@ -59,23 +59,23 @@
                         </div>
                         <div class="productos col-sm-12 col-md-4 col-lg-3">
                             <a href="../producto/detalle.php"> 
-                                <div class="centrar" > <img src="../img/sinfondo.jpg" width="200" alt="paleta"> </div>
-                                <div> <h3> BLACK CROWN JOKE 2018 </h2></div>
-                                <div> <h5> $4850 </h3> </div>
-                                <div> <a href="#blaccrown"> Black crown</a> </div>
+                                <div class="centrar" > <img src="../img/productos/short2.jpg" width="200" alt="paleta"> </div>
+                                <div> <h3> Short Deportivo </h2></div>
+                                <div> <h5> $2560 </h3> </div>
+                                <div> <a href="#blaccrown"> Meridian</a> </div>
                             </a>
                         </div>                      
                         <div class="productos col-sm-12 col-md-4 col-lg-3">
                             <a href="../producto/detalle.php"> 
-                                <div class="centrar" > <img src="../img/sinfondo.jpg" width="200" alt="paleta"> </div>
-                                <div> <h3> BLACK CROWN JOKE 2018 </h2></div>
-                                <div> <h5> $4850 </h3> </div>
-                                <div> <a href="#blaccrown"> Black crown</a> </div>
+                                <div class="centrar" > <img src="../img/productos/remera.jpg" width="200" alt="paleta"> </div>
+                                <div> <h3> Remera Asics</h2></div>
+                                <div> <h5> $1900 </h3> </div>
+                                <div> <a href="#blaccrown"> Asics</a> </div>
                             </a>
                         </div>                    
                         <div class="productos col-sm-12 col-md-4 col-lg-3">
                             <a href="../producto/detalle.php"> 
-                                <div class="centrar" > <img src="../img/sinfondo.jpg" width="200" alt="paleta"> </div>
+                                <div class="centrar" > <img src="../img/productos/paleterowilson.jpg" width="200" alt="paleta"> </div>
                                 <div> <h3> BLACK CROWN JOKE 2018 </h2></div>
                                 <div> <h5> $4850 </h3> </div>
                                 <div> <a href="#blaccrown"> Black crown</a> </div>
@@ -86,30 +86,30 @@
                             <div> <h3> <i class="fa fa-truck"></i> ENVIOS GRATIS </h3> </div>
                             <div> <h3> <i class="fa fa-money-bill-alt"></i> 10% DE DESCUENTO </h3> </div>                       
                     </section>
+                       <div class="productos col-sm-12 col-md-4 col-lg-3">
+                            <a href="../producto/detalle.php"> 
+                                <div class="centrar" > <img src="../img/productos/short2.jpg" width="200" alt="paleta"> </div>
+                                <div> <h3> Short Deportivo </h2></div>
+                                <div> <h5> $2560 </h3> </div>
+                                <div> <a href="#blaccrown"> Meridian</a> </div>
+                            </a>
+                        </div>                      
                         <div class="productos col-sm-12 col-md-4 col-lg-3">
                             <a href="../producto/detalle.php"> 
-                                <div class="centrar" > <img src="../img/sinfondo.jpg" width="200" alt="paleta"> </div>
+                                <div class="centrar" > <img src="../img/productos/remera.jpg" width="200" alt="paleta"> </div>
+                                <div> <h3> Remera Asics</h2></div>
+                                <div> <h5> $1900 </h3> </div>
+                                <div> <a href="#blaccrown"> Asics</a> </div>
+                            </a>
+                        </div>                    
+                        <div class="productos col-sm-12 col-md-4 col-lg-3">
+                            <a href="../producto/detalle.php"> 
+                                <div class="centrar" > <img src="../img/productos/paleterowilson.jpg" width="200" alt="paleta"> </div>
                                 <div> <h3> BLACK CROWN JOKE 2018 </h2></div>
                                 <div> <h5> $4850 </h3> </div>
                                 <div> <a href="#blaccrown"> Black crown</a> </div>
                             </a>
-                        </div>   
-                        <div class="productos col-sm-12 col-md-4 col-lg-3">
-                            <a href="../producto/detalle.php"> 
-                                <div class="centrar" > <img src="../img/sinfondo.jpg" width="200" alt="paleta"> </div>
-                                <div> <h3> BLACK CROWN JOKE 2018 </h2></div>
-                                <div> <h5> $4850 </h3> </div>
-                                <div> <a href="#blaccrown"> Black crown</a> </div>
-                            </a>
-                        </div>   
-                        <div class="productos col-sm-12 col-md-4 col-lg-3">
-                            <a href="../producto/detalle.php"> 
-                                <div class="centrar" > <img src="../img/sinfondo.jpg" width="200" alt="paleta"> </div>
-                                <div> <h3> BLACK CROWN JOKE 2018 </h2></div>
-                                <div> <h5> $4850 </h3> </div>
-                                <div> <a href="#blaccrown"> Black crown</a> </div>
-                            </a>
-                        </div>   
+                        </div>  
                     </main>
                     <?php require_once("footer.php"); ?>
         </div>

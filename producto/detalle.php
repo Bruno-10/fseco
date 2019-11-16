@@ -38,7 +38,6 @@ $producto = traerProductoID($id);
                                         
                                     </ul>
                                 </div>
-
                                 <div class="precio">
                                     <h3><?= $producto["precio"]?></h3>
                                     <p>En stock</p>

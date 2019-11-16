@@ -45,14 +45,14 @@ if ($producto["categoria"] == 1){
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link rel="stylesheet" href="../../css/admin-producto.css">
     <link rel="stylesheet" href="../../css/procesar-modificar.css">
+    <link rel="stylesheet" href="../../css/footer1.css">
     <title>Modificar Producto</title>
 </head>
     <body>
     <div class="container-fluid padding">
     <?php require_once("header-admin.php");?>
-
-
          <div class="producto">
+         <div><h2>Modificar producto</h2></div>
               <form action="procesar-modificar.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                 <div class="contenedor">
                   <div class="rectangulos">
@@ -86,12 +86,11 @@ if ($producto["categoria"] == 1){
                 </div>
                 <div>
                 <button class="btn btn-success" type="submit">Enviar</button>
-
                 </div>
               </form>
          </div>
-
     </div>
+    <?php require_once("../../recursos/footer.php"); ?>
   
 </body>
 </html>

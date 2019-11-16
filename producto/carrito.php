@@ -51,16 +51,26 @@
                                 </thead>
                                 <tbody>
                                 <?php 
+                                        $subTotal = 0;
+                                        $envio = 200;
                                     if  (isset($productos)){ 
                                     foreach ($productos as $producto){ 
+                                        $subTotal = $subTotal + $producto["precio"];
                             ?>
                             <tr>
                                 <td scope="col border"><img src='data:image/jpg;base64,<?php echo base64_encode($producto["imgProducto"])?>'></td>
                                 <td scope="col border"><?php echo $producto["titulo"]; ?></td>
                                 <td scope="col border"><?php echo $producto["precio"]; ?> </td>
-                                <td scope="col border"><?php echo 1; ?></td>
-
-                                
+                                <td scope="col border">
+                                        <select name="cantidad" id="cantidad">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <a href="carrito.php"> Actualizar</a>
+                                </td>
                             </tr>
                         <?php } }?>
                                 
@@ -79,15 +89,15 @@
                                     <tbody>
                                         <tr>
                                             <th scope="row">Subtotal</th>
-                                            <td>$800</td>
+                                            <td><?= $subTotal ?> </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Envio</th>
-                                            <td>$150</td>
+                                            <td><?= $envio ?></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Total</th>
-                                            <td>$950</td>
+                                            <td><?= $subTotal + $envio ?></td>
                                         </tr> 
                                     </tbody>
                             </table>

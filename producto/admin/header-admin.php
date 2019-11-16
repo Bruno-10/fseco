@@ -13,6 +13,9 @@
                                 <div class="collapse navbar-collapse barra" id="collapsibleNavbar">                                   
                                     <ul class="navbar-nav block">
                                         <li class="nav-item">
+                                            <a class="nav-link" href="index-admin.php">Home admin</a> 
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" href="../../funciones/logOut.php">LogOut</a> 
                                         </li>
                                     </ul>

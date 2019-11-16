@@ -1,4 +1,6 @@
-<?php require_once("function.php"); ?>
+<?php 
+require_once("../funciones/function.php"); 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,13 +10,13 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
         <link rel="stylesheet" href="css/master.css">
-        <link rel="stylesheet" href="css/footer1.css">
-        <link rel="stylesheet" href="css/caja.css">
+        <link rel="stylesheet" href="../css/footer1.css">
+        <link rel="stylesheet" href="../css/caja.css">
         <title>Registro</title>
     </head>
     <body>
         <div class="container-fluid padding">
-        <?php require_once("header.php"); ?>
+        <?php require_once("../recursos/header.php"); ?>
                 <main class="row col-sm-12 col-md-12 col-lg-12 main margencero">     
                     <div class="col-sm-12 col-md-12 col-lg-5 caja_form">
                         <form action="registro.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
@@ -60,30 +62,45 @@
                         </form>
                         <div class="col-md-7 col-lg-9 errores">
                         <?php 
-                            if($_POST){
+                            /* if($_POST){
                                 foreach($errores as $error){
                         
                                    echo $error;
                             } 
                         }
                             
-                        
+                         */
                         ?>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-5 caja_form">
                         <div><h2>MI PEDIDO</h2></div>
-                            <?php 
-                                if (isset($_SESSION["carrito"])){
-                                    $productos = $_SESSION["carrito"];
-                                   
-                                dibujarProductosCaja($productos);
-                                }
-                                else {
-                                    header("location:carrito.php");
-                                }
-                            ?>
+                        <div class="col-sm-12 col-md-4 col-lg-5 margencero">
+                            <table class="table border">
+                                    <thead class="fondo">
+                                        <tr>
+                                        <th scope="row">TOTAL</th>
+                                        <td></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Subtotal</th>
+                                            <td> $2000 </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Envio</th>
+                                            <td>$200</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Total</th>
+                                            <td>2200></td>
+                                        </tr> 
+                                    </tbody>
+                            </table>
+                            
                     </div>
+                </div>
                 </main>
                 <section class="col-sm-12 col-md-12 col-lg-12 caja_pagos">
                 <div class="col-sm-12 col-md-12 col-lg-5 caja_form">
@@ -121,7 +138,7 @@
                                 </div>
 
                 </section>
-                <?php require_once("footer.php"); ?>
+                <?php require_once("../recursos/footer.php"); ?>
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

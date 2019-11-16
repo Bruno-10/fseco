@@ -31,3 +31,12 @@ img{
 p{
     color: red;
 }
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+}
+.btn{
+    margin:10px;
+}

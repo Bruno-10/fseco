@@ -16,3 +16,6 @@ Route::get("/", function () {
 });
 
 Route::get("/contacto", "GeneralController@index");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

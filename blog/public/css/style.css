@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-=======
 @charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0 auto;
 }
->>>>>>> e6e2da03f2a5b7af88a839be60e9c34c138e0c05
 
 ul, ol {
   padding: 0;
@@ -446,12 +443,6 @@ hr {
   margin-top: 10px;
 }
 
-<<<<<<< HEAD
-/* END FOOTER */
-header{
-    background-color: brown;
-}
-=======
 .categorias {
   text-align: center;
 }
@@ -796,4 +787,3 @@ input[type=file] {
 }
 
 /*# sourceMappingURL=style.css.map */
->>>>>>> e6e2da03f2a5b7af88a839be60e9c34c138e0c05

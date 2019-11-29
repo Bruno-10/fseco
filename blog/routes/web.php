@@ -12,5 +12,7 @@
 */
 
 Route::get("/", function () {
-     return view('index');
+     return view('welcome');
 });
+
+Route::get("/contacto", "GeneralController@index");

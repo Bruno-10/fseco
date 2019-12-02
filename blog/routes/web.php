@@ -19,3 +19,8 @@ Route::get("/contacto", "GeneralController@index");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+route::get('/admin', 'AdminController@index');
+
+route::get('/productos-admin', 'AdminController@productos');
+route::post('/productos-admin', 'AdminController@agregarProductos');

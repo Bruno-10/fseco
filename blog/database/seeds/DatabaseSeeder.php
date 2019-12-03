@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             'apellido'=> 'Admin',
             'img' => 'nada',
             'email' => 'admin@admin.com',
-            'nombre_usuario' => 'Admin',
             'password' => Hash::make('admin1234')
         ]);
     }

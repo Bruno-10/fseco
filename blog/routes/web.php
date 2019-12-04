@@ -11,7 +11,6 @@
 |
 */
 
-use Symfony\Component\Routing\Route;
 
 Route::get("/", function () {
      return view('index');
@@ -27,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 route::get('/admin', 'AdminController@index');
 
 route::get('/productos-admin', 'AdminController@productos');
+route::post('/productos-admin', 'AdminController@agregarProducto');
 
 route::get('/productos-admin/agregar', 'AdminController@mostrarAgregar');
 

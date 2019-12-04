@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Producto;
 
 class AdminController extends Controller
 {
@@ -23,10 +24,10 @@ class AdminController extends Controller
 
 
 
-    public function agregarProductos(Request $req)
+    public function agregarProducto(Request $req)
     {
         
-       /*  $producto = new Producto(); */
+        $producto = new Producto();
 
         $ruta = $req->file("imgProducto")->store("public");
 
@@ -36,12 +37,12 @@ class AdminController extends Controller
         $producto->descripcion = $req["descripcion"];
         $producto->precio = $req["precio"];
         $producto->cantidad = $req["cantidad"];
-        $producto->
-        $producto->poster = $nombreArchivo;
+        $producto->img =  $nombreArchivo;
+        $producto->categoria = $req["categoria"];
 
 
         $producto->save();
 
-        return redirect("/peliculas");
+        return redirect("productos-admin");
     }
 }

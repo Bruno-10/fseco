@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" />
     @yield("links")
     <title>@yield('titulo')</title>
 </head>

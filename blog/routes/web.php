@@ -11,7 +11,7 @@
 |
 */
 
-use Symfony\Component\Routing\Route;
+
 
 Route::get("/", function () {
      return view('index');
@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-route::get('/admin', 'AdminController@index');
+route::get('/admin', 'AdminController@index')->middleware('auth');
 
 route::get('/productos-admin', 'AdminController@productos');
 route::post('/productos-admin', 'AdminController@agregarProductos');

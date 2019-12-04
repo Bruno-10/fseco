@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('titulo')
-    Productos
+    Agegar Productos
 @endsection
 
 @section('principal')

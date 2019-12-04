@@ -23,4 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 route::get('/admin', 'AdminController@index');
 
 route::get('/productos-admin', 'AdminController@productos');
-route::post('/productos-admin', 'AdminController@agregarProductos');
+
+route::get('/productos-admin/agregar', 'AdminController@mostrarAgregar');
+

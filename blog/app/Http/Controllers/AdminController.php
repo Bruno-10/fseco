@@ -16,6 +16,11 @@ class AdminController extends Controller
         return view('productos-admin');
     }
 
+    public function mostrarAgregar()
+    {
+        return view('agregarProductos-admin');
+    }
+
 
 
     public function agregarProductos(Request $req)

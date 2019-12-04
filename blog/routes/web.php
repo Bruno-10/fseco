@@ -11,12 +11,16 @@
 |
 */
 
+use Symfony\Component\Routing\Route;
+
 Route::get("/", function () {
      return view('index');
 });
 
 Route::get("/contacto", "GeneralController@index");
 Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

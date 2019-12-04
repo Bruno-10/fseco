@@ -26,7 +26,7 @@ class AdminController extends Controller
     public function agregarProductos(Request $req)
     {
         
-        $producto = new Producto();
+       /*  $producto = new Producto(); */
 
         $ruta = $req->file("imgProducto")->store("public");
 

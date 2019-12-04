@@ -45,4 +45,39 @@ class AdminController extends Controller
 
         return redirect("productos-admin");
     }
+
+
+
+    public function modificarProducto(Request $req)
+    {
+        //Traigo el producto que quiero modificar
+        $idProducto = $req["id"];
+
+        
+        
+
+        //Ingreso nuevos datos
+
+        $idProducto->titulo = $req["titulo"];
+        $idProducto->descripcion = $req["descripcion"];
+        $idProducto->precio = $req["precio"];
+        $idProducto->cantidad = $req["cantidad"];
+        $idProducto->categoria = $req["categoria"];
+
+        //Compruebo si la imagen fue cambiada y la guardo
+        if($req->img){
+            $ruta = $req->file("imgProducto")->store("public");
+
+            $nombreArchivo = basename($ruta);
+
+            $idProducto->img = $nombreArchivo;
+
+        }
+        
+        $idProducto -> save();
+        return redirect("/peliculas");
+    }
+
+
+//Cierre controlador
 }

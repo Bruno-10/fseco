@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -54,4 +55,24 @@ class AdminController extends Controller
         return redirect("productos-admin");
 
     }
+
+
+    public function clientes(){
+        $clientes = User::all();
+
+
+        return view('clientes-admin', compact('clientes'));
+    }
+
+    public function clientesEliminar($id){
+        $cliente = User::find($id);
+
+
+        $cliente->delete();
+    
+        return redirect("/clientes-admin");
+
+    }
+
+
 }

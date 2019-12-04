@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('titulo')
-    Productos
+    Agegar Productos
 @endsection
 
 @section('principal')
@@ -10,7 +10,7 @@
             <div>
                 <h2> AGREGAR PRODUCTO  </h1>
             </div>
-            <form action="productos-admin" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+            <form action="/productos-admin" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                 @csrf
                 <div class="form-column">
                     <div class="col-md-7 col-lg-9">

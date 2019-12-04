@@ -12,7 +12,6 @@
 */
 
 
-
 Route::get("/", function () {
      return view('index');
 });
@@ -27,4 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 route::get('/admin', 'AdminController@index')->middleware('auth');
 
 route::get('/productos-admin', 'AdminController@productos');
-route::post('/productos-admin', 'AdminController@agregarProductos');
+route::post('/productos-admin', 'AdminController@agregarProducto');
+
+route::get('/productos-admin/agregar', 'AdminController@mostrarAgregar');
+

@@ -45,4 +45,12 @@ class AdminController extends Controller
 
         return redirect("productos-admin");
     }
+
+    public function eliminarProducto($id){
+        $post = Producto::find($id);
+        $post->delete();
+    
+        return redirect("productos-admin");
+
+    }
 }

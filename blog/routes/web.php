@@ -30,3 +30,5 @@ route::post('/productos-admin', 'AdminController@agregarProducto');
 
 route::get('/productos-admin/agregar', 'AdminController@mostrarAgregar');
 
+route::get('/productos-admin/eliminar/{id}', 'AdminController@eliminar')
+

@@ -27,7 +27,7 @@
                             <td scope="col border">{{$producto->cantidad}}</td>
                             <td scope="col border"><img src="/storage/{{ $producto->img}}" alt="img producto" width="40"></td>
                             <td scope="col border">
-                                <a class="btn btn-success" href="modificar-admin.php?id="> Modificar </a>
+                                <a class="btn btn-success" href="modificar/{{$producto->id}}"> Modificar </a>
                             </td>
                             <td scope="col border">
                             <a class="btn btn-danger" href="eliminar-admin.php?id="> Eliminar</a></td>

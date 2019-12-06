@@ -47,36 +47,41 @@ class AdminController extends Controller
         return redirect("productos-admin");
     }
 
+    public function formularioModificarProducto($id){
+        $producto= Producto::find($id);
 
+        return view('modificar', compact('producto'));
+    }
 
     public function modificarProducto(Request $req)
     {
         //Traigo el producto que quiero modificar
-        $idProducto = $req["id"];
-
+        $id = $req["id"];
         
+        $producto= Producto::find($id);
+    
         
-
         //Ingreso nuevos datos
 
-        $idProducto->titulo = $req["titulo"];
-        $idProducto->descripcion = $req["descripcion"];
-        $idProducto->precio = $req["precio"];
-        $idProducto->cantidad = $req["cantidad"];
-        $idProducto->categoria = $req["categoria"];
+        $producto->titulo = $req["titulo"];
+        $producto->descripcion = $req["descripcion"];
+        $producto->precio = $req["precio"];
+        $producto->cantidad = $req["cantidad"];
+        $producto->categoria = $req["categoria"];
 
         //Compruebo si la imagen fue cambiada y la guardo
         if($req->img){
-            $ruta = $req->file("imgProducto")->store("public");
-
+            
+            $ruta = $req->file("img")->store("public");
+            
             $nombreArchivo = basename($ruta);
 
-            $idProducto->img = $nombreArchivo;
+            $producto->img = $nombreArchivo;
 
         }
         
-        $idProducto -> save();
-        return redirect("/peliculas");
+        $producto -> save();
+        return redirect("/productos-admin");
     }
 
 

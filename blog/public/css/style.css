@@ -786,4 +786,8 @@ input[type=file] {
   height: 40%;
 }
 
+.contenedor {
+  overflow: hidden;
+}
+
 /*# sourceMappingURL=style.css.map */

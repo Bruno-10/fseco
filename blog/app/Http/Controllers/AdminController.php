@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -85,5 +86,35 @@ class AdminController extends Controller
     }
 
 
+
+
+    public function eliminarProducto($id){
+        $post = Producto::find($id);
+        $post->delete();
+    
+        return redirect("productos-admin");
+
+    }
+
+
+    public function clientes(){
+        $clientes = User::all();
+
+
+        return view('clientes-admin', compact('clientes'));
+    }
+
+    public function clientesEliminar($id){
+        $cliente = User::find($id);
+
+
+        $cliente->delete();
+    
+        return redirect("/clientes-admin");
+
+    }
+
 //Cierre controlador
 }
+
+

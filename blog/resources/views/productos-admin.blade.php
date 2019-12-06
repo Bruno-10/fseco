@@ -30,7 +30,7 @@
                                 <a class="btn btn-success" href="modificar/{{$producto->id}}"> Modificar </a>
                             </td>
                             <td scope="col border">
-                            <a class="btn btn-danger" href="eliminar-admin.php?id="> Eliminar</a></td>
+                            <a class="btn btn-danger" href="productos-admin/eliminar/{{$producto->id}}"> Eliminar</a></td>
                         </tr>
                     @empty 
                     <em> La lista esta vacia  </em>    

@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-route::get('/admin', 'pAdminController@index');
+route::get('/admin', 'AdminController@index');
 
 route::get('/productos-admin', 'AdminController@productos');
 route::post('/productos-admin', 'AdminController@agregarProducto');
@@ -44,4 +44,4 @@ route::get('/clientes-admin/eliminar/{id}', 'AdminController@clientesEliminar');
 
 route::get('/usuario' , 'UsuarioController@index');
 
-
+route::get('/detalle' , 'GeneralController@detalle');

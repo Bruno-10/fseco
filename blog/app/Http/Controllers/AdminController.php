@@ -19,7 +19,7 @@ class AdminController extends Controller
             return redirect("/");
         }
         
-        return view('admin'); 
+        return view('admin.admin'); 
     }
 
     public function productos()
@@ -28,7 +28,7 @@ class AdminController extends Controller
             return redirect("/");
         }
         $productos = Producto::all();
-        return view('productos-admin', compact ('productos'));
+        return view('admin.productos-admin', compact ('productos'));
     }
 
     public function mostrarAgregar()
@@ -36,7 +36,7 @@ class AdminController extends Controller
          if (Helper::noEsAdmin()){
             return redirect("/");
         }
-        return view('agregarProductos-admin');
+        return view('admin.agregarProductos-admin');
     }
 
 
@@ -62,7 +62,7 @@ class AdminController extends Controller
 
         $producto->save();
 
-        return redirect("productos-admin");
+        return redirect("admin.productos-admin");
     }
 
     public function formularioModificarProducto($id){
@@ -71,7 +71,7 @@ class AdminController extends Controller
         }
         $producto= Producto::find($id);
 
-        return view('modificar', compact('producto'));
+        return view('admin.modificar', compact('producto'));
     }
 
     public function modificarProducto(Request $req)
@@ -130,7 +130,7 @@ class AdminController extends Controller
         $clientes = User::all();
 
 
-        return view('clientes-admin', compact('clientes'));
+        return view('admin.clientes-admin', compact('clientes'));
     }
 
     public function clientesEliminar($id){

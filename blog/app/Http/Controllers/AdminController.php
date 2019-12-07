@@ -5,30 +5,47 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Helper;
+
+//Agregar Helper::esAdmin a todos los metodos para validacion de administradores
 
 class AdminController extends Controller
 {
+    
     public function index()
     {
-        return view('admin'); 
+        if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
+        
+        return view('admin.admin'); 
     }
 
     public function productos()
     {   
+         if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
         $productos = Producto::all();
-        return view('productos-admin', compact ('productos'));
+        return view('admin.productos-admin', compact ('productos'));
     }
 
     public function mostrarAgregar()
     {
-        return view('agregarProductos-admin');
+         if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
+        return view('admin.agregarProductos-admin');
     }
 
 
 
     public function agregarProducto(Request $req)
     {
-        
+         if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
         $producto = new Producto();
 
         $ruta = $req->file("imgProducto")->store("public");
@@ -45,17 +62,23 @@ class AdminController extends Controller
 
         $producto->save();
 
-        return redirect("productos-admin");
+        return redirect("admin.productos-admin");
     }
 
     public function formularioModificarProducto($id){
+         if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
         $producto= Producto::find($id);
 
-        return view('modificar', compact('producto'));
+        return view('admin.modificar', compact('producto'));
     }
 
     public function modificarProducto(Request $req)
     {
+         if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
         //Traigo el producto que quiero modificar
         $id = $req["id"];
         
@@ -89,6 +112,9 @@ class AdminController extends Controller
 
 
     public function eliminarProducto($id){
+         if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
         $post = Producto::find($id);
         $post->delete();
     
@@ -98,13 +124,19 @@ class AdminController extends Controller
 
 
     public function clientes(){
+         if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
         $clientes = User::all();
 
 
-        return view('clientes-admin', compact('clientes'));
+        return view('admin.clientes-admin', compact('clientes'));
     }
 
     public function clientesEliminar($id){
+         if (Helper::noEsAdmin()){
+            return redirect("/");
+        }
         $cliente = User::find($id);
 
 

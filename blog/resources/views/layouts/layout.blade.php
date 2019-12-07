@@ -1,3 +1,6 @@
+<?php
+use App\Http\Controllers\Helper;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +38,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">                                   
                 <ul class="navbar-nav block">
                     <li class="nav-item">
-                        <a class="nav-link color_menu" href="../recursos/index.php">Inicio</a>
+                        <a class="nav-link color_menu" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/productos">Productos</a>
@@ -44,10 +47,10 @@
                         <a class="nav-link" href="../recursos/faq.php">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../usuario/contacto.php">Contacto</a>
+                        <a class="nav-link" href="/contacto">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        @if (Route::has('login'))
+                            @if (Route::has('login'))
                             @auth     
                                 @guest
                                     <li class="nav-item">
@@ -66,6 +69,12 @@
                                                         {{ Auth::user()->nombre }} <span class="caret"></span>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                        @if (!Helper::noEsAdmin())
+                                                        <a class="dropdown-item" href="/admin">
+                                                            Panel de control
+                                                        </a>
+                                                        @endif
+                                                        <a href="/usuario" class="dropdown-item">Perfil</a>
                                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                                             onclick="event.preventDefault();
                                                                             document.getElementById('logout-form').submit();">
@@ -90,7 +99,7 @@
                                         @endif
                                     </ul>   
                             @endauth
-                        @endif     
+                        @endif        
                     </li>
                 </ul>
             </div>        
@@ -128,7 +137,7 @@
                                     <a class="nav-link" href="./recursos/faq.php">F.A.Q</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../usuario/contacto.php">Contacto</a>
+                                    <a class="nav-link" href="/contacto">Contacto</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="../producto/listado.php">Shop</a>
@@ -163,72 +172,4 @@
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-</html>
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-</body>
-
 </html>

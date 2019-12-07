@@ -12,6 +12,7 @@
 */
 
 
+
 Route::get("/", function () {
      return view('index');
 });
@@ -43,4 +44,6 @@ route::get('/clientes-admin/eliminar/{id}', 'AdminController@clientesEliminar');
 
 route::get('/producto', 'ProductoController@listado');
 
+route::get('/usuario' , 'UsuarioController@index');
 
+route::get('/detalle' , 'GeneralController@detalle');

@@ -17,12 +17,11 @@
             <div class="card__body">
               <div class="half">
                 <div class="featured_text">
-                  <h1>Nurton</h1>
-                  <p class="sub">Office Chair</p>
-                  <p class="price">$210.00</p>
+                  <h1>{{$producto->titulo}}</h1>
+                  <p class="price">{{$producto->id}}</p>
                 </div>
                 <div class="image">
-                  <img src="https://images-na.ssl-images-amazon.com/images/I/613A7vcgJ4L._SL1500_.jpg" alt="">
+                  <img src="" alt="">
                 </div>
               </div>
               <div class="half">

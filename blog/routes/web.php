@@ -46,4 +46,4 @@ route::get('/producto', 'ProductoController@listado');
 
 route::get('/usuario' , 'UsuarioController@index');
 
-route::get('/detalle' , 'GeneralController@detalle');
+route::get('/detalle' , 'ProductoController@detalle');

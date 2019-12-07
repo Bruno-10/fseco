@@ -31,6 +31,9 @@ a {
   margin-right: 0px;
 }
 
+.nav-link{
+		    display: flex
+      }
 .carrito {
   margin: 0 10px;
 }
@@ -452,11 +455,12 @@ h3 {
   }
 }
 footer {
-  width: 100%;
   background-color: #0E0034;
-  text-align: center;
+  overflow: hidden;
+  padding: 5% 0;
 }
-footer h3 {
+
+h3 {
   color: rgba(240, 248, 255, 0.644);
 }
 
@@ -500,6 +504,7 @@ hr {
 
 @media only screen and (min-width: 768px) {
   footer {
+    background-color: #0E0034;
     overflow: hidden;
     padding: 5% 0;
   }
@@ -680,77 +685,6 @@ article img {
     margin-left: 8%;
   }
 }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-form {
-  border: 2px solid #f1f1f1;
-  margin-bottom: 20px;
-}
-
-#errorLogin {
-  color: red;
-  text-align: center;
-}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.login {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 5px 10px;
-  background-color: #f44336;
-  border: none;
-  color: white;
-  width: 100%;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 10px;
-}
-
-@media only screen and (min-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-}
 .main {
   display: flex;
   justify-content: center;
@@ -900,6 +834,78 @@ input[type=file] {
 
 .contenedor {
   overflow: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+  border: 2px solid #f1f1f1;
+  margin-bottom: 20px;
+}
+
+#errorLogin {
+  color: red;
+  text-align: center;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 5px 10px;
+  background-color: #f44336;
+  border: none;
+  color: white;
+  width: 100%;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 10px;
+}
+
+@media only screen and (min-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

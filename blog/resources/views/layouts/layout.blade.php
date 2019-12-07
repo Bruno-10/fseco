@@ -118,7 +118,7 @@ use App\Http\Controllers\Helper;
         
             <div class="info" >
                 <div class="contiene" >
-                        <h3>Mas Informacion</h3>
+                        <h3 class="mf">Mas Informacion</h3>
         
                         <ul class="navbar-nav">
                                 <li class="nav-item">

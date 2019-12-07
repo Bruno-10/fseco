@@ -12,4 +12,12 @@ class ProductoController extends Controller
         $productos = Producto::all();
         return view('usuario.listado', compact ('productos'));
     }
+    public function detalle(Request $req)
+    {
+        $id = $req["id"];
+        
+        $producto= Producto::find($id);
+
+        return view('detalle', compact('producto'));
+    }
 }

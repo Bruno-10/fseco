@@ -41,4 +41,6 @@ route::get('/clientes-admin', 'AdminController@clientes');
 
 route::get('/clientes-admin/eliminar/{id}', 'AdminController@clientesEliminar');
 
+route::get('/producto', 'ProductoController@listado');
+
 

@@ -38,7 +38,7 @@
                         <a class="nav-link color_menu" href="../recursos/index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../producto/listado.php">Productos</a>
+                        <a class="nav-link" href="/productos">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../recursos/faq.php">FAQ</a>

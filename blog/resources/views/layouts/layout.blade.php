@@ -38,7 +38,7 @@ use App\Http\Controllers\Helper;
             <div class="collapse navbar-collapse" id="collapsibleNavbar">                                   
                 <ul class="navbar-nav block">
                     <li class="nav-item">
-                        <a class="nav-link color_menu" href="../recursos/index.php">Inicio</a>
+                        <a class="nav-link color_menu" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/productos">Productos</a>
@@ -47,7 +47,7 @@ use App\Http\Controllers\Helper;
                         <a class="nav-link" href="../recursos/faq.php">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../usuario/contacto.php">Contacto</a>
+                        <a class="nav-link" href="/contacto">Contacto</a>
                     </li>
                     <li class="nav-item">
                             @if (Route::has('login'))
@@ -74,6 +74,7 @@ use App\Http\Controllers\Helper;
                                                             Panel de control
                                                         </a>
                                                         @endif
+                                                        <a href="/usuario" class="dropdown-item">Perfil</a>
                                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                                             onclick="event.preventDefault();
                                                                             document.getElementById('logout-form').submit();">
@@ -136,7 +137,7 @@ use App\Http\Controllers\Helper;
                                     <a class="nav-link" href="./recursos/faq.php">F.A.Q</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../usuario/contacto.php">Contacto</a>
+                                    <a class="nav-link" href="/contacto">Contacto</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="../producto/listado.php">Shop</a>

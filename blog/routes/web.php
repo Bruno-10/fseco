@@ -28,5 +28,17 @@ route::get('/admin', 'AdminController@index');
 route::get('/productos-admin', 'AdminController@productos');
 route::post('/productos-admin', 'AdminController@agregarProducto');
 
+route::get('/modificar/{id}', 'AdminController@formularioModificarProducto');
+
+route::post('/procesar-modificar', 'AdminController@modificarProducto');
+
+
 route::get('/productos-admin/agregar', 'AdminController@mostrarAgregar');
+
+route::get('/productos-admin/eliminar/{id}', 'AdminController@eliminarProducto');
+
+route::get('/clientes-admin', 'AdminController@clientes');
+
+route::get('/clientes-admin/eliminar/{id}', 'AdminController@clientesEliminar');
+
 

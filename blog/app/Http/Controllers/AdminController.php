@@ -62,7 +62,7 @@ class AdminController extends Controller
 
         $producto->save();
 
-        return redirect("admin.productos-admin");
+        return redirect("productos-admin");
     }
 
     public function formularioModificarProducto($id){

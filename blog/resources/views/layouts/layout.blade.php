@@ -41,7 +41,7 @@ use App\Http\Controllers\Helper;
                         <a class="nav-link color_menu" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/productos">Productos</a>
+                        <a class="nav-link" href="/producto">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../recursos/faq.php">FAQ</a>

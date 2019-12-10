@@ -52,4 +52,6 @@ route::get('/detalle' , 'ProductoController@detalle');
 
 route::get('/carrito/{id}', 'ProductoController@agregar');
 
+route::get('/usuarioCarrito/{id}', 'UsuarioController@mostrar');
+
 

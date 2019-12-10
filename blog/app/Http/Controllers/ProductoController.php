@@ -54,7 +54,8 @@ class ProductoController extends Controller
     }
 
     public function agregar($id){
-        $carrito = new Carrito;
+        if (Auth::user()) {
+            $carrito = new Carrito;
         $producto= Producto::find($id);
         $usuarioId = Auth::user()->id;
 
@@ -71,5 +72,8 @@ class ProductoController extends Controller
         $losProductos = $resultado->producto;   
 
         return view('usuario.carrito', compact('losProductos'));
+        } else {
+            return view('auth.login');
+        }
     }
 }

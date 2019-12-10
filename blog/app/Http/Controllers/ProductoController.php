@@ -63,7 +63,7 @@ class ProductoController extends Controller
         $carrito->precio_unitario = $producto['precio'];
         $carrito->cantidad = 1;
 
-        $carrito->save();
+        // $carrito->save();
 
         $resultado = User::find($usuarioId);
 

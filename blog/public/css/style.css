@@ -45,11 +45,6 @@ a {
   color: aliceblue;
 }
 
-.carro {
-  margin: 10% 15%;
-  background-color: red;
-}
-
 .main {
   display: flex;
   justify-content: center;
@@ -113,14 +108,21 @@ input[type=file] {
     font-weight: bold;
   }
 }
-main {
-  width: 100%;
-  height: auto;
-  justify-content: space-between;
+div .caja_carro {
+  background: black;
+  background: linear-gradient(183deg, black 0%, rgba(48, 8, 212, 0.868785014) 63%, white 100%);
 }
 
-.fondo {
-  background-color: rgba(234, 243, 240, 0.61);
+div .carro {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+#carro_imagen {
+  width: 100px;
+  height: 100px;
 }
 
 .tamaño {
@@ -361,16 +363,6 @@ footer h3 {
     padding: 5% 0;
   }
 }
-/* .logotipo, .info, .contacto 
- * float: left 
- * width: 33% 
- * height: 40vh 
- * display: flex 
- * justify-content: center 
- * align-items: center 
- * */
-/* .info, .contacto 
- * border-left: 2px solid rgba(240, 248, 255, 0.521) */  
 @media only screen and (min-width: 992px) {
   .logotipo {
     margin-top: 50px;

@@ -24,7 +24,6 @@ class ProductoController extends Controller
 
         return view('detalle', compact('producto'));
     }
-<<<<<<< HEAD
     public function filtroCategorias($categoria)
     {
         if ($categoria === 'paletas'){
@@ -53,8 +52,6 @@ class ProductoController extends Controller
             return view('usuario.listado', compact('productos'));
         } 
     }
-    
-=======
 
     public function agregar($id){
         $carrito = new Carrito;
@@ -75,5 +72,4 @@ class ProductoController extends Controller
 
         return view('usuario.carrito', compact('losProductos'));
     }
->>>>>>> 628d9a48fc0807fd2c9607e0d15c48bb2b8403ab
 }

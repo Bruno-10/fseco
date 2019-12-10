@@ -50,6 +50,9 @@ use App\Http\Controllers\Helper;
                         <a class="nav-link" href="/contacto">Contacto</a>
                     </li>
                     <li class="nav-item">
+                       
+                    </li>
+                    <li class="nav-item">
                             @if (Route::has('login'))
                             @auth     
                                 @guest
@@ -69,6 +72,7 @@ use App\Http\Controllers\Helper;
                                                         {{ Auth::user()->nombre }} <span class="caret"></span>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                            <a class="nav-link" href="usuarioCarrito/{{Auth::user()->id}}"><ion-icon class="cart" name="cart" style="color: black;"></ion-icon></a>
                                                         @if (!Helper::noEsAdmin())
                                                         <a class="dropdown-item" href="/admin">
                                                             Panel de control
@@ -137,10 +141,7 @@ use App\Http\Controllers\Helper;
                                 <a class="nav-link" href="/contacto">Contacto</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../producto/listado.php">Shop</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../producto/carrito.php"><ion-icon class="cart" name="cart"></ion-icon></a>
+                                <a class="nav-link"  href="/producto">Productos</a>
                             </li>
                         </ul>
                     </div>           

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Producto;
+use App\Carrito;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\User;
+
 
 class ProductoController extends Controller
 {
@@ -20,6 +24,7 @@ class ProductoController extends Controller
 
         return view('detalle', compact('producto'));
     }
+<<<<<<< HEAD
     public function filtroCategorias($categoria)
     {
         if ($categoria === 'paletas'){
@@ -49,4 +54,26 @@ class ProductoController extends Controller
         } 
     }
     
+=======
+
+    public function agregar($id){
+        $carrito = new Carrito;
+        $producto= Producto::find($id);
+        $usuarioId = Auth::user()->id;
+
+        $carrito->id_producto = $producto['id'];
+        $carrito->id_cliente = $usuarioId;
+        $carrito->precio_unitario = $producto['precio'];
+        $carrito->cantidad = 1;
+
+        $carrito->save();
+
+        $resultado = User::find($usuarioId);
+
+
+        $losProductos = $resultado->producto;   
+
+        return view('usuario.carrito', compact('losProductos'));
+    }
+>>>>>>> 628d9a48fc0807fd2c9607e0d15c48bb2b8403ab
 }

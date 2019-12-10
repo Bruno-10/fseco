@@ -49,3 +49,7 @@ route::get('/producto/{categoria}', 'ProductoController@filtroCategorias');
 route::get('/usuario' , 'UsuarioController@index');
 
 route::get('/detalle' , 'ProductoController@detalle');
+
+route::get('/carrito/{id}', 'ProductoController@agregar');
+
+

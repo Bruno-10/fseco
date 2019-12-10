@@ -108,6 +108,7 @@ use App\Http\Controllers\Helper;
 
     @yield('principal')
     
+<<<<<<< HEAD
     <footer class="col-sm-12 col-md-12 col-lg-12">
             <div class="logotipo col-sm-12 col-md-4 col-lg-4" >
                 <a class="nav-link" href="/"><img src="\storage\logopsport.jpg" alt="logo de la empresa"></a>
@@ -117,6 +118,20 @@ use App\Http\Controllers\Helper;
                         <h3>Mas Informacion</h3>
                     </div>
                     <div class='links'>
+=======
+    <footer>
+
+            <div class="logotipo" >
+            <a class="nav-link" href="/"><img src="\storage\logopsport.jpg" alt="logo de la empresa"></a>
+            </div>
+        
+            <hr>
+        
+            <div class="info" >
+                <div class="contiene" >
+                        <h3 class="mf">Mas Informacion</h3>
+        
+>>>>>>> 628d9a48fc0807fd2c9607e0d15c48bb2b8403ab
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="/">Inicio</a>

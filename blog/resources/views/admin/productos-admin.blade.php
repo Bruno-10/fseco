@@ -10,7 +10,7 @@
             <div>
                 <a class="btn btn-success" href="productos-admin/agregar"> Agregar Producto </a>
             </div>
-            <table class="table border">
+            <table class="table border tabla_admin">
                     
                     <tr>
                         <th scope="col border">Id</th>

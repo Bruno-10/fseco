@@ -5,5 +5,24 @@
 @endsection
 
 @section('principal')
-    <p>Hola</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection

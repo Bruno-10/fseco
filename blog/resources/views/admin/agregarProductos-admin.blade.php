@@ -6,7 +6,7 @@
 
 @section('principal')
 <div class="contenedor col-sm-12 col-md-12 col-lg-12">
-    <div class="col-sm-12 col-md-12 col-lg-4 caja_derecha">
+    <div class="col-sm-12 col-md-12 col-lg-4 caja_admin">
             <div>
                 <h2> AGREGAR PRODUCTO  </h1>
             </div>
@@ -47,8 +47,8 @@
                     </div>
                     <div class="col-md-7 col-lg-9"> 
                         <br>
-                        <button class="btn btn-success" type="submit">Agregar</button>
-                        <button class="btn btn-danger" type="submit">Cancelar</button>
+                        <button class="btn btn-success" type="submit" >Agregar</button>
+                        <button class="btn btn-danger" type="submit" >Cancelar</button>
                     </div>
                 </div>
             </form>

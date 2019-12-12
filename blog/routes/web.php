@@ -50,8 +50,10 @@ route::get('/usuario' , 'UsuarioController@index');
 
 route::get('/detalle' , 'ProductoController@detalle');
 
-route::get('/carrito/{id}', 'ProductoController@agregar');
+route::post('/carrito', 'ProductoController@agregar');
 
-route::get('/usuarioCarrito/{id}', 'UsuarioController@mostrar');
+route::get('/carrito/{id}', 'ProductoController@eliminar');
+
+route::get('/usuarioCarrito', 'UsuarioController@mostrar');
 
 

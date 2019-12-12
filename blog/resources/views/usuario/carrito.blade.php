@@ -27,22 +27,18 @@
                                 <td scope="col border">{{$producto->titulo}}</td>
                                 <td scope="col border">{{$producto->precio}}</td>
                                 <td scope="col border">
-                                        <select name="cantidad" id="cantidad">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
+                                        <input name="cantidad" id="cantidad" >
+                                            
                                         <a href="carrito.php"> Actualizar</a>
                                 </td>
                                 </tr>
+                                <a class="btn btn-danger" href="productos-admin/eliminar/{{$producto->id}}"> Eliminar</a></td>
                         @endforeach
                     </tbody>
                 </table>
             </div>  
             <div class="col-sm-12 col-md-6 col-lg-6 margencero">
-                <table class="table border">
+                <table class="table border col-sm-12 col-md-6 col-lg-6 ">
                     <thead class="fondo">
                         <tr>
                         <th scope="row">TOTAL</th>

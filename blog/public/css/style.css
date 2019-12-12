@@ -448,11 +448,8 @@ main {
   justify-content: center;
   height: auto;
   justify-content: center;
-  background: black;
-  background: linear-gradient(183deg, black 0%, rgba(48, 8, 212, 0.868785014) 63%, white 100%);
-}
-
-.cvip-products {
+  background: #ff6f00;
+  background: linear-gradient(360deg, #ff6f00 7%, #ffd5b4 44%, #ff6f00 94%);
   color: aliceblue;
   background-color: aliceblue;
   display: flex;
@@ -468,8 +465,8 @@ h5 {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   color: white;
-  border-radius: 20px;
-  border: solid 2px white;
+  border-radius: 50px;
+  border: solid 4px white;
 }
 
 .categorias {
@@ -497,6 +494,9 @@ h5 {
   font-weight: 800;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
+}
+.lista_cat div a:hover {
+  color: orange;
 }
 
 .navegacion {

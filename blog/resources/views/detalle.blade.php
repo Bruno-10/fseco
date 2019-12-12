@@ -36,7 +36,9 @@
                 <p>Producto comendado por</p>
                 <h3>Fernando Belasteguín</h3>
             </div>
-            <form action="/carrito/{{$producto->id}}" method="get">
+            <form action="/carrito" method="post">
+                @csrf
+                <input type="hidden" value='{{$producto->id}}' name="id">
                 <input type="submit" value="Agregar al Carrito">  
             </form> 
             </div>

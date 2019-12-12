@@ -12,9 +12,9 @@ class UsuarioController extends Controller
         return view("usuario", compact('usuario'));
     }
 
-    public function mostrar($id){
+    public function mostrar(){
         if (Auth::user()) {
-            $usuarioId = Auth::user()->id;
+            
         $resultado = Auth::user();
 
         $losProductos = $resultado->producto; 

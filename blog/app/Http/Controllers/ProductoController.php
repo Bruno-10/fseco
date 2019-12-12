@@ -53,27 +53,51 @@ class ProductoController extends Controller
         } 
     }
 
-    public function agregar($id){
+    public function agregar(request $req){
         if (Auth::user()) {
-            $carrito = new Carrito;
-        $producto= Producto::find($id);
-        $usuarioId = Auth::user()->id;
+            $usuarioId = Auth::user()->id;
+            $id = $req["id"];
+            $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
+           
+            if($carrito->isNotEmpty()){
+                $producto = $carrito->firstWhere('id_producto', $id);
+                dd($producto->producto);
+                //
+                if(is_null($producto)){
+                    $carrito->id_producto = $id;
+                    $carrito->id_cliente = $usuarioId;
+                    $carrito->precio_unitario = $producto->producto->precio;
+                    $carrito->cantidad = 1;
+                    $carrito->save();
+                    
+                    return view('usuario.carrito', compact('losProductos'));
+                    // }    
+                    
+                    
+                    
+                
+                    //else {
+                    //     return view('auth.login');
+            }
 
-        $carrito->id_producto = $producto['id'];
-        $carrito->id_cliente = $usuarioId;
-        $carrito->precio_unitario = $producto['precio'];
-        $carrito->cantidad = 1;
-
-        // $carrito->save();
-
-        $resultado = User::find($usuarioId);
-
-
-        $losProductos = $resultado->producto;   
-
-        return view('usuario.carrito', compact('losProductos'));
-        } else {
-            return view('auth.login');
+           // }
+        //           $carrito->cantidad += 1;
+        //           $carrito->save(); 
+           // }
         }
+        
+        // $producto= Producto::find($id); 
+       
+        
     }
 }
+
+    public function eliminar($id){
+        $producto = Carrito::find($id);
+        $producto->delete();
+        return view("---------");      
+    }
+
+
+}
+

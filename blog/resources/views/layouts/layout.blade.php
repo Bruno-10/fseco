@@ -72,7 +72,7 @@ use App\Http\Controllers\Helper;
                                                         {{ Auth::user()->nombre }} <span class="caret"></span>
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                            <a class="nav-link" href="usuarioCarrito/{{Auth::user()->id}}"><ion-icon class="cart" name="cart" style="color: black;"></ion-icon></a>
+                                                            <a class="nav-link" href="usuarioCarrito"><ion-icon class="cart" name="cart" style="color: black;"></ion-icon></a>
                                                         @if (!Helper::noEsAdmin())
                                                         <a class="dropdown-item" href="/admin">
                                                             Panel de control

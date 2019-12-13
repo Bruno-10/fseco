@@ -24,19 +24,20 @@
             <div class="card-body">
                     <!-- PRODUCT -->
                     @foreach ($losProductos as $producto)
+                        
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-2 text-center">
-                                    <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
+                                    <img class="img-responsive" src="/storage/{{$producto['img']}}" alt="prewiew" width="120" height="80">
                             </div>
                             <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-4">
-                                <h4 class="product-name"><strong>{{$producto->'titulo'}}</strong></h4>
+                                <h4 class="product-name"><strong>{{$producto['titulo']}}</strong></h4>
                                 <h4>
-                                    <small>{{$producto->'descripcion'}}</small>
+                                    <small>{{$producto['descripcion']}}</small>
                                 </h4>
                             </div>
                             <div class="col-12 col-sm-12 text-sm-center col-md-6 text-md-right row">
                                 <div class="col-3 col-sm-3 col-md-6 text-md-right pre" style="padding: 0px;padding-top: 10px;">
-                                    <h6><strong>{{$producto->'precio'}}</strong></h6>
+                                    <h6><strong>{{$producto['precio']}}</strong></h6>
                                 </div>
                                 <div class="col-4 col-sm-4 col-md-4">
                                     <div class="quantity">
@@ -54,13 +55,14 @@
                             </div>
                         </div>
                         <hr>
+                        @endforeach 
                     <div class="pull-right">
                         <a href="" class="btn btn-outline-secondary pull-right">
                             Actualizar carrito
                         </a>
                     </div>
                 </div>
-            @endforeach 
+            
             <div class="card-footer">
                 <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
                     <div class="row">
@@ -75,7 +77,7 @@
                 <div class="pull-right" style="margin: 10px">
                     <a href="" class="btn btn-success pull-right">Checkout</a>
                     <div class="pull-right" style="margin: 5px">
-                        Total: <b>{{$producto->'precio'}}</b>
+                        Total: <b>{{$producto['precio']}}</b>
                     </div>
                 </div>
             </div>

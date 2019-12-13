@@ -53,7 +53,7 @@ class ProductoController extends Controller
         } 
     }
 
-    public function agregar(request $req){
+    /* public function agregar(request $req){
         if (Auth::user()) {
             $usuarioId = Auth::user()->id;
             $id = $req["id"];
@@ -90,7 +90,7 @@ class ProductoController extends Controller
        
         
     }
-}
+} */
 
     public function eliminar($id){
         $producto = Carrito::find($id);

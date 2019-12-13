@@ -52,7 +52,7 @@ route::get('/detalle' , 'ProductoController@detalle');
 
 route::post('/carrito', 'ProductoController@agregar');
 
-route::get('/carrito/{id}', 'ProductoController@eliminar');
+route::get('/carrito', 'ProductoController@eliminar');
 
 route::get('/usuarioCarrito', 'UsuarioController@mostrar');
 

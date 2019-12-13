@@ -17,7 +17,6 @@ class CreateTableCarrito extends Migration
             $table->bigIncrements('id');
             $table->integer('id_producto');
             $table->integer('id_cliente');
-            $table->decimal('precio_unitario', 8,2);
             $table->integer('cantidad');
             $table->timestamps();
         });

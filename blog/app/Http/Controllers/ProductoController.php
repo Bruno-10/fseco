@@ -58,40 +58,75 @@ class ProductoController extends Controller
             $usuarioId = Auth::user()->id;
             $id = $req["id"];
             $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
-           
+            
             if($carrito->isNotEmpty()){
                 $producto = $carrito->firstWhere('id_producto', $id);
-                dd($producto->producto);
                 //
                 if(is_null($producto)){
-                    $carrito->id_producto = $id;
-                    $carrito->id_cliente = $usuarioId;
-                    $carrito->precio_unitario = $producto->producto->precio;
-                    $carrito->cantidad = 1;
-                    $carrito->save();
-                    
-                    return view('usuario.carrito', compact('losProductos'));
-                    // }    
-                    
-                    
-                    
-                
-                    //else {
-                    //     return view('auth.login');
+                    $producto = new Carrito;
+                    $producto->id_producto = $id;
+                    $producto->id_cliente = $usuarioId;
+                    $producto->cantidad = 1;
+                    $producto->save();
+                    $losProductosDelCarrito = $carrito->all();  
+                    foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
+                        $resultado = [];
+                        $resultado[] = $productoDelCarrito["id_producto"];
+                        
+                    }
+                    foreach($resultado as $idProducto){
+                        $losProductos = [];
+                        $losProductos[] = Producto::find($idProducto);
+                        
+                    }
+                    }
+                    else{
+                        $producto->id_producto = $id;
+                        $producto->id_cliente = $usuarioId;
+                        $producto->cantidad += 1;
+                        $producto->save();
+                        $losProductosDelCarrito = $carrito->all();
+                        $resultado = [];
+                        $losProductos = [];
+                        foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
+                            $resultado[] = $productoDelCarrito["id_producto"];
+                            
+                        }
+                        foreach($resultado as $idProducto){
+                            
+                            $losProductos[] = Producto::find($idProducto);
+                            
+                        }
+                        
+                        return view('usuario.carrito', compact('losProductos',"resultado"));
+                    } 
             }
-
-           // }
-        //           $carrito->cantidad += 1;
-        //           $carrito->save(); 
-           // }
+            else{
+                $producto = new producto;
+                $producto->id_producto = $id;
+                $producto->id_cliente = $usuarioId;
+                $producto->cantidad = 1;
+                $producto->save();
+                $losProductosDelCarrito = $carrito->all();
+                        
+                foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
+                    $resultado = [];
+                    $resultado[] = $productoDelCarrito["id_producto"];
+                    
+                }
+                foreach($resultado as $idProducto){
+                    $losProductos = [];
+                    $losProductos[] = Producto::find($idProducto);
+                    
+                }
+            }
+                
         }
         
-        // $producto= Producto::find($id); 
-       
-        
-    }
-}
 
+        else(redirect('/producto'));           
+    }
+    
     public function eliminar($id){
         $producto = Carrito::find($id);
         $producto->delete();

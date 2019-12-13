@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Producto;
 
 class Carrito extends Model
 {
@@ -13,4 +14,5 @@ class Carrito extends Model
     {
         return $this->hasOne('App\Producto', 'id', 'id_producto');
     }
+    
 }

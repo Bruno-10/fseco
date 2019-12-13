@@ -11,7 +11,7 @@
 |
 */
 
-
+use App\Producto;
 
 Route::get("/", function () {
      return view('index');
@@ -54,6 +54,14 @@ route::post('/carrito', 'ProductoController@agregar');
 
 route::get('/carrito', 'ProductoController@eliminar');
 
+route::get('/carrito', function(){
+     return view('usuario.carrito');
+});
+
+route::get('/carrito/{id}', 'ProductoController@eliminar');
+
 route::get('/usuarioCarrito', 'UsuarioController@mostrar');
+
+route::get('/caja', 'ProductoController@caja');
 
 

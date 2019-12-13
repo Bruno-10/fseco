@@ -133,6 +133,10 @@ class ProductoController extends Controller
         return view("---------");      
     }
 
+    public function caja(){
+        return view('usuario.caja');
+    }
+
 
 }
 

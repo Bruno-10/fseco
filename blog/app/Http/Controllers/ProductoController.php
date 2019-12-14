@@ -134,9 +134,33 @@ class ProductoController extends Controller
     }
 
     public function caja(){
-        return view('usuario.caja');
+
+        $usuarioId = Auth::user()->id;
+
+        $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
+
+        $losProductosDelCarrito = $carrito->all();
+
+        $resultado = [];
+        $losProductos = [];
+                        
+        foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
+            $resultado[] = $productoDelCarrito["id_producto"];
+            
+        }
+        foreach($resultado as $idProducto){
+            
+            $losProductos[] = Producto::find($idProducto);
+            
+            
+        }
+        return view('usuario.caja', compact('losProductos',"resultado"));
+
     }
 
-
+    public function checkout()
+    {
+        return redirect('/usuario')->withErrors(['msg', 'The Message']);
+    }
 }
 

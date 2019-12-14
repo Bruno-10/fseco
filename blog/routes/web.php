@@ -64,4 +64,5 @@ route::get('/usuarioCarrito', 'UsuarioController@mostrar');
 
 route::get('/caja', 'ProductoController@caja');
 
+route::post('/compraExitosa', 'ProductoController@checkout');
 

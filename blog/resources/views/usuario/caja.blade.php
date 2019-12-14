@@ -24,20 +24,23 @@
           <span class="badge badge-secondary badge-pill">3</span>
         </h4>
         <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-condensed col-sm-9 col-md-10">
-            <div>
-              <h6 class="my-0">Product name</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$12</span>
-          </li>
+            @foreach ($losProductos as $producto)
+            <li class="list-group-item d-flex justify-content-between lh-condensed col-sm-9 col-md-10">
+                <div>
+                <h6 class="my-0">{{$producto['titulo']}}</h6>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">{{$producto['precio']}}</span>
+              </li>
+            @endforeach
           <li class="list-group-item d-flex justify-content-between col-sm-9 col-md-10">
             <span>Total</span>
             <strong>$20</strong>
           </li>
         </ul>
 
-        <form class="card p-2">
+        <form class="card p-2" action="/compraExitosa" id="caja" method="POST">
+            @csrf
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Codigo de Descuento">
             <div class="input-group-append">
@@ -171,7 +174,7 @@
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Completar Compra</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" form="caja">Completar Compra</button>
         </form>
       </div>
     </div>

@@ -22,9 +22,9 @@
                 <div class="clearfix"></div>
             </div>
             <div class="card-body">
+
                     <!-- PRODUCT -->
                     @foreach ($losProductos as $producto)
-                        
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-2 text-center">
                                     <img class="img-responsive" src="/storage/{{$producto['img']}}" alt="prewiew" width="120" height="80">
@@ -41,10 +41,8 @@
                                 </div>
                                 <div class="col-4 col-sm-4 col-md-4">
                                     <div class="quantity">
-                                        <input type="button" value="+" class="plus">
-                                        <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
+                                        <input type="number" step="1" max="99" min="1" value='1'  title="Qty" class="qty"
                                             size="4">
-                                        <input type="button" value="-" class="minus">
                                     </div>
                                 </div>
                                 <div class="col-2 col-sm-2 col-md-2 text-right">
@@ -55,7 +53,7 @@
                             </div>
                         </div>
                         <hr>
-                        @endforeach 
+                        @endforeach
                     <div class="pull-right">
                         <a href="" class="btn btn-outline-secondary pull-right">
                             Actualizar carrito
@@ -75,7 +73,7 @@
                     </div>
                 </div>
                 <div class="pull-right" style="margin: 10px">
-                    <a href="" class="btn btn-success pull-right">Checkout</a>
+                    <a href="/caja" class="btn btn-success pull-right">Checkout</a>
                     <div class="pull-right" style="margin: 5px">
                         Total: <b>{{$producto['precio']}}</b>
                     </div>

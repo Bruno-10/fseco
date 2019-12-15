@@ -51,7 +51,7 @@ Use App\Carrito;
           </li>
         </ul>
 
-        <form class="card p-2" action="/compraExitosa" id="caja" method="POST">
+        <form class="card p-2" action=""  method="POST">
             @csrf
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Codigo de Descuento">
@@ -60,32 +60,46 @@ Use App\Carrito;
             </div>
           </div>
         </form>
+        @if (count($errors) > 0)
+                
+        <div class="alert alert-danger" style="
+        margin-top: 18px;"  >
+          <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+          </ul>
+        </div>
+
+      @endif
       </div>
+        
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Direccion de Envio</h4>
-        <form class="needs-validation" novalidate>
+
+        <form class="needs-validation" action="/compraExitosa" id="caja" style="display: contents;" method="POST" novalidate>
+          @csrf
+
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Nombre</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="{{old('firstName')}}" required>
               <div class="invalid-feedback">
-                Necesitas poner un nombre valido.
               </div>
             </div>
+
             <div class="col-md-6 mb-3">
               <label for="lastName">Apellido</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="{{old('lastName')}}" required>
               <div class="invalid-feedback">
                 Necesitas poner un apellido valido.
               </div>
             </div>
           </div>
 
-
-
           <div class="mb-3">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="" required>
+            <input type="email" class="form-control" name="email" id="email" placeholder="" value="{{old('email')}}" required>
             <div class="invalid-feedback">
               Por favor ingrese un email valido;
             </div>
@@ -93,7 +107,7 @@ Use App\Carrito;
 
           <div class="mb-3">
             <label for="address">Direccion</label>
-            <input type="text" class="form-control" id="address" placeholder="1234 Calle " required>
+            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Calle " value="{{old('address')}}" required>
             <div class="invalid-feedback">
               Por favor ingrese su direccion de envio;
             </div>
@@ -101,13 +115,14 @@ Use App\Carrito;
 
           <div class="mb-3">
             <label for="address2">Direccion 2<span class="text-muted">(Opcional)</span></label>
-            <input type="text" class="form-control" id="address2" placeholder="Departamento o piso n°">
+            <input type="text" class="form-control" name="address2" id="address2" value="{{old('address2')}}" placeholder="Departamento o piso n°">
           </div>
 
           <div class="row">
+
             <div class="col-md-5 mb-3">
               <label for="country">Pais</label>
-              <select class="custom-select d-block w-100" id="country" required>
+              <select class="custom-select d-block w-100" name="country" id="country" value="{{old('country')}}" required>
                 <option value="">Selecciona...</option>
                 <option>Argentina</option>
               </select>
@@ -115,9 +130,10 @@ Use App\Carrito;
                 Por favor ingrese un pais valido.
               </div>
             </div>
+
             <div class="col-md-4 mb-3">
               <label for="state">Provincia</label>
-              <select class="custom-select d-block w-100" id="state" required>
+              <select class="custom-select d-block w-100" name="state" id="state" value="{{old('state')}}" required>
                 <option value="">Seleccione...</option>
                 <option>Santa Fe</option>
               </select>
@@ -125,14 +141,22 @@ Use App\Carrito;
                 Por favor ingrese una provincia valida
               </div>
             </div>
+
             <div class="col-md-3 mb-3">
               <label for="zip">Codigo Postal</label>
-              <input type="text" class="form-control zip" id="zip" placeholder="" required>
+              <input type="text" class="form-control zip" name="zip" id="zip" placeholder=""  value="{{old('zip')}}" required>
               <div class="invalid-feedback">
                 Codigo Postal Obigatorio.
               </div>
             </div>
+
           </div>
+
+          <div>
+            <input type="hidden" name="productos" value="{{implode(',', $resultado)}}">
+          </div>
+
+        </form>
           <hr class="mb-4">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="save-info">
@@ -155,7 +179,7 @@ Use App\Carrito;
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="cc-name">Nombre en Tarjeta</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <input type="text" class="form-control" name="cc-name" id="cc-name" placeholder="" required>
               <small class="text-muted">Nombre completo que se muestra en la carpeta</small>
               <div class="invalid-feedback">
                 El nombre de la tarjeta es obligatorio
@@ -163,7 +187,7 @@ Use App\Carrito;
             </div>
             <div class="col-md-6 mb-3">
               <label for="cc-number">Numero de tarjeta de credito</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <input type="text" class="form-control" name="cc_number" id="cc-number" placeholder="" required>
               <div class="invalid-feedback">
                 Credit card number is required
               </div>
@@ -172,14 +196,14 @@ Use App\Carrito;
           <div class="row">
             <div class="col-md-3 mb-3 izquierda">
               <label for="cc-expiration">Vencimiento</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <input type="text" class="form-control" name="cc-expiration" id="cc-expiration" placeholder="" required>
               <div class="invalid-feedback">
                 Fecha de vencimiento obligatoria
               </div>
             </div>
             <div class="col-md-3 mb-3 izquierda">
-              <label for="cc-expiration">Codigo de Seguridad</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <label for="cc-cvv">Codigo de Seguridad</label>
+              <input type="text" class="form-control" name="cc-cvv" id="cc-cvv" placeholder="" required>
               <div class="invalid-feedback">
                 Codigo de Seguridad obligatorio
               </div>
@@ -187,7 +211,6 @@ Use App\Carrito;
           </div>
           <hr class="mb-4">
           <button class="btn btn-primary btn-lg btn-block" type="submit" form="caja">Completar Compra</button>
-        </form>
       </div>
     </div>
   </div>

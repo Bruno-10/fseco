@@ -7,6 +7,7 @@ use App\Carrito;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
+use App\Caja;
 
 
 class ProductoController extends Controller
@@ -185,13 +186,63 @@ class ProductoController extends Controller
             
             
         }
+<<<<<<< HEAD
         return view('usuario.caja', compact('losProductosDelCarrito','losProductos',"resultado"));
+=======
+        
+        return view('usuario.caja', compact('losProductos',"resultado"));
+>>>>>>> ae8cbc0d89e7b5ba55065df0c6a2e01af1fff0fd
 
     }
 
-    public function checkout()
-    {
-        return redirect('/usuario')->withErrors(['msg', 'The Message']);
+    public function checkout(Request $req)
+    {          
+        $this->validate($req, 
+        [
+            "firstName" => "required|max:50|min:0",
+            "lastName" => "required|max:50|min:0",
+            "email" => "required|email|min:0",
+            "address" => "required|min:0",
+            "country" => "required",
+            "state" => "required",
+            "zip" => "required|integer|min:3",
+        ],
+        [
+            'required' => 'El campo :attribute es obligatorio',
+            'email' => 'El campo :attribute debe ser un email valido',
+            'min' => 'El campo Codigo Postal debe tener :min caracteres como minimo',
+            'max' => 'El campo :attribute debe tener :max caracteres como maximo',
+            'integer' => 'El campo :attribute deber ser un numero entero'
+
+        ]
+    );
+
+        $caja = new Caja;
+
+        $caja->nombre = $req['firstName'];
+        $caja->apellido = $req['lastName'];
+        $caja->email = $req['email'];
+        $caja->direccion = $req['address'];
+        if ($req['address2'] != null) {
+            $caja->direccion2 = $req['address2'];
+        }
+        $caja->pais = $req['country'];
+        $caja->provincia = $req['state'];
+        $caja->cPostal = $req['zip'];
+        $caja->idProductos = $req['productos'];
+
+        $caja->save();
+
+        $productos = explode(',', $req['productos']);
+        
+        $usuarioId = Auth::user()->id;        
+        $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();        
+        foreach ($productos as $idProducto) {
+        $producto = $carrito->firstWhere('id_producto', $idProducto);
+        $producto->delete(); 
+        }
+
+        return redirect('/');
     }
 }
 

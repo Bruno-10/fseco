@@ -68,3 +68,7 @@ route::get('/caja', 'ProductoController@caja');
 
 route::post('/compraExitosa', 'ProductoController@checkout');
 
+route::get('/faq', function(){
+     return view('usuario.faq');
+});
+

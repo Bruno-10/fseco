@@ -12,6 +12,13 @@ use App\Caja;
 
 class ProductoController extends Controller
 {
+
+    public function pagPrincipal(){
+        $productos1 = Producto::take(3)->get();
+        $productos2 = Producto::take(3)->get();
+        return view('index', compact('productos1', 'productos2'));
+    }
+
     public function listado()
     {   
         $productos = Producto::all();

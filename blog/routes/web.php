@@ -13,9 +13,7 @@
 
 use App\Producto;
 
-Route::get("/", function () {
-     return view('index');
-});
+Route::get("/", 'ProductoController@pagPrincipal');
 
 Route::get("/contacto", "GeneralController@index");
 Auth::routes();

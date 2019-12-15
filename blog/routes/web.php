@@ -52,13 +52,15 @@ route::get('/detalle' , 'ProductoController@detalle');
 
 route::post('/carrito', 'ProductoController@agregar');
 
-route::get('/carrito', 'ProductoController@eliminar');
-
 route::get('/carrito', function(){
      return view('usuario.carrito');
 });
 
 route::get('/carrito/{id}', 'ProductoController@eliminar');
+
+route::get('/subirCantidad/{id}', 'ProductoController@subirCantidad');
+
+route::get('/bajarCantidad/{id}', 'ProductoController@bajarCantidad');
 
 route::get('/usuarioCarrito', 'UsuarioController@mostrar');
 

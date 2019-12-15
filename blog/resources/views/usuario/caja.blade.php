@@ -1,3 +1,6 @@
+@php
+Use App\Carrito;
+@endphp
 @extends('layouts.layout')
 
 @section('titulo')
@@ -21,7 +24,12 @@
       <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-muted">Tus productos</span>
-          <span class="badge badge-secondary badge-pill">3</span>
+          <span class="badge badge-secondary badge-pill">
+            @php
+              $Carrito = new Carrito;
+              echo $Carrito->cantidadDeProductos($losProductosDelCarrito);
+            @endphp
+          </span>
         </h4>
         <ul class="list-group mb-3">
             @foreach ($losProductos as $producto)
@@ -35,7 +43,11 @@
             @endforeach
           <li class="list-group-item d-flex justify-content-between col-sm-9 col-md-10">
             <span>Total</span>
-            <strong>$20</strong>
+            <strong>
+              @php
+                echo $Carrito->precioTotal($losProductos, $losProductosDelCarrito);
+              @endphp
+            </strong>
           </li>
         </ul>
 
@@ -117,7 +129,7 @@
               <label for="zip">Codigo Postal</label>
               <input type="text" class="form-control zip" id="zip" placeholder="" required>
               <div class="invalid-feedback">
-                Codigo Posta Obigatorio.
+                Codigo Postal Obigatorio.
               </div>
             </div>
           </div>

@@ -98,27 +98,27 @@ class ProductoController extends Controller
                             
                         }
                         
-                        return view('usuario.carrito', compact('losProductos',"resultado"));
+                        return view('usuario.carrito', compact('losProductosDelCarrito','losProductos',"resultado"));
                     } 
             }
             else{
-                $producto = new producto;
+                $producto = new Carrito;
                 $producto->id_producto = $id;
                 $producto->id_cliente = $usuarioId;
                 $producto->cantidad = 1;
                 $producto->save();
                 $losProductosDelCarrito = $carrito->all();
-                        
+                $resultado = [];
+
                 foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
-                    $resultado = [];
                     $resultado[] = $productoDelCarrito["id_producto"];
-                    
                 }
+                $losProductos = [];
                 foreach($resultado as $idProducto){
-                    $losProductos = [];
                     $losProductos[] = Producto::find($idProducto);
                     
                 }
+            return view('usuario.carrito', compact('losProductosDelCarrito','losProductos',"resultado"));
             }
                 
         }
@@ -127,10 +127,41 @@ class ProductoController extends Controller
         else(redirect('/producto'));           
     }
     
+    public function bajarCantidad($id){
+        $usuarioId = Auth::user()->id;
+        $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
+        $producto = $carrito->firstWhere('id_producto', $id);
+        if($producto["cantidad"] > 0){
+            $producto->cantidad -= 1;
+            $producto->save();
+            
+        }
+        else{
+            $producto->delete();
+        }
+        
+        return redirect("usuarioCarrito");
+    }
+
+    public function subirCantidad($id){
+        $usuarioId = Auth::user()->id;
+        $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
+        $producto = $carrito->firstWhere('id_producto', $id);
+        if($producto["cantidad"] > 0){
+            $producto->cantidad += 1;
+            $producto->save();   
+        }
+        
+        return redirect("usuarioCarrito");
+    }
+
     public function eliminar($id){
-        $producto = Carrito::find($id);
+        $usuarioId = Auth::user()->id;
+        $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
+        $producto = $carrito->firstWhere('id_producto', $id);
         $producto->delete();
-        return view("---------");      
+        
+        return redirect("usuarioCarrito");
     }
 
     public function caja(){
@@ -154,7 +185,7 @@ class ProductoController extends Controller
             
             
         }
-        return view('usuario.caja', compact('losProductos',"resultado"));
+        return view('usuario.caja', compact('losProductosDelCarrito','losProductos',"resultado"));
 
     }
 

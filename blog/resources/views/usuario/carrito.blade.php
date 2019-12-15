@@ -1,3 +1,22 @@
+@php
+    use App\Carrito; 
+    use App\Producto;
+
+    $usuarioId = Auth::user()->id;
+    $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
+    $resultado = [];
+    $losProductos = [];
+    $losProductosDelCarrito = $carrito->all();
+    foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
+        $resultado[] = $productoDelCarrito["id_producto"];
+        
+    }
+    foreach($resultado as $idProducto){
+        
+        $losProductos[] = Producto::find($idProducto);
+        
+    }
+@endphp
 @extends('layouts.layout')
 
 @section('titulo')
@@ -25,6 +44,9 @@
 
                     <!-- PRODUCT -->
                     @foreach ($losProductos as $producto)
+                        @php
+                        $numeroDelProducto = 0;
+                        @endphp
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-2 text-center">
                                     <img class="img-responsive" src="/storage/{{$producto['img']}}" alt="prewiew" width="120" height="80">
@@ -32,27 +54,34 @@
                             <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-4">
                                 <h4 class="product-name"><strong>{{$producto['titulo']}}</strong></h4>
                                 <h4>
-                                    <small>{{$producto['descripcion']}}</small>
+                                    <small> {{$producto['descripcion']}}</small>
                                 </h4>
                             </div>
                             <div class="col-12 col-sm-12 text-sm-center col-md-6 text-md-right row">
                                 <div class="col-3 col-sm-3 col-md-6 text-md-right pre" style="padding: 0px;padding-top: 10px;">
-                                    <h6><strong>{{$producto['precio']}}</strong></h6>
+                                    <h6><strong>$ {{$producto['precio']}}</strong></h6>
                                 </div>
                                 <div class="col-4 col-sm-4 col-md-4">
                                     <div class="quantity">
-                                        <input type="number" step="1" max="99" min="1" value='1'  title="Qty" class="qty"
-                                            size="4">
+                                        {{$losProductosDelCarrito[$numeroDelProducto]['cantidad']}}
+                                        <a href="/subirCantidad/{{$producto["id"]}}"><i class="fas fa-arrow-up"></i>
+                                        <a href="/bajarCantidad/{{$producto["id"]}}"><i class="fas fa-arrow-down"></i>
                                     </div>
                                 </div>
+                                
                                 <div class="col-2 col-sm-2 col-md-2 text-right">
-                                    <button type="button" class="btn btn-outline-danger btn-xs">
-                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                    </button>
+                                    <a href="/carrito/{{$producto["id"]}}"> 
+                                        <button type="button" class="btn btn-outline-danger btn-xs">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <hr>
+                        @php
+                        $numeroDelProducto += 1;
+                        @endphp
                         @endforeach
                     <div class="pull-right">
                         <a href="" class="btn btn-outline-secondary pull-right">
@@ -75,7 +104,12 @@
                 <div class="pull-right" style="margin: 10px">
                     <a href="/caja" class="btn btn-success pull-right">Checkout</a>
                     <div class="pull-right" style="margin: 5px">
-                        Total: <b>{{$producto['precio']}}</b>
+                        Total: <b> $ 
+                            <?php
+                            $Carrito = new Carrito;
+                            echo $Carrito->precioTotal($losProductos, $losProductosDelCarrito);
+                            ?>
+                            </b>
                     </div>
                 </div>
             </div>

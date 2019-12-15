@@ -50,17 +50,23 @@ route::get('/detalle' , 'ProductoController@detalle');
 
 route::post('/carrito', 'ProductoController@agregar');
 
-route::get('/carrito', 'ProductoController@eliminar');
-
 route::get('/carrito', function(){
      return view('usuario.carrito');
 });
 
 route::get('/carrito/{id}', 'ProductoController@eliminar');
 
+route::get('/subirCantidad/{id}', 'ProductoController@subirCantidad');
+
+route::get('/bajarCantidad/{id}', 'ProductoController@bajarCantidad');
+
 route::get('/usuarioCarrito', 'UsuarioController@mostrar');
 
 route::get('/caja', 'ProductoController@caja');
 
 route::post('/compraExitosa', 'ProductoController@checkout');
+
+route::get('/faq', function(){
+     return view('usuario.faq');
+});
 

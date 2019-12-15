@@ -186,12 +186,7 @@ class ProductoController extends Controller
             
             
         }
-<<<<<<< HEAD
         return view('usuario.caja', compact('losProductosDelCarrito','losProductos',"resultado"));
-=======
-        
-        return view('usuario.caja', compact('losProductos',"resultado"));
->>>>>>> ae8cbc0d89e7b5ba55065df0c6a2e01af1fff0fd
 
     }
 
@@ -238,7 +233,10 @@ class ProductoController extends Controller
         $usuarioId = Auth::user()->id;        
         $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();        
         foreach ($productos as $idProducto) {
+        $productoBD = Producto::find($idProducto);
         $producto = $carrito->firstWhere('id_producto', $idProducto);
+        $productoBD->cantidad -= $producto["cantidad"];
+        $productoBD->save();
         $producto->delete(); 
         }
 

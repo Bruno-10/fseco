@@ -196,7 +196,15 @@ class ProductoController extends Controller
             
             
         }
-        return view('usuario.caja', compact('losProductosDelCarrito','losProductos',"resultado"));
+
+        $cantidadTotalDeProductos = 0;   
+        foreach ($losProductos as $producto)
+        $cantidadTotalDeProductos += $producto["cantidad"]; 
+        $instanciaParaElPrecio = new Carrito;
+
+        $precioTotal = $instanciaParaElPrecio->precioTotal($losProductos, $losProductosDelCarrito);
+
+        return view('usuario.caja', compact('precioTotal', 'cantidadTotalDeProductos','losProductosDelCarrito','losProductos',"resultado"));
 
     }
 
@@ -260,12 +268,7 @@ class ProductoController extends Controller
         $producto->delete(); 
         }
 
-<<<<<<< HEAD
-        return redirect('/');
-        
-=======
         return redirect('/')->with('success', 'your message,here');
->>>>>>> 27cbb403e2f6af378c1adec61a9ac89174d36bd6
     }
 }
 

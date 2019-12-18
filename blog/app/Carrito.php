@@ -15,13 +15,13 @@ class Carrito extends Model
         return $this->hasOne('App\Producto', 'id', 'id_producto');
     }
 
-    public function cantidadDeProductos($carrito){
-        $total = 0;
-        foreach ($carrito as $indice=>$producto) {
-            $total += $producto["cantidad"];
-        }
-        return $total;
-    }
+    // public function cantidadDeProductos($carrito){
+    //     $total = 0;
+    //     foreach ($carrito as $indice=>$producto) {
+    //         $total += $producto["cantidad"];
+    //     }
+    //     return $total;
+    // }
     public function precioTotal($productos, $carrito){
         $total = 0;
         $numeroDelProducto = 0;

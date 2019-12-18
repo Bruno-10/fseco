@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\Caja;
+use App\CajaCabecera;
 
 
 class ProductoController extends Controller
@@ -15,7 +16,7 @@ class ProductoController extends Controller
 
     public function pagPrincipal(){
         $productos1 = Producto::take(3)->get();
-        $productos2 = Producto::take(3)->get();
+        $productos2 = Producto::take(3)->skip(3)->get();
         return view('index', compact('productos1', 'productos2'));
     }
 
@@ -173,12 +174,12 @@ class ProductoController extends Controller
     }
 
     public function caja(){
-
         $usuarioId = Auth::user()->id;
-
+        
         $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
-
+        
         $losProductosDelCarrito = $carrito->all();
+        
 
         $resultado = [];
         $losProductos = [];
@@ -215,27 +216,37 @@ class ProductoController extends Controller
             'min' => 'El campo Codigo Postal debe tener :min caracteres como minimo',
             'max' => 'El campo :attribute debe tener :max caracteres como maximo',
             'integer' => 'El campo :attribute deber ser un numero entero'
-
-        ]
-    );
-
-        $caja = new Caja;
-
-        $caja->nombre = $req['firstName'];
-        $caja->apellido = $req['lastName'];
-        $caja->email = $req['email'];
-        $caja->direccion = $req['address'];
+            
+            ]
+        );
+        $productos = explode(',', $req['productos']);        
+        $cajaCabecera = new CajaCabecera;
+        
+        $cajaCabecera->nombre = $req['firstName'];
+        $cajaCabecera->apellido = $req['lastName'];
+        $cajaCabecera->email = $req['email'];
+        $cajaCabecera->direccion = $req['address'];
         if ($req['address2'] != null) {
-            $caja->direccion2 = $req['address2'];
+            $cajaCabecera->direccion2 = $req['address2'];
         }
-        $caja->pais = $req['country'];
-        $caja->provincia = $req['state'];
-        $caja->cPostal = $req['zip'];
-        $caja->idProductos = $req['productos'];
+        $cajaCabecera->pais = $req['country'];
+        $cajaCabecera->provincia = $req['state'];
+        $cajaCabecera->cPostal = $req['zip'];
+
+        $cajaCabecera->save();
+
+       foreach ($productos as $value) {
+        $carrito = Carrito::where('id_producto', '=', $value)->get(); 
+        $cantidad = $carrito[0]->cantidad;
+        
+        $caja = new Caja;
+        $caja->id_cabecera = $cajaCabecera->id;
+        $caja->idProductos = $value;
+        $caja->cantidad = $cantidad;
 
         $caja->save();
+       }
 
-        $productos = explode(',', $req['productos']);
         
         $usuarioId = Auth::user()->id;        
         $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();        
@@ -247,7 +258,7 @@ class ProductoController extends Controller
         $producto->delete(); 
         }
 
-        return redirect('/');
+        return redirect('/')->with('success', 'your message,here');
     }
 }
 

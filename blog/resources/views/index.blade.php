@@ -4,9 +4,28 @@
      Padel Sport
 @endsection
 
+@section('links')
+<script src="sweetalert2.all.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+@endsection
+
 @section('principal')
 
 <main class="row col-sm-12 col-md-12 col-lg-12  margencero main">
+
+    @if (\Session::has('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'OK...',
+                text: '{!! \Session::get('success') !!}',
+                footer: '<a href>Why do I have this issue?</a>'
+            })
+        </script>
+@endif
     <div class='col-sm-12 col-md-8 col-lg-10 caja_derecha margencero'>
         @foreach ($productos1 as $producto) 
             <div class="caja_producto col-sm-12 col-md-3 col-lg-3">

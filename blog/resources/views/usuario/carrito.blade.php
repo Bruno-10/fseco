@@ -43,10 +43,11 @@
             <div class="card-body">
 
                     <!-- PRODUCT -->
-                    @foreach ($losProductos as $producto)
-                        @php
+                    @php
                         $numeroDelProducto = 0;
-                        @endphp
+                    @endphp
+                    @foreach ($losProductos as $producto)
+                        
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-2 text-center">
                                     <img class="img-responsive" src="/storage/{{$producto['img']}}" alt="prewiew" width="120" height="80">
@@ -80,9 +81,10 @@
                         </div>
                         <hr>
                         @php
-                        $numeroDelProducto += 1;
+                        $numeroDelProducto++;
                         @endphp
                         @endforeach
+                       
                     <div class="pull-right">
                         <a href="" class="btn btn-outline-secondary pull-right">
                             Actualizar carrito

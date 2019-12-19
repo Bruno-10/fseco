@@ -63,7 +63,7 @@ class ProductoController extends Controller
     }
 
     public function agregar(request $req){
-        if (Auth::check()) {
+        if (Auth::user()) {
             $usuarioId = Auth::user()->id;
             $id = $req["id"];
             $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
@@ -112,6 +112,7 @@ class ProductoController extends Controller
                     } 
                     
             }
+            
             else{
                 $producto = new Carrito;
                 $producto->id_producto = $id;
@@ -209,7 +210,7 @@ class ProductoController extends Controller
     }
 
     public function checkout(Request $req)
-    {          
+    {   
         $this->validate($req, 
         [
             "firstName" => "required|max:50|min:0",

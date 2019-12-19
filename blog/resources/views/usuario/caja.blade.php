@@ -4,6 +4,7 @@ Use App\Carrito;
 @extends('layouts.layout')
 
 @section('links')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{ asset('js/main.js') }}" defer></script>
 @endsection
 
@@ -212,7 +213,7 @@ Use App\Carrito;
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block elboton" id="boton" type="submit" form="caja">Completar Compra</button>
+          <a class="btn btn-primary btn-lg btn-block elboton" id="boton" {{-- type="submit" --}} form="caja">Completar Compra</a>
       </div>
     </div>
   </div>

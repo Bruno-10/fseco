@@ -11,7 +11,7 @@ class CreateCajaTable extends Migration
      *
      * @return void
      */
-/*     public function up()
+    public function up()
     {
         Schema::create('caja', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -21,15 +21,15 @@ class CreateCajaTable extends Migration
             $table->timestamps();
         });
     }
- */
+
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-/*     public function down()
+    public function down()
     {
         Schema::dropIfExists('caja');
-    } */
+    }
 }

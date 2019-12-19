@@ -63,7 +63,7 @@ class ProductoController extends Controller
     }
 
     public function agregar(request $req){
-        if (Auth::user()) {
+        if (Auth::check()) {
             $usuarioId = Auth::user()->id;
             $id = $req["id"];
             $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();

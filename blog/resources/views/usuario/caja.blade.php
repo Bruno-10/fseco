@@ -3,6 +3,10 @@ Use App\Carrito;
 @endphp
 @extends('layouts.layout')
 
+@section('links')
+<script src="{{ asset('js/main.js') }}" defer></script>
+@endsection
+
 @section('titulo')
     Caja
 @endsection
@@ -208,7 +212,7 @@ Use App\Carrito;
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit" form="caja">Completar Compra</button>
+          <button class="btn btn-primary btn-lg btn-block elboton" id="boton" type="submit" form="caja">Completar Compra</button>
       </div>
     </div>
   </div>

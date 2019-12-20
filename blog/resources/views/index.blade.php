@@ -5,25 +5,16 @@
 @endsection
 
 @section('links')
-<script src="sweetalert2.all.min.js"></script>
-<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-<script src="sweetalert2.min.js"></script>
-<link rel="stylesheet" href="sweetalert2.min.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @endsection
 
 @section('principal')
 
 <main class="row col-sm-12 col-md-12 col-lg-12  margencero main">
-
+   {{--  {!! \Session::get('success') !!} --}}
     @if (\Session::has('success'))
         <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'OK...',
-                text: '{!! \Session::get('success') !!}',
-                footer: '<a href>Why do I have this issue?</a>'
-            })
+            swal("Compra Realizada con Exito!", "Gracias por confiar en nosotros!", "success");
         </script>
 @endif
     <div class='col-sm-12 col-md-8 col-lg-10 caja_derecha margencero'>

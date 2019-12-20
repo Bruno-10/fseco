@@ -99,6 +99,7 @@ class ProductoController extends Controller
                     } 
                     
             }
+            
             else{
                 $producto = new Carrito;
                 $producto->id_producto = $id;
@@ -199,7 +200,7 @@ class ProductoController extends Controller
     }
 
     public function checkout(Request $req)
-    {          
+    {   
         $this->validate($req, 
 
         [

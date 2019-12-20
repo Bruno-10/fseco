@@ -20,7 +20,7 @@ Use App\Carrito;
 @endsection
 
 @section('principal')
-<div class="container">
+<div class="container Caja">
     <div class="py-5 text-center">
       <h2>Formulario de Pago</h2>
     </div>
@@ -47,16 +47,6 @@ Use App\Carrito;
             </li>
           @endforeach
 
-            {{-- @foreach ($losProduc as $key=>$producto)
-            <li class="list-group-item d-flex justify-content-between lh-condensed col-sm-9 col-md-10">
-                <div>
-                <h6 class="my-0">{{$producto['titulo']}}</h6>
-               
-                  <small class="text-muted">{{$producto['descripcion']}}</small>
-                </div>
-              <span class="text-muted">{{$losProductosDelCarrito[$key]["cantidad"]}} x   {{$producto['precio']}}</span>
-              </li>
-            @endforeach --}}
           <li class="list-group-item d-flex justify-content-between col-sm-9 col-md-10">
             <span>Total</span>
             <strong>

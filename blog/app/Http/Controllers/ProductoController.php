@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Caja;
 use App\CajaCabecera;
-
+use Illuminate\Support\Arr;
 
 class ProductoController extends Controller
 {
@@ -63,52 +63,39 @@ class ProductoController extends Controller
     }
 
     public function agregar(request $req){
-        if (Auth::user()) {
-            $usuarioId = Auth::user()->id;
+            if (Auth::user()) {
             $id = $req["id"];
+            $usuarioId = Auth::user()->id;
             $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
-            
+            $carritos = (array) $carrito;
+            $losProductosDelCarrito = Arr::flatten((array) $carritos);
+            $cantidadTotalDeProductos = $carrito->sum('cantidad');
+
             if($carrito->isNotEmpty()){
                 $producto = $carrito->firstWhere('id_producto', $id);
-                //
                 if(is_null($producto)){
                     $producto = new Carrito;
                     $producto->id_producto = $id;
                     $producto->id_cliente = $usuarioId;
                     $producto->cantidad = 1;
                     $producto->save();
-                    $losProductosDelCarrito = $carrito->all();  
-                    foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
-                        $resultado = [];
+                    $losProductosDelCarrito = Arr::flatten((array) $carritos);  
+                    $resultado = [];
+                    foreach($losProductosDelCarrito as $key=>$productoDelCarrito){
                         $resultado[] = $productoDelCarrito["id_producto"];
-                        
-                    }
-                    foreach($resultado as $idProducto){
-                        $losProductos = [];
-                        $losProductos[] = Producto::find($idProducto);
-                        
-                    }
-                    return view('usuario.carrito', compact('losProductosDelCarrito','losProductos',"resultado"));
-                    }
+
+                    return view('usuario.carrito', compact('losProductosDelCarrito',"resultado"));
+                    }}
                     else{
                         $producto->id_producto = $id;
                         $producto->id_cliente = $usuarioId;
-                        
                         $producto->cantidad += 1;
                         $producto->save();
-                        $losProductosDelCarrito = $carrito->all();
                         $resultado = [];
-                        $losProductos = [];
                         foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
-                            $resultado[] = $productoDelCarrito["id_producto"];
-                            
+                            $resultado[] = $productoDelCarrito["id_producto"]; 
                         }
-                        foreach($resultado as $idProducto){
-                            
-                            $losProductos[] = Producto::find($idProducto);
-                            
-                        }
-                        return view('usuario.carrito', compact('losProductosDelCarrito','losProductos',"resultado"));    
+                        return view('usuario.carrito', compact('losProductosDelCarrito',"resultado"));    
                     } 
                     
             }
@@ -118,18 +105,12 @@ class ProductoController extends Controller
                 $producto->id_cliente = $usuarioId;
                 $producto->cantidad = 1;
                 $producto->save();
-                $losProductosDelCarrito = $carrito->all();
                 $resultado = [];
 
                 foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
                     $resultado[] = $productoDelCarrito["id_producto"];
                 }
-                $losProductos = [];
-                foreach($resultado as $idProducto){
-                    $losProductos[] = Producto::find($idProducto);
-                    
-                }
-            return view('usuario.carrito', compact('losProductosDelCarrito','losProductos',"resultado"));
+            return view('usuario.carrito', compact('losProductosDelCarrito',"resultado"));
             }
                 
         }
@@ -177,40 +158,50 @@ class ProductoController extends Controller
 
     public function caja(){
         $usuarioId = Auth::user()->id;
-        
         $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
+        $carritos = (array) $carrito;
+        $losProductosDelCarrito = Arr::flatten((array) $carritos);
+        $cantidadTotalDeProductos = $carrito->sum('cantidad');
+        $instanciaParaElPrecio = new Carrito;
+        $precioTotal = $instanciaParaElPrecio->precioTotal($losProductosDelCarrito);
         
-        $losProductosDelCarrito = $carrito->all();
-        
-
+        // $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
+        // $losProductosDelCarrito = $carrito->all();
+        // $precioTotal = $carritos->sum($carritos->producto['precio']) * $carritos->
         $resultado = [];
-        $losProductos = [];
                         
         foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
             $resultado[] = $productoDelCarrito["id_producto"];
-            
-        }
-        foreach($resultado as $idProducto){
-            
-            $losProductos[] = Producto::find($idProducto);
-            
-            
         }
 
-        $cantidadTotalDeProductos = 0;   
-        foreach ($losProductos as $producto)
-        $cantidadTotalDeProductos += $producto["cantidad"]; 
-        $instanciaParaElPrecio = new Carrito;
+        // foreach($resultado as $idProducto){
+        //     $losProductos[] = Producto::find($idProducto);
+        // }
 
-        $precioTotal = $instanciaParaElPrecio->precioTotal($losProductos, $losProductosDelCarrito);
+        // $cantidadTotalDeProductos = $carritos->sum('cantidad');;
+        // $i = 0;
 
-        return view('usuario.caja', compact('precioTotal', 'cantidadTotalDeProductos','losProductosDelCarrito','losProductos',"resultado"));
+        // foreach ($losProductos as $producto)
+        // $cantidadTotalDeProductos += $losProductosDelCarrito[$i]["cantidad"]; 
+        // $i += 1;
+        // $instanciaParaElPrecio = new Carrito;
 
+        // $precioTotal = $instanciaParaElPrecio->precioTotal($losProductos, $losProductosDelCarrito);
+        // dd($losProductos, $losProductosDelCarrito);
+        return view('usuario.caja', compact(
+            'carritos',
+            'precioTotal',
+            'cantidadTotalDeProductos',
+            'losProductosDelCarrito',
+            'resultado',
+
+        ));
     }
 
     public function checkout(Request $req)
     {          
         $this->validate($req, 
+
         [
             "firstName" => "required|max:50|min:0",
             "lastName" => "required|max:50|min:0",

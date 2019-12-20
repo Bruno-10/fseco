@@ -70,3 +70,7 @@ route::get('/faq', function(){
      return view('usuario.faq');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

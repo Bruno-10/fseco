@@ -22,12 +22,10 @@ class Carrito extends Model
     //     }
     //     return $total;
     // }
-    public function precioTotal($productos, $carrito){
+    public function precioTotal($losProductosDelCarrito){
         $total = 0;
-        $numeroDelProducto = 0;
-        foreach ($productos as $producto) {
-            $total += $producto["precio"] * $carrito[$numeroDelProducto]["cantidad"];
-            $numeroDelProducto += 1;
+        foreach ($losProductosDelCarrito as $key => $carrito) {
+            $total += $carrito->producto->precio * $carrito['cantidad'];
         }
         return $total;
     }

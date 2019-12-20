@@ -109,7 +109,7 @@
                         Total: <b> $ 
                             <?php
                             $Carrito = new Carrito;
-                            echo $Carrito->precioTotal($losProductos, $losProductosDelCarrito);
+                            echo $Carrito->precioTotal($losProductosDelCarrito);
                             ?>
                             </b>
                     </div>

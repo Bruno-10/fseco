@@ -31,16 +31,27 @@ Use App\Carrito;
           
         </h4>
         <ul class="list-group mb-3">
-            @foreach ($losProductos as $producto)
+          @foreach ($losProductosDelCarrito as $carrito)
+          <li class="list-group-item d-flex justify-content-between lh-condensed col-sm-9 col-md-10">
+              <div>
+              <h6 class="my-0">{{$carrito->producto->titulo}}</h6>
+             
+                <small class="text-muted">{{$carrito->producto->descripcion}}</small>
+              </div>
+            <span class="text-muted">{{$carrito->cantidad}} x   {{$carrito->producto->precio}}</span>
+            </li>
+          @endforeach
+
+            {{-- @foreach ($losProduc as $key=>$producto)
             <li class="list-group-item d-flex justify-content-between lh-condensed col-sm-9 col-md-10">
                 <div>
                 <h6 class="my-0">{{$producto['titulo']}}</h6>
                
                   <small class="text-muted">{{$producto['descripcion']}}</small>
                 </div>
-              <span class="text-muted">{{$producto["cantidad"]}} x   {{$producto['precio']}}</span>
+              <span class="text-muted">{{$losProductosDelCarrito[$key]["cantidad"]}} x   {{$producto['precio']}}</span>
               </li>
-            @endforeach
+            @endforeach --}}
           <li class="list-group-item d-flex justify-content-between col-sm-9 col-md-10">
             <span>Total</span>
             <strong>

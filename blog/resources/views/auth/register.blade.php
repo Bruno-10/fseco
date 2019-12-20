@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('links')
+     <script src="{{ asset('js/conexionApiProvincias.js') }}"></script>
+@endsection
+
 @section('principal')
 <div class='d-flex justify-content-center'>
     <div class="container">
@@ -30,7 +34,7 @@
                                 <label for="apellido" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="apellido" type="text" class="form-control @error('apellido') is-invalid @enderror" name="apellido" value="{{ old('apellido') }}" required autocomplete="apellido" autofocus>
+                                    <input id="apellido" type="text" class="form-control @error('apellido') is-invalid @enderror" name="apellido" value="{{ old('apellido') }}" required autocomplete="surname" autofocus>
 
                                     @error('apellido')
                                         <span class="invalid-feedback" role="alert">
@@ -38,8 +42,30 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
                             
+
+                            <div class="col-md-5 mb-3">
+                                <label for="pais">Pais</label>
+                                <select class="custom-select d-block w-100 pais form-control @error('pais') is-invalid @enderror" name="pais" id="pais" value="{{old('pais')}}" required>
+                                  <option value="">Selecciona...</option>
+                                  
+                                </select>
+                                <div class="invalid-feedback">
+                                  Por favor ingrese un pais valido.
+                                </div>
+                            </div>
+                  
+                            <div class="provincia col-md-5 mb-3">
+                                <label class="provincia" for="provincia">Provincia</label>
+                                <div id="provincia"> 
+                                    <span>Debe seleccionar un país primero.</span>
+                                </div>
+                                <div class="invalid-feedback">
+                                  Por favor ingrese una provincia valida
+                                </div>
+                            </div> 
+                        </div>
+
                             <div class="form-group row">
                                 <label for="imagen" class="col-md-4 col-form-label text-md-right">{{ __('Imagen Perfil') }}</label>
 

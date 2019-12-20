@@ -166,29 +166,12 @@ class ProductoController extends Controller
         $instanciaParaElPrecio = new Carrito;
         $precioTotal = $instanciaParaElPrecio->precioTotal($losProductosDelCarrito);
         
-        // $carrito = Carrito::where('id_cliente', '=', $usuarioId)->get();
-        // $losProductosDelCarrito = $carrito->all();
-        // $precioTotal = $carritos->sum($carritos->producto['precio']) * $carritos->
         $resultado = [];
                         
         foreach($losProductosDelCarrito as $id=>$productoDelCarrito){
             $resultado[] = $productoDelCarrito["id_producto"];
         }
 
-        // foreach($resultado as $idProducto){
-        //     $losProductos[] = Producto::find($idProducto);
-        // }
-
-        // $cantidadTotalDeProductos = $carritos->sum('cantidad');;
-        // $i = 0;
-
-        // foreach ($losProductos as $producto)
-        // $cantidadTotalDeProductos += $losProductosDelCarrito[$i]["cantidad"]; 
-        // $i += 1;
-        // $instanciaParaElPrecio = new Carrito;
-
-        // $precioTotal = $instanciaParaElPrecio->precioTotal($losProductos, $losProductosDelCarrito);
-        // dd($losProductos, $losProductosDelCarrito);
         return view('usuario.caja', compact(
             'carritos',
             'precioTotal',

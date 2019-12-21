@@ -19,5 +19,25 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => Hash::make('admin1234')
         ]);
+        DB::table('categorias')->insert([
+            'id' => '1',
+            'nombre' => 'paletas'
+        ]);
+        DB::table('categorias')->insert([
+            'id' => '2',
+            'nombre' => 'indumentaria'
+        ]);
+        DB::table('categorias')->insert([
+            'id' => '3',
+            'nombre' => 'accesorios'
+        ]);
+        DB::table('categorias')->insert([
+            'id' => '4',
+            'nombre' => 'paleteros'
+        ]);
+        DB::table('categorias')->insert([
+            'id' => '5',
+            'nombre' => 'pelotas'
+        ]);
     }
 }

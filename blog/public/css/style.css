@@ -304,6 +304,11 @@ footer h3 {
   color: white;
 }
 
+.carrusel {
+  width: auto;
+  margin: auto;
+}
+
 .carousel-item img {
   height: 50vh;
   width: 150vh;
@@ -649,6 +654,19 @@ input[type=file] {
   border: 2px solid #41B3A3;
   border-radius: 4px;
   height: 40%;
+}
+
+.contenedorBotones {
+  background-color: white;
+  border-radius: 10px;
+}
+.contenedorBotones a {
+  margin: 2vh;
+}
+
+.botonesAdmin {
+  padding: 5vh;
+  margin: 0 auto;
 }
 
 .contenedor {

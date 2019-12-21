@@ -11,7 +11,7 @@
             <div>
                 <a class="btn btn-success" href="productos-admin/agregar"> Agregar Producto </a>
             </div>
-            <table class="table border">
+            <table class="card table border">
                     
                     <tr>
                         <th scope="col border">Id</th>

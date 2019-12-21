@@ -72,7 +72,7 @@ class RegisterController extends Controller
         $path = $data['imagen']->store('public');
 
         $nombredeArchivo = basename($path);
-        dd($data);
+
         return User::create([
             'nombre' => $data['name'],
             'apellido' => $data['apellido'],

@@ -26,7 +26,7 @@ fetch('https://restcountries.eu/rest/v2/all')
         console.log(error);
     })
     campoPaises.onchange = function(){
-                    
+
         if(this.value.toUpperCase() === ("Argentina").toUpperCase()){  
             fetch('https://apis.datos.gob.ar/georef/api/provincias')
             .then( function (response){
@@ -50,8 +50,10 @@ fetch('https://restcountries.eu/rest/v2/all')
                 console.log(error);
             })    
         }
-        else{labelProvincia.innerHTML = "No hay provincias para el país seleccionado.";}
-
+        else{
+            var selectProvincia = document.querySelector("select[name='provincia']").remove();
+            labelProvincia.innerHTML = "No hay provincias para el país seleccionado.";
+        }
     }
     
     

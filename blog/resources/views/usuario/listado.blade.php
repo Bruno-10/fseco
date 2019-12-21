@@ -5,7 +5,7 @@
 @endsection
 
 @section('principal')
-    <main class="row col-sm-12 col-md-12 col-lg-12  margencero main">
+    <main class="row col-sm-12 col-md-12 col-lg-12   margencero main">
         <div class="categorias col-sm-12 col-md-4 col-lg-2 margencero">
             <div id='titulo_categoria'>
                 <h5>Categorias</h5>

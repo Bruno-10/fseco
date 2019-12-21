@@ -3,6 +3,11 @@ Use App\Carrito;
 @endphp
 @extends('layouts.layout')
 
+@section('links')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{ asset('js/main.js') }}" defer></script>
+@endsection
+
 @section('titulo')
     Caja
 @endsection
@@ -15,7 +20,7 @@ Use App\Carrito;
 @endsection
 
 @section('principal')
-<div class="container">
+<div class="container Caja">
     <div class="py-5 text-center">
       <h2>Formulario de Pago</h2>
     </div>
@@ -25,28 +30,27 @@ Use App\Carrito;
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-muted">Tus productos</span>
           <span class="badge badge-secondary badge-pill">
-            @php
-              $Carrito = new Carrito;
-              echo $Carrito->cantidadDeProductos($losProductosDelCarrito);
-            @endphp
+            {{$cantidadTotalDeProductos}}
           </span>
+          <br>
+          
         </h4>
         <ul class="list-group mb-3">
-            @foreach ($losProductos as $producto)
-            <li class="list-group-item d-flex justify-content-between lh-condensed col-sm-9 col-md-10">
-                <div>
-                <h6 class="my-0">{{$producto['titulo']}}</h6>
-                  <small class="text-muted">Brief description</small>
-                </div>
-                <span class="text-muted">{{$producto['precio']}}</span>
-              </li>
-            @endforeach
+          @foreach ($losProductosDelCarrito as $carrito)
+          <li class="list-group-item d-flex justify-content-between lh-condensed col-sm-9 col-md-10">
+              <div>
+              <h6 class="my-0">{{$carrito->producto->titulo}}</h6>
+             
+                <small class="text-muted">{{$carrito->producto->descripcion}}</small>
+              </div>
+            <span class="text-muted">{{$carrito->cantidad}} x   {{$carrito->producto->precio}}</span>
+            </li>
+          @endforeach
+
           <li class="list-group-item d-flex justify-content-between col-sm-9 col-md-10">
             <span>Total</span>
             <strong>
-              @php
-                echo $Carrito->precioTotal($losProductos, $losProductosDelCarrito);
-              @endphp
+              {{$precioTotal}}
             </strong>
           </li>
         </ul>
@@ -210,7 +214,7 @@ Use App\Carrito;
             </div>
           </div>
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit" form="caja">Completar Compra</button>
+          <a class="btn btn-primary btn-lg btn-block elboton" id="boton" {{-- type="submit" --}} form="caja">Completar Compra</a>
       </div>
     </div>
   </div>

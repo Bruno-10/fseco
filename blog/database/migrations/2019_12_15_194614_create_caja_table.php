@@ -15,18 +15,13 @@ class CreateCajaTable extends Migration
     {
         Schema::create('caja', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre', 50);
-            $table->string('apellido', 50);
-            $table->string('email');
-            $table->string('direccion');
-            $table->string('direccion2')->nullable();
-            $table->string('pais');
-            $table->string('provincia');
-            $table->string('cPostal');
+            $table->integer('id_cabecera');
             $table->string('idProductos');
+            $table->integer('cantidad');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

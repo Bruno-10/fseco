@@ -317,7 +317,6 @@ footer h3 {
 
 .banner {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   height: auto;
   margin-top: 10px;
@@ -366,7 +365,7 @@ main {
   padding: 0px;
 }
 
-main {
+.listadoMain {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -444,6 +443,7 @@ h5 {
 }
 
 .caja_derecha {
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -679,17 +679,18 @@ main {
   margin: 5% auto;
 }
 
-.card {
+.detalleCard {
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
   transition: 200ms;
   background: #fff;
+  flex-direction: row;
 }
-.card .card__title {
+.detalleCard .card__title {
   display: flex;
   align-items: center;
   padding: 30px 40px;
 }
-.card .card__title h3 {
+.detalleCard .card__title h3 {
   flex: 0 1 200px;
   text-align: right;
   margin: 0;
@@ -699,31 +700,31 @@ main {
   font-size: 20px;
   text-transform: uppercase;
 }
-.card .card__title .icon {
+.detalleCard .card__title .icon {
   flex: 1 0 10px;
   background: #115dd8;
   color: #fff;
   padding: 10px 10px;
   transition: 200ms;
 }
-.card .card__title .icon > a {
+.detalleCard .card__title .icon > a {
   color: #fff;
 }
-.card .card__title .icon:hover {
+.detalleCard .card__title .icon:hover {
   background: #252525;
 }
-.card .card__body {
+.detalleCard .card__body {
   padding: 0 40px;
   display: flex;
   flex-flow: row no-wrap;
   margin-bottom: 25px;
 }
-.card .card__body > .half {
+.detalleCard .card__body > .half {
   box-sizing: border-box;
   padding: 0 15px;
   flex: 1 0 50%;
 }
-.card .card__body .featured_text h1 {
+.detalleCard .card__body .featured_text h1 {
   margin: 0;
   padding: 0;
   font-weight: 800;
@@ -732,11 +733,11 @@ main {
   line-height: 50px;
   color: #181e28;
 }
-.card .card__body .featured_text p {
+.detalleCard .card__body .featured_text p {
   margin: 0;
   padding: 0;
 }
-.card .card__body .featured_text p.sub {
+.detalleCard .card__body .featured_text p.sub {
   font-family: "Montserrat", sans-serif;
   font-size: 26px;
   text-transform: uppercase;
@@ -744,24 +745,24 @@ main {
   font-weight: 300;
   margin-bottom: 5px;
 }
-.card .card__body .featured_text p.price {
+.detalleCard .card__body .featured_text p.price {
   font-family: "Fjalla One", sans-serif;
   color: #252525;
   font-size: 26px;
 }
-.card .card__body .image {
+.detalleCard .card__body .image {
   padding-top: 15px;
   width: 100%;
 }
-.card .card__body .image img {
+.detalleCard .card__body .image img {
   display: block;
   max-width: 100%;
   height: auto;
 }
-.card .card__body .description {
+.detalleCard .card__body .description {
   margin-bottom: 25px;
 }
-.card .card__body .description p {
+.detalleCard .card__body .description p {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -769,36 +770,36 @@ main {
   font-size: 16px;
   color: #555;
 }
-.card .card__body span.stock {
+.detalleCard .card__body span.stock {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: #a1cc16;
 }
-.card .card__body .reviews .stars {
+.detalleCard .card__body .reviews .stars {
   display: inline-block;
   list-style: none;
   padding: 0;
 }
-.card .card__body .reviews .stars > li {
+.detalleCard .card__body .reviews .stars > li {
   display: inline-block;
 }
-.card .card__body .reviews .stars > li .fa {
+.detalleCard .card__body .reviews .stars > li .fa {
   color: #f7c01b;
 }
-.card .card__body .reviews > span {
+.detalleCard .card__body .reviews > span {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   margin-left: 5px;
   color: #555;
 }
-.card .card__footer {
+.detalleCard .card__footer {
   padding: 30px 40px;
   display: flex;
   flex-flow: row no-wrap;
   align-items: center;
   position: relative;
 }
-.card .card__footer::before {
+.detalleCard .card__footer::before {
   content: "";
   position: absolute;
   display: block;
@@ -809,10 +810,10 @@ main {
   background: #115dd8;
   background: linear-gradient(to right, #115dd8 0%, #115dd8 20%, #ddd 20%, #ddd 100%);
 }
-.card .card__footer .recommend {
+.detalleCard .card__footer .recommend {
   flex: 1 0 10px;
 }
-.card .card__footer .recommend p {
+.detalleCard .card__footer .recommend p {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -820,7 +821,7 @@ main {
   font-size: 14px;
   color: #555;
 }
-.card .card__footer .recommend h3 {
+.detalleCard .card__footer .recommend h3 {
   margin: 0;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
@@ -828,7 +829,7 @@ main {
   text-transform: uppercase;
   color: #115dd8;
 }
-.card .card__footer .recommend:hover {
+.detalleCard .card__footer .recommend:hover {
   background: #fff;
   color: #115dd8;
 }
@@ -848,6 +849,11 @@ form button {
 
 .container {
   max-width: 960px;
+}
+
+.Caja {
+  padding-left: 7vw;
+  margin: auto;
 }
 
 .border-top {

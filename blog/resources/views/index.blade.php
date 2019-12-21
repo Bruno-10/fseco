@@ -4,7 +4,12 @@
      Padel Sport
 @endsection
 
+@section('links')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@endsection
+
 @section('principal')
+<<<<<<< HEAD
         <div class='carrusel'>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -66,6 +71,18 @@
                     <div> <h4> <i class="fa fa-money-bill-alt"></i> 10% DE DESCUENTO </h4> </div>                       
             </section>
             @foreach ($productos2 as $producto) 
+=======
+
+<main class="row col-sm-12 col-md-12 col-lg-12  margencero main">
+   {{--  {!! \Session::get('success') !!} --}}
+    @if (\Session::has('success'))
+        <script>
+            swal("Compra Realizada con Exito!", "Gracias por confiar en nosotros!", "success");
+        </script>
+@endif
+    <div class='col-sm-12 col-md-8 col-lg-10 caja_derecha margencero'>
+        @foreach ($productos1 as $producto) 
+>>>>>>> cca43bbc0ea2824ebaae659225ea89e5ba6a708b
             <div class="caja_producto col-sm-12 col-md-3 col-lg-3">
                 <br>
                     <div class="contenedor_imagen" >

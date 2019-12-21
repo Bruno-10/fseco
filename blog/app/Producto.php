@@ -14,6 +14,5 @@ class Producto extends Model
     public function user(){
         return $this->belongsToMany(User::class, 'carrito', 'id_producto', 'id_cliente');
     }
-    
 
 }

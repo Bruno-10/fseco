@@ -11,14 +11,12 @@
 |
 */
 
-use App\Producto;
 
 Route::get("/", 'ProductoController@pagPrincipal');
 
 Route::get("/contacto", "GeneralController@index");
+
 Auth::routes();
-
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -70,3 +68,7 @@ route::get('/faq', function(){
      return view('usuario.faq');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

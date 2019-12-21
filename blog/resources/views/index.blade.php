@@ -9,18 +9,18 @@
 @endsection
 
 @section('principal')
-<<<<<<< HEAD
-        <div class='carrusel'>
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
+    <section>    
+        <div class='carousel'>
+            <div id="carouselExampleControls" class="carousel slide col-sm-12 col-md-8 col-lg-8" data-ride="carousel">
+                <div class="carousel-inner col-sm-12 col-md-8 col-lg-8">
                     <div class="carousel-item active">
-                    <img class="d-block w-100" src="/storage/feliznavidad.jpg" alt="First slide">
+                    <img class="d-block w-100" src="/storage/Carrusel.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item ">
+                    <img class="d-block w-100" src="/storage/Carrusel.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                    <img class="d-block w-100" src="/storage/feliznavidad.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="/storage/feliznavidad.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="/storage/Carrusel.jpg" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -38,7 +38,7 @@
                 @foreach ($productos1 as $producto) 
                     <div class="caja_producto col-sm-12 col-md-3 col-lg-3">
                         <br>
-                            <div class="contenedor_imagen" >
+                            <div class="contenedor_imagen " >
                                     <img class="imagen22" src="/storage/{{ $producto->img}}" alt="">
                             </div>
                             <div class="h1_titulo">
@@ -70,48 +70,47 @@
                     <div> <h4> <i class="fa fa-truck"></i> ENVIOS GRATIS </h4> </div>
                     <div> <h4> <i class="fa fa-money-bill-alt"></i> 10% DE DESCUENTO </h4> </div>                       
             </section>
-            @foreach ($productos2 as $producto) 
-=======
 
-<main class="row col-sm-12 col-md-12 col-lg-12  margencero main">
-   {{--  {!! \Session::get('success') !!} --}}
-    @if (\Session::has('success'))
-        <script>
-            swal("Compra Realizada con Exito!", "Gracias por confiar en nosotros!", "success");
-        </script>
-@endif
-    <div class='col-sm-12 col-md-8 col-lg-10 caja_derecha margencero'>
-        @foreach ($productos1 as $producto) 
->>>>>>> cca43bbc0ea2824ebaae659225ea89e5ba6a708b
-            <div class="caja_producto col-sm-12 col-md-3 col-lg-3">
-                <br>
-                    <div class="contenedor_imagen" >
-                            <img class="imagen22" src="/storage/{{ $producto->img}}" alt="">
-                    </div>
-                    <div class="h1_titulo">
-                        <h1 >{{$producto->titulo}}</h1>
-                    </div>
-                    <div class="precio">
-                        <p> $ {{$producto->precio}}</p>
-                    </div>
-                    <div>
-                        @if ($producto->cantidad > 0) 
-                            <span class="stock"><i class="fa fa-pen"></i>{{$producto->cantidad}} restantes! </span>
-                        @else 
-                            <span class="stock"><i class="fa fa-pen"></i> Agotado </span>
-                        @endif
-                    </div>
-                    <div class='cuotas'>
-                        <p>Hasta 12 cuotas</p>                         
-                    </div>
-                    <form class='boton_formu' action="detalle" method="GET">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$producto->id}}">
-                        <Button type="submit" > Ver más </Button>
-                    </form> 
-            
-            </div>
-        @endforeach 
-            </div>        
-        </main>
+
+    <main class="row col-sm-12 col-md-12 col-lg-12  margencero main">
+    {{--  {!! \Session::get('success') !!} --}}
+        @if (\Session::has('success'))
+            <script>
+                swal("Compra Realizada con Exito!", "Gracias por confiar en nosotros!", "success");
+            </script>
+        @endif
+        <div class='col-sm-12 col-md-8 col-lg-10 caja_derecha margencero'>
+            @foreach ($productos2 as $producto) 
+                <div class="caja_producto col-sm-12 col-md-3 col-lg-3">
+                    <br>
+                        <div class="contenedor_imagen" >
+                                <img class="imagen22" src="/storage/{{ $producto->img}}" alt="">
+                        </div>
+                        <div class="h1_titulo">
+                            <h1 >{{$producto->titulo}}</h1>
+                        </div>
+                        <div class="precio">
+                            <p> $ {{$producto->precio}}</p>
+                        </div>
+                        <div>
+                            @if ($producto->cantidad > 0) 
+                                <span class="stock"><i class="fa fa-pen"></i>{{$producto->cantidad}} restantes! </span>
+                            @else 
+                                <span class="stock"><i class="fa fa-pen"></i> Agotado </span>
+                            @endif
+                        </div>
+                        <div class='cuotas'>
+                            <p>Hasta 12 cuotas</p>                         
+                        </div>
+                        <form class='boton_formu' action="detalle" method="GET">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$producto->id}}">
+                            <Button type="submit" > Ver más </Button>
+                        </form> 
+                
+                </div>
+            @endforeach 
+                </div>        
+            </main>
+        </section>
 @endsection

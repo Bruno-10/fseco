@@ -11,21 +11,23 @@ fetch('https://restcountries.eu/rest/v2/all')
     .then(function (paises){ 
 
         for (pais of paises) {
+
+                
                 var option = document.createElement('option');
                 option.setAttribute("value", pais.name);
                 var optionText = document.createTextNode(pais.name);
                 option.append(optionText);
                 campoPaises.append(option);
             }
+            
     })
 
     .catch(function(error){
         console.log(error);
     })
     campoPaises.onchange = function(){
-
-        if(this.name.toUpperCase() === "Argentina".toUpperCase()){  
-
+                    
+        if(this.value.toUpperCase() === ("Argentina").toUpperCase()){  
             fetch('https://apis.datos.gob.ar/georef/api/provincias')
             .then( function (response){
                 return response.json(); 

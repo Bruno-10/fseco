@@ -6,7 +6,7 @@
 
 @section('principal')
     <div class="producto">
-        <div class="contenedor">
+        <div class="card col-md-8 col-sm-12 col-lg-8 contenedor">
             <div><h2>Modificar producto</h2></div>
                 <form action="/procesar-modificar" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
                     @csrf
@@ -34,7 +34,7 @@
                         <input type="file" name="img" id="img" value="">
                     </div >
         
-                    <div class="rectangulos">
+                    <div class="card rectangulos">
                         <label for="cat">Categoria</label>
                         <br>
                         <select name="categoria" id="categoria">
